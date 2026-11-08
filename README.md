@@ -1,2 +1,2 @@
 # ptx-session-kit
-Decoder for Avid Protools Session Format (.ptx), SoundCraft Export (Rust)
+decode and encode protools session file format (.ptx), soundCraft export (feasibility study)
