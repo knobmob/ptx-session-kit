@@ -1,7 +1,3 @@
-# ptx-session-kit
-decode and encode protools session file format (.ptx), soundCraft export (feasibility study)
-
-
 ### Legal & Interoperability Disclaimer
 
 **Important Note:** This project is not affiliated with, maintained, authorized, endorsed, or sponsored by [Avid Technology, Inc.] or any of its affiliates. All product and company names are the registered trademarks of their original owners. The use of any trade name or trademark is for identification and reference purposes only.
