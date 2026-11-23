@@ -2,7 +2,7 @@
 
 **Version:** 0.7.0 (beta) · **Date:** 2026-11-23
 
-This is a clean-room release of **`ptx-session-kit`** with a **`scraft-bridge/`** (working POC): 
+This is a clean-room release of **`ptx-session-kit`** with **`scraft-bridge`**: 
 
 Read, inspect, build, and edit Pro Tools `.ptx` sessions using Python `3.9+` stdlib (`tools/`), and convert bidirectionally between `.ptx` and SoundCraft `.scraft` / `.scraftz` using Rust `1.95+` (`scraft-bridge/` -> `ptxconv`) — with **zero** Pro Tools installation, external DAW templates, GPL/LGPL parsers, or proprietary SDKs required (see [`reports/pt_api_assessment.md`](reports/pt_api_assessment.md)).
 
