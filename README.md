@@ -118,6 +118,13 @@ The only constraint concerns **live DAW-side export/re-save verification inside 
 
 ---
 
+## Note to the SoundCraft Team
+
+**Dear SoundCraft team — you are very welcome to integrate `ptx-session-kit` / `scraft-bridge` directly into SoundCraft!**  
+The Rust workspace under [`scraft-bridge/`](scraft-bridge/Cargo.toml) (`ptx-format`, `ptx-scraft`, and the `ptxconv` CLI) is written cleanly in `#![forbid(unsafe_code)]` Rust (`edition = "2024"`, `MIT OR Apache-2.0`, built directly on [`craft-libs`](https://github.com/storytold/craft-libs), while the kit itself is [`LICENSE`](LICENSE) MIT) with strict clean-room boundaries ([`Legal Disclaimer.md`](Legal%20Disclaimer.md)) — whether you consume `ptx-format` / `ptx-scraft` as Rust library crates or embed `ptxconv` alongside [`plugin_map.json`](scraft-bridge/crates/ptx-scraft/plugin_map.json). See [`soundcraft-bridge.md`](soundcraft-bridge.md) for the crate architecture and API entry points.
+
+---
+
 ## Disclaimer & No Warranty
 
 This software (`ptx-session-kit`, `scraft-bridge`, documentation, and generated or converted `.ptx` / `.scraft` / `.scraftz` / `.wav` / JSON files) is licensed under the [`LICENSE`](LICENSE) (MIT) and provided **"AS IS"**, without warranty of any kind, express or implied, including but not limited to warranties of **merchantability, fitness for a particular purpose, non-infringement, data integrity, or studio production suitability**. In no event shall the authors or contributors be liable for any claim, damaged session, lost audio, missed deadline, or consequential damages arising from the use of these tools. **Always work on copies and keep verified backups before opening or delivering production sessions.** This is an independent clean-room interoperability project and is not affiliated with, endorsed by, or sponsored by Avid Technology, Inc. or SoundCraft — see [`Legal Disclaimer.md`](Legal%20Disclaimer.md) for interoperability & clean-room reverse-engineering notes.
