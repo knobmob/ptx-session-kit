@@ -1,0 +1,48 @@
+# Version: 0.7.0 (beta) | Date: 2026-11-23
+# Minimal release configuration for ptx-session-kit
+# Format: TOML (https://toml.io). Paths are relative to this file (kit root).
+# Verify layout with:  python3 tools/ptx_kitconfig.py
+
+[project]
+name = "ptx-session-kit"
+version = "0.7.0-beta"
+language = "en"
+phase = "release"
+
+[paths]
+readme = "README.md"
+getting_started = "getting_started.md"
+soundcraft_bridge_doc = "soundcraft-bridge.md"
+requirements = "requirements.txt"
+tools = "tools"
+scraft_bridge = "scraft-bridge"
+reports = "reports"
+data = "test"
+
+[format]
+ppq = 960000
+xor_type = 5
+xor_value = 92
+default_folder = "/Users/Shared"
+default_volume = "Macintosh HD"
+default_bpm = 120.0
+default_sample_rate = 48000
+default_bit_depth = 24
+max_session_bytes = 268435456
+
+[intro_limits]
+audio_tracks = 8
+aux_and_routing_folders = 4
+inst_tracks = 8
+midi_tracks = 8
+master_tracks = 1
+insert_slots = 10
+send_slots = 10
+video_tracks = 0
+mpe_tracks = 8
+
+[tools]
+kitconfig = "tools/ptx_kitconfig.py"
+probe = "tools/ptx_probe.py"
+decode = "tools/ptx_decode.py"
+edit = "tools/ptx_edit.py"

@@ -1,0 +1,22 @@
+# Version: 0.7.0 (beta) | Date: 2026-11-23
+
+[package]
+name = "ptx-scraft"
+description = "Bidirectional clean-room .ptx <-> .scraft (SoundCraft) session converter and loss ledger"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+
+[dependencies]
+ptx-format.workspace = true
+craft-scraft-format.workspace = true
+craft-midi.workspace = true
+craft-time.workspace = true
+craft-audio.workspace = true
+thiserror.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+
+[lints]
+workspace = true

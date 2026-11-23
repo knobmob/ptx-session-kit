@@ -1,0 +1,23 @@
+# Version: 0.7.0 (beta) | Date: 2026-11-23
+
+[package]
+name = "ptx-convert-cli"
+description = "Drop-in CLI converter between Pro Tools (.ptx) and SoundCraft (.scraft) sessions"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+
+[[bin]]
+name = "ptxconv"
+path = "src/main.rs"
+
+[dependencies]
+ptx-format.workspace = true
+ptx-scraft.workspace = true
+craft-scraft-format.workspace = true
+clap.workspace = true
+serde_json.workspace = true
+
+[lints]
+workspace = true

@@ -1,0 +1,17 @@
+# Version: 0.7.0 (beta) | Date: 2026-11-23
+
+[package]
+name = "ptx-format"
+description = "Clean-room Pro Tools (.ptx) binary reader and field writer (MIT OR Apache-2.0)"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+
+[dependencies]
+thiserror.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+
+[lints]
+workspace = true

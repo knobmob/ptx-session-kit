@@ -1,0 +1,1284 @@
+{
+  "version": 1,
+  "xor_seed": 90,
+  "session_version": "2026.11.0",
+  "timeline": {
+    "timecode_rate_code": 2,
+    "timecode_rate": "25",
+    "drop_frame": false,
+    "session_start": "01:00:00:00"
+  },
+  "session_settings": {},
+  "audio_files": [
+    {
+      "file_name": "amb_m.wav",
+      "bit_depth": 24,
+      "is_float": false,
+      "is_aiff": false,
+      "data_offset": 654,
+      "filetime": 134398604225023143,
+      "umid": "060a2b340101010501010f1013000000eb6f517526c8800002637e52ef52a583"
+    },
+    {
+      "file_name": "bass_m.wav",
+      "bit_depth": 24,
+      "is_float": false,
+      "is_aiff": false,
+      "data_offset": 654,
+      "filetime": 134398604225061267,
+      "umid": "060a2b340101010501010f10130000002d1b316c8dcd8000bff6f8a880a7d13e"
+    },
+    {
+      "file_name": "drums_st.wav",
+      "bit_depth": 24,
+      "is_float": false,
+      "is_aiff": false,
+      "data_offset": 654,
+      "filetime": 134398604225106137,
+      "umid": "060a2b340101010501010f101300000062b0ace5fe9b80009beff3c93c6c175b"
+    },
+    {
+      "file_name": "fx_m.wav",
+      "bit_depth": 24,
+      "is_float": false,
+      "is_aiff": false,
+      "data_offset": 654,
+      "filetime": 134398604225118986,
+      "umid": "060a2b340101010501010f1013000000c7e9ceb7ae028000ab2aa96322026bb0"
+    },
+    {
+      "file_name": "gtr_dl.L.wav",
+      "bit_depth": 24,
+      "is_float": false,
+      "is_aiff": false,
+      "data_offset": 654,
+      "filetime": 134398604225126586,
+      "umid": "060a2b340101010501010f1013000000e2af7dda8eac8000f57f9e8257f5922e"
+    },
+    {
+      "file_name": "gtr_dl.R.wav",
+      "bit_depth": 24,
+      "is_float": false,
+      "is_aiff": false,
+      "data_offset": 654,
+      "filetime": 134398604225137041,
+      "umid": "060a2b340101010501010f10130000005821f003413180009d885bed98543a3a"
+    },
+    {
+      "file_name": "keys_st.wav",
+      "bit_depth": 24,
+      "is_float": false,
+      "is_aiff": false,
+      "data_offset": 654,
+      "filetime": 134398604225182410,
+      "umid": "060a2b340101010501010f10130000004347860631e5800041d61d2f9d21d407"
+    },
+    {
+      "file_name": "perc_st.wav",
+      "bit_depth": 24,
+      "is_float": false,
+      "is_aiff": false,
+      "data_offset": 654,
+      "filetime": 134398604225199811,
+      "umid": "060a2b340101010501010f1013000000ef7dbcd1d10c8000f191c32c88910cac"
+    },
+    {
+      "file_name": "vox_m.wav",
+      "bit_depth": 24,
+      "is_float": false,
+      "is_aiff": false,
+      "data_offset": 654,
+      "filetime": 134398604225209338,
+      "umid": "060a2b340101010501010f10130000000147a506d03a80002d547a58353e5f58"
+    }
+  ],
+  "tracks": {
+    "Au_Amb_M": {
+      "colour": 72,
+      "inserts": [
+        {
+          "slot_index": 0,
+          "plugin_name": "D-Verb",
+          "vendor_id": "com.avid.aax.dverb",
+          "bypass": false,
+          "active": false,
+          "multi_mono": false,
+          "params": {
+            "algorithm_norm": 0.0,
+            "decay_norm": 0.628906,
+            "diffusion": 0.875,
+            "master_bypass": false,
+            "mix": 1.0,
+            "pre_delay_norm": 0.0,
+            "size_norm": 1.0
+          },
+          "values_i32": [
+            -2147483648,
+            2147483647,
+            553648127,
+            2147483647,
+            1610612736,
+            0,
+            1084962432,
+            2147483647,
+            -2147483648,
+            0,
+            0
+          ]
+        }
+      ]
+    },
+    "Au_Bass_M": {
+      "colour": 42,
+      "inserts": [
+        {
+          "slot_index": 0,
+          "plugin_name": "SansAmp PSA-1",
+          "vendor_id": "com.avid.aax.sansamp",
+          "bypass": false,
+          "active": true,
+          "multi_mono": false,
+          "params": {
+            "master_bypass": false
+          },
+          "values_i32": [
+            0,
+            -1073741824,
+            0,
+            -42949673,
+            858993459,
+            85899345,
+            644245094,
+            515396075,
+            747324309,
+            0
+          ]
+        },
+        {
+          "slot_index": 1,
+          "plugin_name": "BF-76",
+          "vendor_id": "com.avid.aax.bf76",
+          "bypass": false,
+          "active": true,
+          "multi_mono": false,
+          "params": {
+            "attack": 0.33,
+            "input": 0.37,
+            "master_bypass": false,
+            "meter_mode": 1.0,
+            "output": 0.63,
+            "ratio": 0.0,
+            "release": 0.69
+          },
+          "values_i32": [
+            -558345749,
+            558345748,
+            -730144512,
+            816043929,
+            -2147483648,
+            2147483647,
+            0
+          ]
+        }
+      ]
+    },
+    "Au_Drums_St": {
+      "colour": 35,
+      "inserts": [
+        {
+          "slot_index": 0,
+          "plugin_name": "Channel Strip",
+          "vendor_id": "com.avid.aax.sdk.ChannelStrip",
+          "bypass": false,
+          "active": true,
+          "multi_mono": false,
+          "params": {
+            "d_Cmp Attack Time": 0.0001,
+            "d_Cmp Depth": -36.0,
+            "d_Cmp Gain Makeup": 0.0,
+            "d_Cmp Knee": 0.0,
+            "d_Cmp Ratio": 1.0,
+            "d_Cmp Release Time": 0.2,
+            "d_Cmp Threshold": -18.0,
+            "d_EQ High Frequency": 10500.0,
+            "d_EQ High Gain": 0.0,
+            "d_EQ High Q": 0.5,
+            "d_EQ High-Mid Frequency": 2630.0,
+            "d_EQ High-Mid Gain": 0.0,
+            "d_EQ High-Mid Q": 0.5,
+            "d_EQ Low Frequency": 41.2,
+            "d_EQ Low Gain": 0.0,
+            "d_EQ Low Q": 0.5,
+            "d_EQ Low-Mid Frequency": 329.0,
+            "d_EQ Low-Mid Gain": 0.0,
+            "d_EQ Low-Mid Q": 0.5,
+            "d_Exp Attack Time": 0.00002,
+            "d_Exp Depth": -36.0,
+            "d_Exp Hold Time": 0.001,
+            "d_Exp Hysteresis": 0.0,
+            "d_Exp Knee": 0.0,
+            "d_Exp Ratio": 1.0,
+            "d_Exp Release Time": 0.2,
+            "d_Exp Threshold": -58.0,
+            "d_Fader Volume": 0.0,
+            "d_Filter 1 Frequency": 20.6,
+            "d_Filter 1 Q": 0.5,
+            "d_Filter 2 Frequency": 21000.0,
+            "d_Filter 2 Q": 0.5,
+            "d_Input Trim": 1.5,
+            "d_Sc Filter Frequency": 20.0,
+            "l_Cmp In/Out": 1,
+            "l_Dynamics On/Off": 1,
+            "l_Dynamics Range": 0,
+            "l_Dynamics Reveal": 0,
+            "l_Dynamics Tab": 1,
+            "l_EQ High In/Out": 1,
+            "l_EQ High Listen In/Out": 0,
+            "l_EQ High Type": 0,
+            "l_EQ High-Mid In/Out": 1,
+            "l_EQ High-Mid Listen In/Out": 0,
+            "l_EQ Low In/Out": 1,
+            "l_EQ Low Listen In/Out": 0,
+            "l_EQ Low Type": 0,
+            "l_EQ Low-Mid In/Out": 1,
+            "l_EQ Low-Mid Listen In/Out": 0,
+            "l_EQ On/Off": 1,
+            "l_EQ Range": 0,
+            "l_EQ Reveal": 0,
+            "l_EQ Tab": 0,
+            "l_Exp In/Out": 1,
+            "l_Fader Volume On/Off": 1,
+            "l_Fader Volume Pre/Post": 0,
+            "l_Filter 1 In/Out": 0,
+            "l_Filter 1 Listen In/Out": 0,
+            "l_Filter 1 Slope 12/24dB": 0,
+            "l_Filter 1 Type": 0,
+            "l_Filter 2 In/Out": 0,
+            "l_Filter 2 Listen In/Out": 0,
+            "l_Filter 2 Slope 12/24dB": 0,
+            "l_Filter 2 Type": 1,
+            "l_Filters On/Off": 1,
+            "l_Meters Tab": 0,
+            "l_Order Tab": 0,
+            "l_Phase Switch In/Out": 0,
+            "l_Process Order": 0,
+            "l_Sc Detector Type Avg/Pk": 1,
+            "l_Sc Filter In/Out": 1,
+            "l_Sc Filter Type": 0,
+            "l_Sc Listen In/Out": 0,
+            "l_Sc Source": 0
+          }
+        },
+        {
+          "slot_index": 1,
+          "plugin_name": "Dyn3 Compressor/Limiter",
+          "vendor_id": "com.avid.aax.dyn3.Compressor",
+          "bypass": false,
+          "active": true,
+          "multi_mono": false,
+          "params": {
+            "d_HiFF": 20000.0,
+            "d_LoFF": 20.0,
+            "d_sld1": 0.01,
+            "d_sld2": 4.0,
+            "d_sld3": 0.08,
+            "d_sldC": -20.0,
+            "d_sldD": 0.0,
+            "d_sldG": 0.0,
+            "l_HiFE": 0,
+            "l_HiRG": 1,
+            "l_LoFE": 0,
+            "l_LoRG": 1,
+            "l_Phse": 0,
+            "l_sldE": 0
+          }
+        }
+      ]
+    },
+    "Au_FX_M": {
+      "inserts": [
+        {
+          "slot_index": 1,
+          "plugin_name": "Time Adjuster",
+          "vendor_id": "com.avid.aax.timeadjuster",
+          "bypass": false,
+          "active": true,
+          "multi_mono": false,
+          "params": {
+            "delay_samples": 64,
+            "delay_samples_r": 64,
+            "master_bypass": false
+          },
+          "values_i32": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            64,
+            64,
+            0
+          ]
+        }
+      ]
+    },
+    "Au_Gtr_St": {
+      "inserts": [
+        {
+          "slot_index": 0,
+          "plugin_name": "Sci-Fi",
+          "vendor_id": "com.avid.aax.scifi",
+          "bypass": false,
+          "active": true,
+          "multi_mono": false,
+          "params": {
+            "effect_depth": 0.0,
+            "effect_frequency": 0.0,
+            "effect_type": 0.0,
+            "input_level": 1.0,
+            "master_bypass": false,
+            "mod_depth": 0.0,
+            "mod_rate_slew_thresh": 0.0,
+            "slot_4": 0.0
+          },
+          "values_i32": [
+            2147483647,
+            -2147483648,
+            -2147483648,
+            -2147483648,
+            -2147483648,
+            -2147483648,
+            -2147483648,
+            0
+          ]
+        },
+        {
+          "slot_index": 1,
+          "plugin_name": "Mod Delay III",
+          "vendor_id": "com.avid.aax.moddelay3",
+          "bypass": false,
+          "active": true,
+          "multi_mono": false,
+          "params": {
+            "delay_left": 0.05,
+            "delay_right": 0.05,
+            "depth_left": 0.0,
+            "depth_right": 0.0,
+            "feedback_left": 0.5,
+            "feedback_right": 0.5,
+            "groove_left": 0.5,
+            "groove_right": 0.500015,
+            "invert_left": false,
+            "invert_right": false,
+            "lpf_left": 1.0,
+            "lpf_right": 1.0,
+            "meter_den": 4,
+            "meter_num": 4,
+            "mix_left": 1.0,
+            "mix_right": 1.0,
+            "note_left_norm": 0.0,
+            "note_right_norm": 0.0,
+            "output_left": 1.0,
+            "output_right": 1.0,
+            "rate_left": 0.0,
+            "rate_right": 0.0,
+            "tempo_bpm": 120.0
+          }
+        },
+        {
+          "slot_index": 2,
+          "plugin_name": "EQ3 7-Band",
+          "vendor_id": "com.digidesign.aax.eq3.7band",
+          "bypass": false,
+          "active": true,
+          "multi_mono": true,
+          "params": {
+            "d_bnd2": 1.0,
+            "d_bnd3": 1.0,
+            "d_bnd4": 1.0,
+            "d_bnd5": 1.0,
+            "d_bnd6": 1.0,
+            "d_frq1": 20.0,
+            "d_frq2": 100.0,
+            "d_frq3": 200.0,
+            "d_frq4": 1000.0,
+            "d_frq5": 2000.0,
+            "d_frq6": 6000.0,
+            "d_frq7": 20000.0,
+            "d_gai2": 0.0,
+            "d_gai3": 0.0,
+            "d_gai4": 3.0,
+            "d_gai5": 0.0,
+            "d_gai6": 0.0,
+            "d_hpfq": 1.0,
+            "d_inpt": 0.0,
+            "d_lpfq": 1.0,
+            "d_outp": 0.0,
+            "l_Phse": 0,
+            "l_hak1": 0,
+            "l_hak2": 0,
+            "l_hak3": 0,
+            "l_hfrg": 1,
+            "l_hpfs": 0,
+            "l_hprg": 1,
+            "l_in 1": 0,
+            "l_in 2": 1,
+            "l_in 3": 1,
+            "l_in 4": 1,
+            "l_in 5": 1,
+            "l_in 6": 1,
+            "l_in 7": 0,
+            "l_lfrg": 1,
+            "l_lpfs": 0,
+            "l_lprg": 1
+          }
+        }
+      ]
+    },
+    "Au_Keys_St": {
+      "colour": 64,
+      "inserts": [
+        {
+          "slot_index": 0,
+          "plugin_name": "Pitch II",
+          "vendor_id": "com.avid.aax.pitch",
+          "bypass": false,
+          "active": true,
+          "multi_mono": false,
+          "params": {
+            "lpf_left": 22050.0,
+            "lpf_right": 22050.0,
+            "mix_left": 100.0,
+            "mix_right": 100.0,
+            "version": 1
+          }
+        },
+        {
+          "slot_index": 1,
+          "plugin_name": "Lo-Fi",
+          "vendor_id": "com.avid.aax.lofi",
+          "bypass": false,
+          "active": true,
+          "multi_mono": false,
+          "params": {
+            "anti_alias_norm": 1.0,
+            "distortion": 0.25,
+            "master_bypass": false,
+            "noise_norm": 0.0,
+            "sample_rate_norm": 1.0,
+            "sample_size_norm": 1.0,
+            "saturation": 0.0
+          },
+          "values_i32": [
+            2147483647,
+            2147483647,
+            2147483647,
+            -2147483648,
+            -2147483648,
+            0,
+            -1073741824,
+            -2147483648,
+            0
+          ]
+        }
+      ]
+    },
+    "Au_Perc_St": {
+      "user_delay": 137,
+      "synthesized_user_delay_slot": 9,
+      "inserts": [
+        {
+          "slot_index": 0,
+          "plugin_name": "Time Adjuster",
+          "vendor_id": "com.avid.aax.timeadjuster",
+          "bypass": false,
+          "active": true,
+          "multi_mono": false,
+          "params": {
+            "delay_samples": 137,
+            "delay_samples_r": 137,
+            "master_bypass": false
+          },
+          "values_i32": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            137,
+            137,
+            0
+          ]
+        }
+      ]
+    },
+    "Au_Vox_Lead_M": {
+      "colour": 58,
+      "inserts": [
+        {
+          "slot_index": 0,
+          "plugin_name": "EQ3 7-Band",
+          "vendor_id": "com.digidesign.aax.eq3.7band",
+          "bypass": false,
+          "active": true,
+          "multi_mono": false,
+          "params": {
+            "d_bnd2": 1.0,
+            "d_bnd3": 1.0,
+            "d_bnd4": 1.0,
+            "d_bnd5": 1.0,
+            "d_bnd6": 1.0,
+            "d_frq1": 85.0,
+            "d_frq2": 100.0,
+            "d_frq3": 200.0,
+            "d_frq4": 1000.0,
+            "d_frq5": 2000.0,
+            "d_frq6": 6000.0,
+            "d_frq7": 20000.0,
+            "d_gai2": 0.0,
+            "d_gai3": 0.0,
+            "d_gai4": 0.0,
+            "d_gai5": 2.5,
+            "d_gai6": 0.0,
+            "d_hpfq": 1.0,
+            "d_inpt": 0.0,
+            "d_lpfq": 1.0,
+            "d_outp": 0.0,
+            "l_Phse": 0,
+            "l_hak1": 0,
+            "l_hak2": 0,
+            "l_hak3": 0,
+            "l_hfrg": 1,
+            "l_hpfs": 0,
+            "l_hprg": 1,
+            "l_in 1": 1,
+            "l_in 2": 1,
+            "l_in 3": 1,
+            "l_in 4": 1,
+            "l_in 5": 1,
+            "l_in 6": 1,
+            "l_in 7": 0,
+            "l_lfrg": 1,
+            "l_lpfs": 0,
+            "l_lprg": 1
+          }
+        },
+        {
+          "slot_index": 1,
+          "plugin_name": "Dyn3 Compressor/Limiter",
+          "vendor_id": "com.avid.aax.dyn3.Compressor",
+          "bypass": false,
+          "active": true,
+          "multi_mono": false,
+          "params": {
+            "d_HiFF": 20000.0,
+            "d_LoFF": 20.0,
+            "d_sld1": 0.01,
+            "d_sld2": 3.0,
+            "d_sld3": 0.08,
+            "d_sldC": -16.0,
+            "d_sldD": 0.0,
+            "d_sldG": 0.0,
+            "l_HiFE": 0,
+            "l_HiRG": 1,
+            "l_LoFE": 0,
+            "l_LoRG": 1,
+            "l_Phse": 0,
+            "l_sldE": 0
+          }
+        }
+      ]
+    },
+    "Aux_Sub_M": {
+      "inserts": [
+        {
+          "slot_index": 0,
+          "plugin_name": "Dyn3 Compressor/Limiter",
+          "vendor_id": "com.avid.aax.dyn3.Compressor",
+          "bypass": false,
+          "active": true,
+          "multi_mono": false,
+          "params": {
+            "d_HiFF": 20000.0,
+            "d_LoFF": 20.0,
+            "d_sld1": 0.01,
+            "d_sld2": 3.0,
+            "d_sld3": 0.08,
+            "d_sldC": -24.0,
+            "d_sldD": 0.0,
+            "d_sldG": 0.0,
+            "l_HiFE": 0,
+            "l_HiRG": 1,
+            "l_LoFE": 0,
+            "l_LoRG": 1,
+            "l_Phse": 0,
+            "l_sldE": 0
+          }
+        },
+        {
+          "slot_index": 1,
+          "plugin_name": "SansAmp PSA-1",
+          "vendor_id": "com.avid.aax.sansamp",
+          "bypass": false,
+          "active": true,
+          "multi_mono": false,
+          "params": {
+            "master_bypass": false
+          },
+          "values_i32": [
+            0,
+            -1073741824,
+            0,
+            -42949673,
+            858993459,
+            85899345,
+            644245094,
+            515396075,
+            747324309,
+            0
+          ]
+        }
+      ]
+    },
+    "Aux_Verb_St": {
+      "inserts": [
+        {
+          "slot_index": 0,
+          "plugin_name": "D-Verb",
+          "vendor_id": "com.avid.aax.dverb",
+          "bypass": false,
+          "active": true,
+          "multi_mono": false,
+          "params": {
+            "algorithm_norm": 0.0,
+            "decay_norm": 0.628906,
+            "diffusion": 0.875,
+            "master_bypass": false,
+            "mix": 1.0,
+            "pre_delay_norm": 0.0,
+            "size_norm": 1.0
+          },
+          "values_i32": [
+            -2147483648,
+            2147483647,
+            553648127,
+            2147483647,
+            1610612736,
+            0,
+            1084962432,
+            2147483647,
+            -2147483648,
+            0,
+            0
+          ]
+        },
+        {
+          "slot_index": 1,
+          "plugin_name": "EQ3 7-Band",
+          "vendor_id": "com.digidesign.aax.eq3.7band",
+          "bypass": false,
+          "active": true,
+          "multi_mono": false,
+          "params": {
+            "d_bnd2": 1.0,
+            "d_bnd3": 1.0,
+            "d_bnd4": 1.0,
+            "d_bnd5": 1.0,
+            "d_bnd6": 1.0,
+            "d_frq1": 180.0,
+            "d_frq2": 100.0,
+            "d_frq3": 200.0,
+            "d_frq4": 1000.0,
+            "d_frq5": 2000.0,
+            "d_frq6": 6000.0,
+            "d_frq7": 20000.0,
+            "d_gai2": 0.0,
+            "d_gai3": 0.0,
+            "d_gai4": 0.0,
+            "d_gai5": 0.0,
+            "d_gai6": 0.0,
+            "d_hpfq": 1.0,
+            "d_inpt": 0.0,
+            "d_lpfq": 1.0,
+            "d_outp": 0.0,
+            "l_Phse": 0,
+            "l_hak1": 0,
+            "l_hak2": 0,
+            "l_hak3": 0,
+            "l_hfrg": 1,
+            "l_hpfs": 0,
+            "l_hprg": 1,
+            "l_in 1": 1,
+            "l_in 2": 1,
+            "l_in 3": 1,
+            "l_in 4": 1,
+            "l_in 5": 1,
+            "l_in 6": 1,
+            "l_in 7": 0,
+            "l_lfrg": 1,
+            "l_lpfs": 0,
+            "l_lprg": 1
+          }
+        },
+        {
+          "slot_index": 2,
+          "plugin_name": "Mod Delay III",
+          "vendor_id": "com.avid.aax.moddelay3",
+          "bypass": false,
+          "active": true,
+          "multi_mono": false,
+          "params": {
+            "delay_left": 0.05,
+            "delay_right": 0.05,
+            "depth_left": 0.0,
+            "depth_right": 0.0,
+            "feedback_left": 0.5,
+            "feedback_right": 0.5,
+            "groove_left": 0.5,
+            "groove_right": 0.500015,
+            "invert_left": false,
+            "invert_right": false,
+            "lpf_left": 1.0,
+            "lpf_right": 1.0,
+            "meter_den": 4,
+            "meter_num": 4,
+            "mix_left": 1.0,
+            "mix_right": 1.0,
+            "note_left_norm": 0.0,
+            "note_right_norm": 0.0,
+            "output_left": 1.0,
+            "output_right": 1.0,
+            "rate_left": 0.0,
+            "rate_right": 0.0,
+            "tempo_bpm": 120.0
+          }
+        }
+      ]
+    },
+    "Fold_Rhythm": {
+      "inserts": [
+        {
+          "slot_index": 0,
+          "plugin_name": "Channel Strip",
+          "vendor_id": "com.avid.aax.sdk.ChannelStrip",
+          "bypass": false,
+          "active": true,
+          "multi_mono": false,
+          "params": {
+            "d_Cmp Attack Time": 0.0001,
+            "d_Cmp Depth": -36.0,
+            "d_Cmp Gain Makeup": 0.0,
+            "d_Cmp Knee": 0.0,
+            "d_Cmp Ratio": 1.0,
+            "d_Cmp Release Time": 0.2,
+            "d_Cmp Threshold": -24.0,
+            "d_EQ High Frequency": 10500.0,
+            "d_EQ High Gain": 0.0,
+            "d_EQ High Q": 0.5,
+            "d_EQ High-Mid Frequency": 2630.0,
+            "d_EQ High-Mid Gain": 0.0,
+            "d_EQ High-Mid Q": 0.5,
+            "d_EQ Low Frequency": 41.2,
+            "d_EQ Low Gain": 0.0,
+            "d_EQ Low Q": 0.5,
+            "d_EQ Low-Mid Frequency": 329.0,
+            "d_EQ Low-Mid Gain": 0.0,
+            "d_EQ Low-Mid Q": 0.5,
+            "d_Exp Attack Time": 0.00002,
+            "d_Exp Depth": -36.0,
+            "d_Exp Hold Time": 0.001,
+            "d_Exp Hysteresis": 0.0,
+            "d_Exp Knee": 0.0,
+            "d_Exp Ratio": 1.0,
+            "d_Exp Release Time": 0.2,
+            "d_Exp Threshold": -58.0,
+            "d_Fader Volume": 0.0,
+            "d_Filter 1 Frequency": 20.6,
+            "d_Filter 1 Q": 0.5,
+            "d_Filter 2 Frequency": 21000.0,
+            "d_Filter 2 Q": 0.5,
+            "d_Input Trim": 0.0,
+            "d_Sc Filter Frequency": 20.0,
+            "l_Cmp In/Out": 1,
+            "l_Dynamics On/Off": 1,
+            "l_Dynamics Range": 0,
+            "l_Dynamics Reveal": 0,
+            "l_Dynamics Tab": 1,
+            "l_EQ High In/Out": 1,
+            "l_EQ High Listen In/Out": 0,
+            "l_EQ High Type": 0,
+            "l_EQ High-Mid In/Out": 1,
+            "l_EQ High-Mid Listen In/Out": 0,
+            "l_EQ Low In/Out": 1,
+            "l_EQ Low Listen In/Out": 0,
+            "l_EQ Low Type": 0,
+            "l_EQ Low-Mid In/Out": 1,
+            "l_EQ Low-Mid Listen In/Out": 0,
+            "l_EQ On/Off": 1,
+            "l_EQ Range": 0,
+            "l_EQ Reveal": 0,
+            "l_EQ Tab": 0,
+            "l_Exp In/Out": 1,
+            "l_Fader Volume On/Off": 1,
+            "l_Fader Volume Pre/Post": 0,
+            "l_Filter 1 In/Out": 0,
+            "l_Filter 1 Listen In/Out": 0,
+            "l_Filter 1 Slope 12/24dB": 0,
+            "l_Filter 1 Type": 0,
+            "l_Filter 2 In/Out": 0,
+            "l_Filter 2 Listen In/Out": 0,
+            "l_Filter 2 Slope 12/24dB": 0,
+            "l_Filter 2 Type": 1,
+            "l_Filters On/Off": 1,
+            "l_Meters Tab": 0,
+            "l_Order Tab": 0,
+            "l_Phase Switch In/Out": 0,
+            "l_Process Order": 0,
+            "l_Sc Detector Type Avg/Pk": 1,
+            "l_Sc Filter In/Out": 1,
+            "l_Sc Filter Type": 0,
+            "l_Sc Listen In/Out": 0,
+            "l_Sc Source": 0
+          }
+        }
+      ]
+    },
+    "Fold_Strings": {
+      "ptx_kind": 11
+    },
+    "Fold_Synths": {
+      "ptx_kind": 11
+    },
+    "In_Bass_M": {
+      "user_delay": 64,
+      "synthesized_user_delay_slot": 9,
+      "inserts": [
+        {
+          "slot_index": 0,
+          "plugin_name": "BF-76",
+          "vendor_id": "com.avid.aax.bf76",
+          "bypass": false,
+          "active": true,
+          "multi_mono": false,
+          "params": {
+            "attack": 0.33,
+            "input": 0.37,
+            "master_bypass": false,
+            "meter_mode": 1.0,
+            "output": 0.63,
+            "ratio": 0.0,
+            "release": 0.69
+          },
+          "values_i32": [
+            -558345749,
+            558345748,
+            -730144512,
+            816043929,
+            -2147483648,
+            2147483647,
+            0
+          ]
+        }
+      ]
+    },
+    "In_Drone_St": {
+      "inserts": [
+        {
+          "slot_index": 0,
+          "plugin_name": "Channel Strip",
+          "vendor_id": "com.avid.aax.sdk.ChannelStrip",
+          "bypass": false,
+          "active": false,
+          "multi_mono": false,
+          "params": {
+            "d_Cmp Attack Time": 0.0001,
+            "d_Cmp Depth": -36.0,
+            "d_Cmp Gain Makeup": 0.0,
+            "d_Cmp Knee": 0.0,
+            "d_Cmp Ratio": 1.0,
+            "d_Cmp Release Time": 0.2,
+            "d_Cmp Threshold": -24.0,
+            "d_EQ High Frequency": 10500.0,
+            "d_EQ High Gain": 0.0,
+            "d_EQ High Q": 0.5,
+            "d_EQ High-Mid Frequency": 2630.0,
+            "d_EQ High-Mid Gain": 0.0,
+            "d_EQ High-Mid Q": 0.5,
+            "d_EQ Low Frequency": 41.2,
+            "d_EQ Low Gain": 0.0,
+            "d_EQ Low Q": 0.5,
+            "d_EQ Low-Mid Frequency": 329.0,
+            "d_EQ Low-Mid Gain": 0.0,
+            "d_EQ Low-Mid Q": 0.5,
+            "d_Exp Attack Time": 0.00002,
+            "d_Exp Depth": -36.0,
+            "d_Exp Hold Time": 0.001,
+            "d_Exp Hysteresis": 0.0,
+            "d_Exp Knee": 0.0,
+            "d_Exp Ratio": 1.0,
+            "d_Exp Release Time": 0.2,
+            "d_Exp Threshold": -58.0,
+            "d_Fader Volume": 0.0,
+            "d_Filter 1 Frequency": 20.6,
+            "d_Filter 1 Q": 0.5,
+            "d_Filter 2 Frequency": 21000.0,
+            "d_Filter 2 Q": 0.5,
+            "d_Input Trim": 0.0,
+            "d_Sc Filter Frequency": 20.0,
+            "l_Cmp In/Out": 1,
+            "l_Dynamics On/Off": 1,
+            "l_Dynamics Range": 0,
+            "l_Dynamics Reveal": 0,
+            "l_Dynamics Tab": 1,
+            "l_EQ High In/Out": 1,
+            "l_EQ High Listen In/Out": 0,
+            "l_EQ High Type": 0,
+            "l_EQ High-Mid In/Out": 1,
+            "l_EQ High-Mid Listen In/Out": 0,
+            "l_EQ Low In/Out": 1,
+            "l_EQ Low Listen In/Out": 0,
+            "l_EQ Low Type": 0,
+            "l_EQ Low-Mid In/Out": 1,
+            "l_EQ Low-Mid Listen In/Out": 0,
+            "l_EQ On/Off": 1,
+            "l_EQ Range": 0,
+            "l_EQ Reveal": 0,
+            "l_EQ Tab": 0,
+            "l_Exp In/Out": 1,
+            "l_Fader Volume On/Off": 1,
+            "l_Fader Volume Pre/Post": 0,
+            "l_Filter 1 In/Out": 0,
+            "l_Filter 1 Listen In/Out": 0,
+            "l_Filter 1 Slope 12/24dB": 0,
+            "l_Filter 1 Type": 0,
+            "l_Filter 2 In/Out": 0,
+            "l_Filter 2 Listen In/Out": 0,
+            "l_Filter 2 Slope 12/24dB": 0,
+            "l_Filter 2 Type": 1,
+            "l_Filters On/Off": 1,
+            "l_Meters Tab": 0,
+            "l_Order Tab": 0,
+            "l_Phase Switch In/Out": 0,
+            "l_Process Order": 0,
+            "l_Sc Detector Type Avg/Pk": 1,
+            "l_Sc Filter In/Out": 1,
+            "l_Sc Filter Type": 0,
+            "l_Sc Listen In/Out": 0,
+            "l_Sc Source": 0
+          }
+        }
+      ]
+    },
+    "In_Lead_St": {
+      "inserts": [
+        {
+          "slot_index": 0,
+          "plugin_name": "Mod Delay III",
+          "vendor_id": "com.avid.aax.moddelay3",
+          "bypass": false,
+          "active": true,
+          "multi_mono": false,
+          "params": {
+            "delay_left": 0.05,
+            "delay_right": 0.05,
+            "depth_left": 0.0,
+            "depth_right": 0.0,
+            "feedback_left": 0.5,
+            "feedback_right": 0.5,
+            "groove_left": 0.5,
+            "groove_right": 0.500015,
+            "invert_left": false,
+            "invert_right": false,
+            "lpf_left": 1.0,
+            "lpf_right": 1.0,
+            "meter_den": 4,
+            "meter_num": 4,
+            "mix_left": 1.0,
+            "mix_right": 1.0,
+            "note_left_norm": 0.0,
+            "note_right_norm": 0.0,
+            "output_left": 1.0,
+            "output_right": 1.0,
+            "rate_left": 0.0,
+            "rate_right": 0.0,
+            "tempo_bpm": 120.0
+          }
+        }
+      ]
+    },
+    "In_Pad_St": {
+      "inserts": [
+        {
+          "slot_index": 0,
+          "plugin_name": "D-Verb",
+          "vendor_id": "com.avid.aax.dverb",
+          "bypass": false,
+          "active": true,
+          "multi_mono": false,
+          "params": {
+            "algorithm_norm": 0.0,
+            "decay_norm": 0.628906,
+            "diffusion": 0.875,
+            "master_bypass": false,
+            "mix": 1.0,
+            "pre_delay_norm": 0.0,
+            "size_norm": 1.0
+          },
+          "values_i32": [
+            -2147483648,
+            2147483647,
+            553648127,
+            2147483647,
+            1610612736,
+            0,
+            1084962432,
+            2147483647,
+            -2147483648,
+            0,
+            0
+          ]
+        }
+      ]
+    },
+    "In_Perc_St": {
+      "inserts": [
+        {
+          "slot_index": 0,
+          "plugin_name": "Sci-Fi",
+          "vendor_id": "com.avid.aax.scifi",
+          "bypass": false,
+          "active": true,
+          "multi_mono": false,
+          "params": {
+            "effect_depth": 0.0,
+            "effect_frequency": 0.0,
+            "effect_type": 0.0,
+            "input_level": 1.0,
+            "master_bypass": false,
+            "mod_depth": 0.0,
+            "mod_rate_slew_thresh": 0.0,
+            "slot_4": 0.0
+          },
+          "values_i32": [
+            2147483647,
+            -2147483648,
+            -2147483648,
+            -2147483648,
+            -2147483648,
+            -2147483648,
+            -2147483648,
+            0
+          ]
+        }
+      ]
+    },
+    "In_Piano_St": {
+      "inserts": [
+        {
+          "slot_index": 1,
+          "plugin_name": "Click II",
+          "vendor_id": "com.avid.aax.sdk.megaclick",
+          "bypass": true,
+          "active": true,
+          "multi_mono": false,
+          "params": {
+            "d_AcAt": 0.5,
+            "d_UnAt": 0.5
+          }
+        }
+      ]
+    },
+    "In_Pluck_M": {
+      "inserts": [
+        {
+          "slot_index": 0,
+          "plugin_name": "Lo-Fi",
+          "vendor_id": "com.avid.aax.lofi",
+          "bypass": false,
+          "active": true,
+          "multi_mono": false,
+          "params": {
+            "anti_alias_norm": 1.0,
+            "distortion": 0.0,
+            "master_bypass": false,
+            "noise_norm": 0.0,
+            "sample_rate_norm": 1.0,
+            "sample_size_norm": 1.0,
+            "saturation": 0.0
+          },
+          "values_i32": [
+            2147483647,
+            2147483647,
+            2147483647,
+            -2147483648,
+            -2147483648,
+            0,
+            -2147483648,
+            -2147483648,
+            0
+          ]
+        }
+      ]
+    },
+    "Master": {
+      "inserts": [
+        {
+          "slot_index": 0,
+          "plugin_name": "EQ3 7-Band",
+          "vendor_id": "com.digidesign.aax.eq3.7band",
+          "bypass": false,
+          "active": true,
+          "multi_mono": false,
+          "params": {
+            "d_bnd2": 1.0,
+            "d_bnd3": 1.0,
+            "d_bnd4": 1.0,
+            "d_bnd5": 1.0,
+            "d_bnd6": 1.0,
+            "d_frq1": 20.0,
+            "d_frq2": 100.0,
+            "d_frq3": 200.0,
+            "d_frq4": 1000.0,
+            "d_frq5": 2000.0,
+            "d_frq6": 6000.0,
+            "d_frq7": 20000.0,
+            "d_gai2": 0.0,
+            "d_gai3": 0.0,
+            "d_gai4": 0.0,
+            "d_gai5": 0.0,
+            "d_gai6": 0.0,
+            "d_hpfq": 1.0,
+            "d_inpt": 0.0,
+            "d_lpfq": 1.0,
+            "d_outp": 0.0,
+            "l_Phse": 0,
+            "l_hak1": 0,
+            "l_hak2": 0,
+            "l_hak3": 0,
+            "l_hfrg": 1,
+            "l_hpfs": 0,
+            "l_hprg": 1,
+            "l_in 1": 0,
+            "l_in 2": 1,
+            "l_in 3": 1,
+            "l_in 4": 1,
+            "l_in 5": 1,
+            "l_in 6": 1,
+            "l_in 7": 0,
+            "l_lfrg": 1,
+            "l_lpfs": 0,
+            "l_lprg": 1
+          }
+        },
+        {
+          "slot_index": 1,
+          "plugin_name": "Dyn3 Compressor/Limiter",
+          "vendor_id": "com.avid.aax.dyn3.Compressor",
+          "bypass": false,
+          "active": true,
+          "multi_mono": false,
+          "params": {
+            "d_HiFF": 20000.0,
+            "d_LoFF": 20.0,
+            "d_sld1": 0.01,
+            "d_sld2": 3.0,
+            "d_sld3": 0.08,
+            "d_sldC": -24.0,
+            "d_sldD": 0.0,
+            "d_sldG": 0.0,
+            "l_HiFE": 0,
+            "l_HiRG": 1,
+            "l_LoFE": 0,
+            "l_LoRG": 1,
+            "l_Phse": 0,
+            "l_sldE": 0
+          }
+        },
+        {
+          "slot_index": 2,
+          "plugin_name": "Dither",
+          "vendor_id": "com.avid.aax.dither",
+          "bypass": false,
+          "active": true,
+          "multi_mono": false,
+          "params": {
+            "master_bypass": false
+          },
+          "values_i32": [
+            0,
+            2147483647,
+            2147483647,
+            0
+          ]
+        },
+        {
+          "slot_index": 3,
+          "plugin_name": "POW-r Dither",
+          "vendor_id": "com.avid.aax.powr",
+          "bypass": true,
+          "active": true,
+          "multi_mono": false,
+          "params": {
+            "master_bypass": false
+          },
+          "values_i32": [
+            2147483647,
+            -2147483648,
+            0
+          ]
+        }
+      ]
+    }
+  },
+  "clips": {
+    "Keys_Seg2.L": {
+      "loop_mode": null,
+      "loop_bars": null,
+      "loop_beats": null,
+      "loop_ticks": null,
+      "loop_count": null,
+      "loop_iter_ticks": null,
+      "loop_iter_samples": null,
+      "crossfade_pre_roll": 2400,
+      "sysex": []
+    },
+    "Md_Main-01": {
+      "loop_mode": null,
+      "loop_bars": null,
+      "loop_beats": null,
+      "loop_ticks": null,
+      "loop_count": null,
+      "loop_iter_ticks": null,
+      "loop_iter_samples": null,
+      "sysex": [
+        [
+          0,
+          "7e7f0901"
+        ],
+        [
+          1920000,
+          "4110421240007f0041"
+        ]
+      ]
+    },
+    "gtr_dl.L": {
+      "loop_mode": 2,
+      "loop_bars": 0,
+      "loop_beats": 0,
+      "loop_ticks": 0,
+      "loop_count": 4,
+      "loop_iter_ticks": 2880000,
+      "loop_iter_samples": null,
+      "split_pair": [
+        "gtr_dl.L.wav",
+        "gtr_dl.R.wav"
+      ],
+      "sysex": []
+    }
+  },
+  "clip_group_names": {
+    "68": "Grp_Amb"
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "version": "0.7.0-beta",
+  "date": "2026-11-23",
+  "rate": 48000,
+  "bits": 24,
+  "io": 1,
+  "tempo": [
+    {"ticks": 0, "bpm": 120.0}
+  ],
+  "meter": [
+    {"ticks": 0, "bar": 1, "num": 4, "den": 4}
+  ],
+  "keysig": [
+    {"ticks": 0, "key": "C"},
+    {"ticks": 3840000, "key": "Am"}
+  ],
+  "timeline": {
+    "tc_rate": "25",
+    "tc_start": "01:00:00:00",
+    "pull": "None",
+    "record_mode": "Normal"
+  },
+  "busses": [
+    {"name": "FX", "stereo": true},
+    {"name": "BandSub", "stereo": true}
+  ],
+  "tracks": [
+    {"name": "MixBus", "kind": "rfolder", "stereo": true},
+    {"name": "Vox", "kind": "audio", "stereo": false, "in": "MixBus", "output": "BandSub", "colour": 29, "comment": "Lead vocal"},
+    {"name": "Keys", "kind": "audio", "stereo": true, "in": "MixBus", "output": "BandSub", "colour": 44},
+    {"name": "AuxFX", "kind": "aux", "stereo": true, "input": "FX"},
+    {"name": "Chords", "kind": "midi"}
+  ],
+  "clips": [
+    {"track": "Vox", "wav": "CR_max/Audio Files/vox_m.wav", "at": 0},
+    {"track": "Keys", "wav": "CR_max/Audio Files/keys_st.wav", "at": 0}
+  ],
+  "fades": [
+    {"track": "Vox", "pos": 0, "len": 4800, "kind": "fade_in", "slope": "equal_power"}
+  ],
+  "notes": [
+    {"track": "Chords", "spec": "chords:C,Am,F,G7:4:96"}
+  ],
+  "sends": [
+    {"track": "Vox", "bus": "FX", "slot": "a", "level": -6.0, "pan": -30, "pre": true}
+  ],
+  "plugins": [
+    {"track": "Vox", "slot": "a", "plugin": "EQ3 1-Band", "params": {"d_gain": 3.0}, "bypass": false},
+    {"track": "AuxFX", "slot": "a", "plugin": "D-Verb", "bypass": false}
+  ],
+  "lanes": [
+    {"track": "Vox", "lane": "volume", "points": "0:0,48000:-30"},
+    {"track": "Vox", "lane": "pan", "points": "0:-50"}
+  ],
+  "markers": [
+    {"name": "Intro", "start": 0, "unit": "ticks", "kind": "marker"},
+    {"name": "Chorus", "start": 3840000, "end": 7680000, "unit": "ticks", "kind": "selection"}
+  ],
+  "groups": [
+    {"name": "G_Vocals", "members": ["Vox", "AuxFX"]}
+  ]
+}

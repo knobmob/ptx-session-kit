@@ -1,0 +1,142 @@
+{
+  "version": 1,
+  "params": {
+    "eq_1band": [
+      { "sc_key": "type", "min": 0.0, "max": 6.0, "taper": "linear" },
+      { "sc_key": "freq", "min": 20.0, "max": 20000.0, "taper": "log" },
+      { "sc_key": "gain", "min": -18.0, "max": 18.0, "taper": "linear" },
+      { "sc_key": "q", "min": 0.1, "max": 10.0, "taper": "log" },
+      { "sc_key": "output_gain", "min": -18.0, "max": 18.0, "taper": "linear" }
+    ],
+    "eq_7band": [
+      { "sc_key": "input_gain", "min": -18.0, "max": 6.0, "taper": "linear", "zero_db_norm": 0.769231 },
+      { "sc_key": "output_gain", "min": -18.0, "max": 6.0, "taper": "linear", "zero_db_norm": 0.769231 },
+      { "sc_key": "hpf_on", "min": 0.0, "max": 1.0, "taper": "toggle" },
+      { "sc_key": "hpf_freq", "min": 10.0, "max": 2000.0, "taper": "log" },
+      { "sc_key": "hpf_slope", "min": 0.0, "max": 3.0, "taper": "linear" },
+      { "sc_key": "low_shelf_freq", "min": 20.0, "max": 1000.0, "taper": "log" },
+      { "sc_key": "low_shelf_gain", "min": -18.0, "max": 18.0, "taper": "linear" },
+      { "sc_key": "low_shelf_q", "min": 0.3, "max": 2.0, "taper": "log" },
+      { "sc_key": "low_mid_freq", "min": 20.0, "max": 2000.0, "taper": "log" },
+      { "sc_key": "low_mid_gain", "min": -18.0, "max": 18.0, "taper": "linear" },
+      { "sc_key": "low_mid_q", "min": 0.1, "max": 10.0, "taper": "log" },
+      { "sc_key": "mid_freq", "min": 100.0, "max": 8000.0, "taper": "log" },
+      { "sc_key": "mid_gain", "min": -18.0, "max": 18.0, "taper": "linear" },
+      { "sc_key": "mid_q", "min": 0.1, "max": 10.0, "taper": "log" },
+      { "sc_key": "high_mid_freq", "min": 500.0, "max": 20000.0, "taper": "log" },
+      { "sc_key": "high_mid_gain", "min": -18.0, "max": 18.0, "taper": "linear" },
+      { "sc_key": "high_mid_q", "min": 0.1, "max": 10.0, "taper": "log" },
+      { "sc_key": "high_shelf_freq", "min": 1000.0, "max": 20000.0, "taper": "log" },
+      { "sc_key": "high_shelf_gain", "min": -18.0, "max": 18.0, "taper": "linear" },
+      { "sc_key": "high_shelf_q", "min": 0.3, "max": 2.0, "taper": "log" },
+      { "sc_key": "lpf_on", "min": 0.0, "max": 1.0, "taper": "toggle" },
+      { "sc_key": "lpf_freq", "min": 1000.0, "max": 20000.0, "taper": "log" },
+      { "sc_key": "lpf_slope", "min": 0.0, "max": 3.0, "taper": "linear" }
+    ],
+    "compressor": [
+      { "sc_key": "threshold", "min": -60.0, "max": 0.0, "taper": "linear" },
+      { "sc_key": "ratio", "min": 1.0, "max": 100.0, "taper": "log" },
+      { "sc_key": "attack", "min": 0.01, "max": 300.0, "taper": "log" },
+      { "sc_key": "release", "min": 5.0, "max": 3000.0, "taper": "log" },
+      { "sc_key": "knee", "min": 0.0, "max": 24.0, "taper": "linear" },
+      { "sc_key": "makeup", "min": 0.0, "max": 40.0, "taper": "linear" },
+      { "sc_key": "sc_hpf_on", "min": 0.0, "max": 1.0, "taper": "toggle" },
+      { "sc_key": "sc_hpf_freq", "min": 20.0, "max": 500.0, "taper": "log" }
+    ],
+    "expander_gate": [
+      { "sc_key": "threshold", "min": -80.0, "max": 0.0, "taper": "linear" },
+      { "sc_key": "ratio", "min": 1.0, "max": 100.0, "taper": "log" },
+      { "sc_key": "range", "min": 0.0, "max": 80.0, "taper": "linear" },
+      { "sc_key": "attack", "min": 0.01, "max": 100.0, "taper": "log" },
+      { "sc_key": "hold", "min": 0.0, "max": 2000.0, "taper": "linear" },
+      { "sc_key": "release", "min": 1.0, "max": 4000.0, "taper": "log" }
+    ],
+    "de_esser": [
+      { "sc_key": "freq", "min": 2000.0, "max": 16000.0, "taper": "log" },
+      { "sc_key": "range", "min": 0.0, "max": 40.0, "taper": "linear" },
+      { "sc_key": "threshold", "min": -60.0, "max": 0.0, "taper": "linear" },
+      { "sc_key": "listen", "min": 0.0, "max": 1.0, "taper": "toggle" }
+    ],
+    "maximizer": [
+      { "sc_key": "threshold", "min": -30.0, "max": 0.0, "taper": "linear" },
+      { "sc_key": "ceiling", "min": -30.0, "max": 0.0, "taper": "linear" },
+      { "sc_key": "release", "min": 1.0, "max": 1000.0, "taper": "log" }
+    ],
+    "channel_strip": [
+      { "sc_key": "input_gain", "min": -18.0, "max": 18.0, "taper": "linear" },
+      { "sc_key": "comp_on", "min": 0.0, "max": 1.0, "taper": "toggle" },
+      { "sc_key": "comp_threshold", "min": -60.0, "max": 0.0, "taper": "linear" },
+      { "sc_key": "comp_ratio", "min": 1.0, "max": 100.0, "taper": "log" },
+      { "sc_key": "comp_attack", "min": 0.01, "max": 300.0, "taper": "log" },
+      { "sc_key": "comp_release", "min": 5.0, "max": 3000.0, "taper": "log" },
+      { "sc_key": "comp_makeup", "min": 0.0, "max": 40.0, "taper": "linear" },
+      { "sc_key": "gate_on", "min": 0.0, "max": 1.0, "taper": "toggle" },
+      { "sc_key": "gate_threshold", "min": -80.0, "max": 0.0, "taper": "linear" },
+      { "sc_key": "gate_range", "min": 0.0, "max": 80.0, "taper": "linear" },
+      { "sc_key": "gate_release", "min": 1.0, "max": 4000.0, "taper": "log" },
+      { "sc_key": "eq_on", "min": 0.0, "max": 1.0, "taper": "toggle" },
+      { "sc_key": "hpf_on", "min": 0.0, "max": 1.0, "taper": "toggle" },
+      { "sc_key": "hpf_freq", "min": 10.0, "max": 2000.0, "taper": "log" },
+      { "sc_key": "low_gain", "min": -24.0, "max": 24.0, "taper": "linear" },
+      { "sc_key": "low_freq", "min": 20.0, "max": 1000.0, "taper": "log" },
+      { "sc_key": "mid_gain", "min": -24.0, "max": 24.0, "taper": "linear" },
+      { "sc_key": "mid_freq", "min": 100.0, "max": 8000.0, "taper": "log" },
+      { "sc_key": "mid_q", "min": 0.1, "max": 10.0, "taper": "log" },
+      { "sc_key": "high_gain", "min": -24.0, "max": 24.0, "taper": "linear" },
+      { "sc_key": "high_freq", "min": 1000.0, "max": 20000.0, "taper": "log" }
+    ],
+    "auto_pan": [
+      { "sc_key": "output", "min": -24.0, "max": 12.0, "taper": "linear" },
+      { "sc_key": "width", "min": 0.0, "max": 100.0, "taper": "linear" },
+      { "sc_key": "manual", "min": -100.0, "max": 100.0, "taper": "linear" },
+      { "sc_key": "rate", "min": 1.0, "max": 960.0, "taper": "log" },
+      { "sc_key": "threshold", "min": -60.0, "max": -1.0, "taper": "linear" },
+      { "sc_key": "attack", "min": 0.1, "max": 100.0, "taper": "log" },
+      { "sc_key": "release", "min": 5.0, "max": 2000.0, "taper": "log" }
+    ],
+    "trim": [
+      { "sc_key": "gain", "min": -144.0, "max": 12.0, "taper": "linear" },
+      { "sc_key": "invert", "min": 0.0, "max": 1.0, "taper": "toggle" }
+    ],
+    "time_shift": [
+      { "sc_key": "delay_samples", "min": 0.0, "max": 48000.0, "taper": "linear" },
+      { "sc_key": "delay_ms", "min": 0.0, "max": 1000.0, "taper": "linear" }
+    ],
+    "room_reverb": [
+      { "sc_key": "mix", "min": 0.0, "max": 100.0, "taper": "linear" },
+      { "sc_key": "pre_delay", "min": 0.0, "max": 250.0, "taper": "linear" },
+      { "sc_key": "decay", "min": 0.1, "max": 20.0, "taper": "log" },
+      { "sc_key": "size", "min": 0.0, "max": 100.0, "taper": "linear" },
+      { "sc_key": "diffusion", "min": 0.0, "max": 100.0, "taper": "linear" }
+    ],
+    "plate_reverb": [
+      { "sc_key": "mix", "min": 0.0, "max": 100.0, "taper": "linear" },
+      { "sc_key": "pre_delay", "min": 0.0, "max": 250.0, "taper": "linear" },
+      { "sc_key": "decay", "min": 0.1, "max": 20.0, "taper": "log" },
+      { "sc_key": "size", "min": 0.0, "max": 100.0, "taper": "linear" },
+      { "sc_key": "diffusion", "min": 0.0, "max": 100.0, "taper": "linear" }
+    ],
+    "mod_delay": [
+      { "sc_key": "time", "min": 1.0, "max": 2000.0, "taper": "log" },
+      { "sc_key": "feedback", "min": -99.0, "max": 99.0, "taper": "linear" },
+      { "sc_key": "mix", "min": 0.0, "max": 100.0, "taper": "linear" },
+      { "sc_key": "mod_rate", "min": 0.01, "max": 10.0, "taper": "log" },
+      { "sc_key": "mod_depth", "min": 0.0, "max": 100.0, "taper": "linear" },
+      { "sc_key": "lpf", "min": 500.0, "max": 20000.0, "taper": "log" }
+    ],
+    "lofi": [
+      { "sc_key": "bits", "min": 1.0, "max": 24.0, "taper": "linear" },
+      { "sc_key": "sample_rate", "min": 500.0, "max": 48000.0, "taper": "log" },
+      { "sc_key": "noise", "min": 0.0, "max": 100.0, "taper": "linear" },
+      { "sc_key": "mix", "min": 0.0, "max": 100.0, "taper": "linear" }
+    ]
+  },
+  "trim_knots": [
+    [0.0, -144.0],
+    [0.10, -53.10],
+    [0.25, -23.40],
+    [0.40, -14.60],
+    [0.50, -10.40],
+    [0.755, 0.0]
+  ]
+}

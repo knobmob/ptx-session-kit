@@ -1,0 +1,34 @@
+# Version: 0.7.0 (beta) | Date: 2026-11-23
+
+[workspace]
+resolver = "3"
+members = ["crates/*", "apps/*"]
+
+[workspace.package]
+version = "0.7.0-beta"
+edition = "2024"
+license = "MIT OR Apache-2.0"
+rust-version = "1.95"
+
+[workspace.dependencies]
+ptx-format = { path = "crates/ptx-format" }
+ptx-scraft = { path = "crates/ptx-scraft" }
+thiserror = "2"
+serde = { version = "1", features = ["derive"] }
+serde_json = { version = "1", features = ["float_roundtrip"] }
+clap = { version = "4", features = ["derive"] }
+craft-scraft-format = { version = "0.1.0", git = "https://github.com/storytold/craft-libs", rev = "45a8e16669e70dadb780dfbc759c882dd5b7ea1c" }
+craft-midi = { version = "0.1.0", git = "https://github.com/storytold/craft-libs", rev = "45a8e16669e70dadb780dfbc759c882dd5b7ea1c", features = ["serde"] }
+craft-time = { version = "0.1.0", git = "https://github.com/storytold/craft-libs", rev = "45a8e16669e70dadb780dfbc759c882dd5b7ea1c" }
+craft-audio = { version = "0.1.0", git = "https://github.com/storytold/craft-libs", rev = "45a8e16669e70dadb780dfbc759c882dd5b7ea1c", features = ["decode", "lossless-encode", "serde"] }
+
+[workspace.lints.rust]
+unsafe_code = "forbid"
+
+[workspace.lints.clippy]
+unwrap_used = "deny"
+expect_used = "deny"
+panic = "deny"
+unimplemented = "deny"
+todo = "deny"
+unreachable = "deny"

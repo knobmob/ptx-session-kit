@@ -1,0 +1,8 @@
+# Version: 0.7.0 (beta) | Date: 2026-11-23
+# Clean-room Python runtime dependencies for ptx-session-kit
+#
+# All tools in tools/ (ptx_kitconfig.py, ptx_probe.py, ptx_decode.py, ptx_edit.py)
+# use Python >= 3.9 standard library only — zero third-party PyPI packages required.
+#
+# Companion build requirement for scraft-bridge/:
+#   Rust toolchain >= 1.95 (Cargo edition 2024)
