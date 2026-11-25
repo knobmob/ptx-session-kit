@@ -458,10 +458,24 @@ def _params(b):
     return out
 
 
-def _plugin_lane(d, n):
+def _plugin_lane_steps(d, f_blk):
+    """Return discrete step count (>=2) from 0x260F entry metadata when is_continuous==0, else None."""
+    tail_start = probe_end(f_blk["kids"][-1]) if f_blk["kids"] else f_blk["pos"] + 10
+    end = probe_end(f_blk)
+    if tail_start + 4 > end:
+        return None
+    nlen = u32(d, tail_start)
+    mpos = tail_start + 4 + nlen + 4
+    if mpos + 4 > end:
+        return None
+    meta = d[mpos:mpos + 4]
+    return meta[3] if meta[1] == 0 and meta[3] >= 2 else None
+
+
+def _plugin_lane(d, n, steps=None):
     """Plug-in automation lane 0x260B, laid out like 0x260A with i32 values (): 01 46 01 00 | u32 L | u16 time base |
     u32 n | u16 4 | u16 n - 1 | u64 first position (ticks + 10^12, or samples) | i32 | (n - 1) x (u32 offset from p0, i32);
-    value = (normalised - 0.5) x 2^31 -> normalised 0..1."""
+    continuous uses value = (normalised - 0.5) x 2^31; discrete uses raw 0..steps-1."""
     s = n["pos"] + 9
     e = probe_end(n)
     if d[s:s + 4] != b"\x01\x46\x01\x00" or s + 30 > e:
@@ -473,10 +487,14 @@ def _plugin_lane(d, n):
     p0 = struct.unpack_from("<Q", d, s + 18)[0]
     if tb == 1 and p0 >= 10 ** 12:
         p0 -= 10 ** 12
-    pts = [(p0, struct.unpack_from("<i", d, s + 26)[0] / 2 ** 31 + 0.5)]
+    def _dec(vi):
+        if steps is not None:
+            return (1.0 if vi != 0 else 0.0) if steps <= 2 else max(0.0, min(1.0, vi / (steps - 1)))
+        return vi / 2 ** 31 + 0.5
+    pts = [(p0, _dec(struct.unpack_from("<i", d, s + 26)[0]))]
     j = s + 30
     for _ in range(cnt - 1):
-        pts.append((p0 + u32(d, j), struct.unpack_from("<i", d, j + 4)[0] / 2 ** 31 + 0.5))
+        pts.append((p0 + u32(d, j), _dec(struct.unpack_from("<i", d, j + 4)[0])))
         j += 8
     return [(p, round(v, 6)) for p, v in pts]
 
@@ -688,8 +706,13 @@ def inserts(d, ch):
                 elif e["state_format"] == "PiII" and len(b) >= 196:
                     e["params"].update(_decode_piii(b))
         if auto:
-            e["automation"] = [_plugin_lane(d, x) for x in _subtree(auto) if x["ct"] == 0x260B]
-            e["automation_params"] = [list(plugin_lane_names(d, x)) for x in auto["kids"] if x["ct"] == 0x260F]
+            entries = [k for k in auto["kids"] if k["ct"] == 0x260F]
+            e["automation"] = [
+                _plugin_lane(d, b0b, _plugin_lane_steps(d, f))
+                for f in entries
+                for b0b in _subtree(f) if b0b["ct"] == 0x260B
+            ]
+            e["automation_params"] = [list(plugin_lane_names(d, x)) for x in entries]
         out.append(e)
     return out
 

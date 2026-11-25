@@ -1,0 +1,2621 @@
+{
+  "version": 1,
+  "direction": "ptx_to_scraft",
+  "source_path": "test/CR_max2/CR_max2.ptx",
+  "target_path": "test/CR_max2/CR_max2.scraft",
+  "media_mode": "relative",
+  "loop_handling": "faithful",
+  "summary": {
+    "native": 77,
+    "approx": 28,
+    "carry": 342,
+    "absent": 0
+  },
+  "warnings": [],
+  "entries": [
+    {
+      "domain": "tempo",
+      "item": "tempo@0=120.000bpm",
+      "fidelity": "native"
+    },
+    {
+      "domain": "tempo",
+      "item": "tempo@3840=132.000bpm",
+      "fidelity": "native"
+    },
+    {
+      "domain": "tempo",
+      "item": "tempo@7680=112.000bpm",
+      "fidelity": "native"
+    },
+    {
+      "domain": "meter",
+      "item": "4/4@0",
+      "fidelity": "native"
+    },
+    {
+      "domain": "meter",
+      "item": "3/4@3840",
+      "fidelity": "native"
+    },
+    {
+      "domain": "meter",
+      "item": "6/8@7680",
+      "fidelity": "native"
+    },
+    {
+      "domain": "key_signatures",
+      "item": "0:C",
+      "fidelity": "native"
+    },
+    {
+      "domain": "key_signatures",
+      "item": "96000:Am",
+      "fidelity": "native"
+    },
+    {
+      "domain": "key_signatures",
+      "item": "183273:F#m",
+      "fidelity": "native"
+    },
+    {
+      "domain": "media",
+      "item": "amb_m.wav",
+      "fidelity": "native"
+    },
+    {
+      "domain": "media",
+      "item": "bass_m.wav",
+      "fidelity": "native"
+    },
+    {
+      "domain": "media",
+      "item": "drums_st.wav",
+      "fidelity": "native"
+    },
+    {
+      "domain": "media",
+      "item": "fx_m.wav",
+      "fidelity": "native"
+    },
+    {
+      "domain": "media",
+      "item": "gtr_dl.L.wav",
+      "fidelity": "native"
+    },
+    {
+      "domain": "media",
+      "item": "gtr_dl.R.wav",
+      "fidelity": "native"
+    },
+    {
+      "domain": "media",
+      "item": "keys_st.wav",
+      "fidelity": "native"
+    },
+    {
+      "domain": "media",
+      "item": "perc_st.wav",
+      "fidelity": "native"
+    },
+    {
+      "domain": "media",
+      "item": "vox_m.wav",
+      "fidelity": "native"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Fold_Rhythm:slot0:Channel Strip:Process Order",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Fold_Rhythm:slot0:Channel Strip:Phase Switch In/Out",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Fold_Rhythm:slot0:Channel Strip:Fader Volume Pre/Post",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Fold_Rhythm:slot0:Channel Strip:Fader Volume On/Off",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Fold_Rhythm:slot0:Channel Strip:Filters On/Off",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Fold_Rhythm:slot0:Channel Strip:Dynamics On/Off",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Fold_Rhythm:slot0:Channel Strip:Cmp Knee",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Fold_Rhythm:slot0:Channel Strip:Cmp Depth",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Fold_Rhythm:slot0:Channel Strip:Exp Ratio",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Fold_Rhythm:slot0:Channel Strip:Exp Knee",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Fold_Rhythm:slot0:Channel Strip:Exp Attack Time",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Fold_Rhythm:slot0:Channel Strip:Exp Hold Time",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Fold_Rhythm:slot0:Channel Strip:Exp Hysteresis",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Fold_Rhythm:slot0:Channel Strip:Sc Filter In/Out",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Fold_Rhythm:slot0:Channel Strip:Sc Filter Type",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Fold_Rhythm:slot0:Channel Strip:Sc Filter Frequency",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Fold_Rhythm:slot0:Channel Strip:Sc Source",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Fold_Rhythm:slot0:Channel Strip:Sc Detector Type Avg/Pk",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Fold_Rhythm:slot0:Channel Strip:EQ Low In/Out",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Fold_Rhythm:slot0:Channel Strip:EQ Low Type",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Fold_Rhythm:slot0:Channel Strip:EQ Low Q",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Fold_Rhythm:slot0:Channel Strip:EQ Low-Mid In/Out",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Fold_Rhythm:slot0:Channel Strip:EQ High-Mid In/Out",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Fold_Rhythm:slot0:Channel Strip:EQ High-Mid Gain",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Fold_Rhythm:slot0:Channel Strip:EQ High-Mid Frequency",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Fold_Rhythm:slot0:Channel Strip:EQ High-Mid Q",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Fold_Rhythm:slot0:Channel Strip:EQ High In/Out",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Fold_Rhythm:slot0:Channel Strip:EQ High Type",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Fold_Rhythm:slot0:Channel Strip:EQ High Q",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Fold_Rhythm:slot0:Channel Strip:Filter 1 Type",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Fold_Rhythm:slot0:Channel Strip:Filter 1 Q",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Fold_Rhythm:slot0:Channel Strip:Filter 1 Slope 12/24dB",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Fold_Rhythm:slot0:Channel Strip:Filter 2 In/Out",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Fold_Rhythm:slot0:Channel Strip:Filter 2 Type",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Fold_Rhythm:slot0:Channel Strip:Filter 2 Frequency",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Fold_Rhythm:slot0:Channel Strip:Filter 2 Q",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Fold_Rhythm:slot0:Channel Strip:Filter 2 Slope 12/24dB",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugins",
+      "item": "Fold_Rhythm:slot0:Channel Strip",
+      "fidelity": "approx",
+      "note": "4-band/Fader/Filter2 carried"
+    },
+    {
+      "domain": "plugins",
+      "item": "Fold_Rhythm:slot1:Trim",
+      "fidelity": "native"
+    },
+    {
+      "domain": "tracks",
+      "item": "Fold_Rhythm",
+      "fidelity": "native"
+    },
+    {
+      "domain": "tracks",
+      "item": "Fold_Strings",
+      "fidelity": "native"
+    },
+    {
+      "domain": "tracks",
+      "item": "Fold_Synths",
+      "fidelity": "native"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Aux_Verb_St:slot0:D-Verb:Input Level",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Aux_Verb_St:slot0:D-Verb:Wet/Dry",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Aux_Verb_St:slot0:D-Verb:Algorithm",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Aux_Verb_St:slot0:D-Verb:Size",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Aux_Verb_St:slot0:D-Verb:Decay",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Aux_Verb_St:slot0:D-Verb:Pre-Delay",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Aux_Verb_St:slot0:D-Verb:Diffusion",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Aux_Verb_St:slot0:D-Verb:HF Cut",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Aux_Verb_St:slot0:D-Verb:LP Filter",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugins",
+      "item": "Aux_Verb_St:slot0:D-Verb",
+      "fidelity": "approx",
+      "note": "D-Verb mapped to Room Reverb"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Aux_Verb_St:slot1:EQ3 7-Band:Phase Invert",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Aux_Verb_St:slot1:EQ3 7-Band:High-Pass Type",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Aux_Verb_St:slot1:EQ3 7-Band:High-Pass Q",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Aux_Verb_St:slot1:EQ3 7-Band:Low Band Type",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Aux_Verb_St:slot1:EQ3 7-Band:High Band Type",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Aux_Verb_St:slot1:EQ3 7-Band:Low-Pass Type",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Aux_Verb_St:slot1:EQ3 7-Band:Low-Pass Q",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugins",
+      "item": "Aux_Verb_St:slot1:EQ3 7-Band",
+      "fidelity": "approx",
+      "note": "EQ3 7-Band dynamic band enable composed into gain; EQ3 7-Band dynamic band enable composed into gain; EQ3 7-Band dynamic band enable composed into gain; EQ3 7-Band dynamic band enable composed into gain; EQ3 7-Band dynamic band enable composed into gain"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Aux_Verb_St:slot2:Mod Delay III:Output Left",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Aux_Verb_St:slot2:Mod Delay III:Invert Left",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Aux_Verb_St:slot2:Mod Delay III:Mix Left",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Aux_Verb_St:slot2:Mod Delay III:Depth Left",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Aux_Verb_St:slot2:Mod Delay III:Delay Left",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Aux_Verb_St:slot2:Mod Delay III:Rate Left",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Aux_Verb_St:slot2:Mod Delay III:LPF Left",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Aux_Verb_St:slot2:Mod Delay III:Feedback Left",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Aux_Verb_St:slot2:Mod Delay III:Tempo",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Aux_Verb_St:slot2:Mod Delay III:Tempo Sync",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Aux_Verb_St:slot2:Mod Delay III:Meter Num",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Aux_Verb_St:slot2:Mod Delay III:Meter Den",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Aux_Verb_St:slot2:Mod Delay III:Note Left",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Aux_Verb_St:slot2:Mod Delay III:Note Dot Left",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Aux_Verb_St:slot2:Mod Delay III:Note Triplet Left",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Aux_Verb_St:slot2:Mod Delay III:Groove Left",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Aux_Verb_St:slot2:Mod Delay III:Output Right",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Aux_Verb_St:slot2:Mod Delay III:Invert Right",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Aux_Verb_St:slot2:Mod Delay III:Mix Right",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Aux_Verb_St:slot2:Mod Delay III:Depth Right",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Aux_Verb_St:slot2:Mod Delay III:Delay Right",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Aux_Verb_St:slot2:Mod Delay III:Rate Right",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Aux_Verb_St:slot2:Mod Delay III:LPF Right",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Aux_Verb_St:slot2:Mod Delay III:Feedback Right",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Aux_Verb_St:slot2:Mod Delay III:Note Right",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Aux_Verb_St:slot2:Mod Delay III:Note Dot Right",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Aux_Verb_St:slot2:Mod Delay III:Note Triplet Right",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Aux_Verb_St:slot2:Mod Delay III:Groove Right",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugins",
+      "item": "Aux_Verb_St:slot2:Mod Delay III",
+      "fidelity": "approx",
+      "note": "Mod Delay III L/R collapsed to linked mod_delay"
+    },
+    {
+      "domain": "tracks",
+      "item": "Aux_Verb_St",
+      "fidelity": "native"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Aux_Sub_M:slot0:Dyn3 Compressor/Limiter:Phase Invert",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Aux_Sub_M:slot0:Dyn3 Compressor/Limiter:High Filter Freq",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Aux_Sub_M:slot0:Dyn3 Compressor/Limiter:High Filter Type",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Aux_Sub_M:slot0:Dyn3 Compressor/Limiter:High Filter Enable",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Aux_Sub_M:slot0:Dyn3 Compressor/Limiter:Low Filter Type",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugins",
+      "item": "Aux_Sub_M:slot0:Dyn3 Compressor/Limiter",
+      "fidelity": "approx",
+      "note": "dyn3 curve/sidechain differences"
+    },
+    {
+      "domain": "plugins",
+      "item": "Aux_Sub_M:slot1:SansAmp PSA-1",
+      "fidelity": "approx",
+      "note": "SansAmp PSA-1 approximated as saturator"
+    },
+    {
+      "domain": "tracks",
+      "item": "Aux_Sub_M",
+      "fidelity": "native"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Au_Drums_St:slot0:Channel Strip:Process Order",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Au_Drums_St:slot0:Channel Strip:Phase Switch In/Out",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Au_Drums_St:slot0:Channel Strip:Fader Volume Pre/Post",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Au_Drums_St:slot0:Channel Strip:Fader Volume On/Off",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Au_Drums_St:slot0:Channel Strip:Filters On/Off",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Au_Drums_St:slot0:Channel Strip:Dynamics On/Off",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Au_Drums_St:slot0:Channel Strip:Cmp Knee",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Au_Drums_St:slot0:Channel Strip:Cmp Depth",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Au_Drums_St:slot0:Channel Strip:Exp Ratio",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Au_Drums_St:slot0:Channel Strip:Exp Knee",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Au_Drums_St:slot0:Channel Strip:Exp Attack Time",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Au_Drums_St:slot0:Channel Strip:Exp Hold Time",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Au_Drums_St:slot0:Channel Strip:Exp Hysteresis",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Au_Drums_St:slot0:Channel Strip:Sc Filter In/Out",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Au_Drums_St:slot0:Channel Strip:Sc Filter Type",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Au_Drums_St:slot0:Channel Strip:Sc Filter Frequency",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Au_Drums_St:slot0:Channel Strip:Sc Source",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Au_Drums_St:slot0:Channel Strip:Sc Detector Type Avg/Pk",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Au_Drums_St:slot0:Channel Strip:EQ Low In/Out",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Au_Drums_St:slot0:Channel Strip:EQ Low Type",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Au_Drums_St:slot0:Channel Strip:EQ Low Q",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Au_Drums_St:slot0:Channel Strip:EQ Low-Mid In/Out",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Au_Drums_St:slot0:Channel Strip:EQ High-Mid In/Out",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Au_Drums_St:slot0:Channel Strip:EQ High-Mid Gain",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Au_Drums_St:slot0:Channel Strip:EQ High-Mid Frequency",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Au_Drums_St:slot0:Channel Strip:EQ High-Mid Q",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Au_Drums_St:slot0:Channel Strip:EQ High In/Out",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Au_Drums_St:slot0:Channel Strip:EQ High Type",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Au_Drums_St:slot0:Channel Strip:EQ High Q",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Au_Drums_St:slot0:Channel Strip:Filter 1 Type",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Au_Drums_St:slot0:Channel Strip:Filter 1 Q",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Au_Drums_St:slot0:Channel Strip:Filter 1 Slope 12/24dB",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Au_Drums_St:slot0:Channel Strip:Filter 2 In/Out",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Au_Drums_St:slot0:Channel Strip:Filter 2 Type",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Au_Drums_St:slot0:Channel Strip:Filter 2 Frequency",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Au_Drums_St:slot0:Channel Strip:Filter 2 Q",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Au_Drums_St:slot0:Channel Strip:Filter 2 Slope 12/24dB",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugins",
+      "item": "Au_Drums_St:slot0:Channel Strip",
+      "fidelity": "approx",
+      "note": "4-band/Fader/Filter2 carried"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Au_Drums_St:slot1:Dyn3 Compressor/Limiter:Phase Invert",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Au_Drums_St:slot1:Dyn3 Compressor/Limiter:High Filter Freq",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Au_Drums_St:slot1:Dyn3 Compressor/Limiter:High Filter Type",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Au_Drums_St:slot1:Dyn3 Compressor/Limiter:High Filter Enable",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Au_Drums_St:slot1:Dyn3 Compressor/Limiter:Low Filter Type",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugins",
+      "item": "Au_Drums_St:slot1:Dyn3 Compressor/Limiter",
+      "fidelity": "approx",
+      "note": "dyn3 curve/sidechain differences"
+    },
+    {
+      "domain": "plugins",
+      "item": "Au_Drums_St:slot2:Trim",
+      "fidelity": "native"
+    },
+    {
+      "domain": "sync_points",
+      "item": "Au_Drums_St:drums_st.L",
+      "fidelity": "native"
+    },
+    {
+      "domain": "tracks",
+      "item": "Au_Drums_St",
+      "fidelity": "native"
+    },
+    {
+      "domain": "plugins",
+      "item": "Au_Bass_M:slot0:SansAmp PSA-1",
+      "fidelity": "approx",
+      "note": "SansAmp PSA-1 approximated as saturator"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Au_Bass_M:slot1:BF-76:Input",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Au_Bass_M:slot1:BF-76:Output",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugins",
+      "item": "Au_Bass_M:slot1:BF-76",
+      "fidelity": "approx",
+      "note": "BF-76 FET compressor approximated as compressor"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Au_Bass_M:slot2:EQ3 1-Band:Slope",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Au_Bass_M:slot2:EQ3 1-Band:Phase Invert",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugins",
+      "item": "Au_Bass_M:slot2:EQ3 1-Band",
+      "fidelity": "native"
+    },
+    {
+      "domain": "sync_points",
+      "item": "Au_Bass_M:bass_m",
+      "fidelity": "native"
+    },
+    {
+      "domain": "tracks",
+      "item": "Au_Bass_M",
+      "fidelity": "native"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Au_Gtr_St:slot0:Sci-Fi:Input Level",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Au_Gtr_St:slot0:Sci-Fi:Effect Type",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Au_Gtr_St:slot0:Sci-Fi:Effect Depth",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Au_Gtr_St:slot0:Sci-Fi:Effect Frequency",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Au_Gtr_St:slot0:Sci-Fi:Mod Depth",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Au_Gtr_St:slot0:Sci-Fi:Mod Rate/Slew/Thresh",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Au_Gtr_St:slot0:Sci-Fi:Mod Type",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugins",
+      "item": "Au_Gtr_St:slot0:Sci-Fi",
+      "fidelity": "approx",
+      "note": "Sci-Fi approximated as ring_mod"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Au_Gtr_St:slot1:Mod Delay III:Output Left",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Au_Gtr_St:slot1:Mod Delay III:Invert Left",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Au_Gtr_St:slot1:Mod Delay III:Mix Left",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Au_Gtr_St:slot1:Mod Delay III:Depth Left",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Au_Gtr_St:slot1:Mod Delay III:Delay Left",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Au_Gtr_St:slot1:Mod Delay III:Rate Left",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Au_Gtr_St:slot1:Mod Delay III:LPF Left",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Au_Gtr_St:slot1:Mod Delay III:Feedback Left",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Au_Gtr_St:slot1:Mod Delay III:Tempo",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Au_Gtr_St:slot1:Mod Delay III:Tempo Sync",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Au_Gtr_St:slot1:Mod Delay III:Meter Num",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Au_Gtr_St:slot1:Mod Delay III:Meter Den",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Au_Gtr_St:slot1:Mod Delay III:Note Left",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Au_Gtr_St:slot1:Mod Delay III:Note Dot Left",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Au_Gtr_St:slot1:Mod Delay III:Note Triplet Left",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Au_Gtr_St:slot1:Mod Delay III:Groove Left",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Au_Gtr_St:slot1:Mod Delay III:Output Right",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Au_Gtr_St:slot1:Mod Delay III:Invert Right",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Au_Gtr_St:slot1:Mod Delay III:Mix Right",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Au_Gtr_St:slot1:Mod Delay III:Depth Right",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Au_Gtr_St:slot1:Mod Delay III:Delay Right",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Au_Gtr_St:slot1:Mod Delay III:Rate Right",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Au_Gtr_St:slot1:Mod Delay III:LPF Right",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Au_Gtr_St:slot1:Mod Delay III:Feedback Right",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Au_Gtr_St:slot1:Mod Delay III:Note Right",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Au_Gtr_St:slot1:Mod Delay III:Note Dot Right",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Au_Gtr_St:slot1:Mod Delay III:Note Triplet Right",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Au_Gtr_St:slot1:Mod Delay III:Groove Right",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugins",
+      "item": "Au_Gtr_St:slot1:Mod Delay III",
+      "fidelity": "approx",
+      "note": "Mod Delay III L/R collapsed to linked mod_delay"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Au_Gtr_St:slot2:EQ3 7-Band:Phase Invert",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Au_Gtr_St:slot2:EQ3 7-Band:High-Pass Type",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Au_Gtr_St:slot2:EQ3 7-Band:High-Pass Q",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Au_Gtr_St:slot2:EQ3 7-Band:Low Band Type",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Au_Gtr_St:slot2:EQ3 7-Band:High Band Type",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Au_Gtr_St:slot2:EQ3 7-Band:Low-Pass Type",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Au_Gtr_St:slot2:EQ3 7-Band:Low-Pass Q",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugins",
+      "item": "Au_Gtr_St:slot2:EQ3 7-Band",
+      "fidelity": "approx",
+      "note": "EQ3 7-Band dynamic band enable composed into gain; EQ3 7-Band dynamic band enable composed into gain; EQ3 7-Band dynamic band enable composed into gain; EQ3 7-Band dynamic band enable composed into gain; EQ3 7-Band dynamic band enable composed into gain"
+    },
+    {
+      "domain": "fades",
+      "item": "Au_Gtr_St:slope=equal_power",
+      "fidelity": "native"
+    },
+    {
+      "domain": "media",
+      "item": "split_pair:gtr_dl",
+      "fidelity": "native"
+    },
+    {
+      "domain": "loops",
+      "item": "Au_Gtr_St:gtr_dl.L",
+      "fidelity": "native"
+    },
+    {
+      "domain": "tracks",
+      "item": "Au_Gtr_St",
+      "fidelity": "native"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Au_Vox_Lead_M:slot0:EQ3 7-Band:Phase Invert",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Au_Vox_Lead_M:slot0:EQ3 7-Band:High-Pass Type",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Au_Vox_Lead_M:slot0:EQ3 7-Band:High-Pass Q",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Au_Vox_Lead_M:slot0:EQ3 7-Band:Low Band Type",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Au_Vox_Lead_M:slot0:EQ3 7-Band:High Band Type",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Au_Vox_Lead_M:slot0:EQ3 7-Band:Low-Pass Type",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Au_Vox_Lead_M:slot0:EQ3 7-Band:Low-Pass Q",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugins",
+      "item": "Au_Vox_Lead_M:slot0:EQ3 7-Band",
+      "fidelity": "approx",
+      "note": "EQ3 7-Band dynamic band enable composed into gain; EQ3 7-Band dynamic band enable composed into gain; EQ3 7-Band dynamic band enable composed into gain; EQ3 7-Band dynamic band enable composed into gain; EQ3 7-Band dynamic band enable composed into gain"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Au_Vox_Lead_M:slot1:Dyn3 Compressor/Limiter:Phase Invert",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Au_Vox_Lead_M:slot1:Dyn3 Compressor/Limiter:High Filter Freq",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Au_Vox_Lead_M:slot1:Dyn3 Compressor/Limiter:High Filter Type",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Au_Vox_Lead_M:slot1:Dyn3 Compressor/Limiter:High Filter Enable",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Au_Vox_Lead_M:slot1:Dyn3 Compressor/Limiter:Low Filter Type",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugins",
+      "item": "Au_Vox_Lead_M:slot1:Dyn3 Compressor/Limiter",
+      "fidelity": "approx",
+      "note": "dyn3 curve/sidechain differences"
+    },
+    {
+      "domain": "plugins",
+      "item": "Au_Vox_Lead_M:slot2:Trim",
+      "fidelity": "native"
+    },
+    {
+      "domain": "tracks",
+      "item": "Au_Vox_Lead_M",
+      "fidelity": "native"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Au_Keys_St:slot0:Pitch II:Delay L",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Au_Keys_St:slot0:Pitch II:Mix L",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Au_Keys_St:slot0:Pitch II:Feedback L",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Au_Keys_St:slot0:Pitch II:LPF L",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Au_Keys_St:slot0:Pitch II:Delay R",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Au_Keys_St:slot0:Pitch II:Mix R",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Au_Keys_St:slot0:Pitch II:Feedback R",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Au_Keys_St:slot0:Pitch II:LPF R",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugins",
+      "item": "Au_Keys_St:slot0:Pitch II",
+      "fidelity": "approx",
+      "note": "Pitch II pitch settings carried"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Au_Keys_St:slot1:Lo-Fi:Distortion",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Au_Keys_St:slot1:Lo-Fi:Sample Rate",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Au_Keys_St:slot1:Lo-Fi:Anti-Alias",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Au_Keys_St:slot1:Lo-Fi:Sample Size",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Au_Keys_St:slot1:Lo-Fi:Noise",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Au_Keys_St:slot1:Lo-Fi:Saturation",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugins",
+      "item": "Au_Keys_St:slot1:Lo-Fi",
+      "fidelity": "approx",
+      "note": "Lo-Fi drive/saturation carried"
+    },
+    {
+      "domain": "fades",
+      "item": "Au_Keys_St:slope=equal_power",
+      "fidelity": "native"
+    },
+    {
+      "domain": "fades",
+      "item": "Au_Keys_St:slope=equal_power",
+      "fidelity": "native"
+    },
+    {
+      "domain": "tracks",
+      "item": "Au_Keys_St",
+      "fidelity": "native"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Au_FX_M:slot0:AutoPan:Offset",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Au_FX_M:slot0:AutoPan:Mode",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Au_FX_M:slot0:AutoPan:Direction",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Au_FX_M:slot0:AutoPan:Waveform",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Au_FX_M:slot0:AutoPan:Trig Mode",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Au_FX_M:slot0:AutoPan:One Shot",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Au_FX_M:slot0:AutoPan:Link",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Au_FX_M:slot0:AutoPan:Env Trig",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Au_FX_M:slot0:AutoPan:Duration",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Au_FX_M:slot0:AutoPan:Threshold",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Au_FX_M:slot0:AutoPan:Attack",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Au_FX_M:slot0:AutoPan:Release",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugins",
+      "item": "Au_FX_M:slot0:AutoPan",
+      "fidelity": "native"
+    },
+    {
+      "domain": "plugins",
+      "item": "Au_FX_M:slot1:Time Adjuster",
+      "fidelity": "native"
+    },
+    {
+      "domain": "fades",
+      "item": "Au_FX_M:slope=equal_power",
+      "fidelity": "native"
+    },
+    {
+      "domain": "fades",
+      "item": "Au_FX_M:slope=linear",
+      "fidelity": "native"
+    },
+    {
+      "domain": "tracks",
+      "item": "Au_FX_M",
+      "fidelity": "native"
+    },
+    {
+      "domain": "plugins",
+      "item": "Au_Perc_St:slot0:Time Adjuster",
+      "fidelity": "native"
+    },
+    {
+      "domain": "tracks",
+      "item": "Au_Perc_St:user_delay=137",
+      "fidelity": "approx",
+      "note": "synthesized time_shift insert"
+    },
+    {
+      "domain": "fades",
+      "item": "Au_Perc_St:slope=linear",
+      "fidelity": "native"
+    },
+    {
+      "domain": "tracks",
+      "item": "Au_Perc_St",
+      "fidelity": "native"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Au_Amb_M:slot0:D-Verb:Input Level",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Au_Amb_M:slot0:D-Verb:Wet/Dry",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Au_Amb_M:slot0:D-Verb:Algorithm",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Au_Amb_M:slot0:D-Verb:Size",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Au_Amb_M:slot0:D-Verb:Decay",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Au_Amb_M:slot0:D-Verb:Pre-Delay",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Au_Amb_M:slot0:D-Verb:Diffusion",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Au_Amb_M:slot0:D-Verb:HF Cut",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Au_Amb_M:slot0:D-Verb:LP Filter",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugins",
+      "item": "Au_Amb_M:slot0:D-Verb",
+      "fidelity": "approx",
+      "note": "D-Verb mapped to Room Reverb"
+    },
+    {
+      "domain": "clip_groups",
+      "item": "Au_Amb_M:Grp_Amb",
+      "fidelity": "native"
+    },
+    {
+      "domain": "tracks",
+      "item": "Au_Amb_M",
+      "fidelity": "native"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "In_Piano_St:slot0:EQ3 1-Band:Slope",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "In_Piano_St:slot0:EQ3 1-Band:Phase Invert",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugins",
+      "item": "In_Piano_St:slot0:EQ3 1-Band",
+      "fidelity": "native"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "In_Piano_St:slot1:Click II:Accented Level",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "In_Piano_St:slot1:Click II:Unaccented Level",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugins",
+      "item": "In_Piano_St:slot1:Click II",
+      "fidelity": "carry",
+      "note": "opaque or unmapped AAX plugin preserved in carry sidecar"
+    },
+    {
+      "domain": "tracks",
+      "item": "In_Piano_St",
+      "fidelity": "native"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "In_Bass_M:slot0:BF-76:Input",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "In_Bass_M:slot0:BF-76:Output",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugins",
+      "item": "In_Bass_M:slot0:BF-76",
+      "fidelity": "approx",
+      "note": "BF-76 FET compressor approximated as compressor"
+    },
+    {
+      "domain": "tracks",
+      "item": "In_Bass_M:user_delay=64",
+      "fidelity": "approx",
+      "note": "synthesized time_shift insert"
+    },
+    {
+      "domain": "tracks",
+      "item": "In_Bass_M",
+      "fidelity": "native"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "In_Lead_St:slot0:Mod Delay III:Output Left",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "In_Lead_St:slot0:Mod Delay III:Invert Left",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "In_Lead_St:slot0:Mod Delay III:Mix Left",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "In_Lead_St:slot0:Mod Delay III:Depth Left",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "In_Lead_St:slot0:Mod Delay III:Delay Left",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "In_Lead_St:slot0:Mod Delay III:Rate Left",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "In_Lead_St:slot0:Mod Delay III:LPF Left",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "In_Lead_St:slot0:Mod Delay III:Feedback Left",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "In_Lead_St:slot0:Mod Delay III:Tempo",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "In_Lead_St:slot0:Mod Delay III:Tempo Sync",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "In_Lead_St:slot0:Mod Delay III:Meter Num",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "In_Lead_St:slot0:Mod Delay III:Meter Den",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "In_Lead_St:slot0:Mod Delay III:Note Left",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "In_Lead_St:slot0:Mod Delay III:Note Dot Left",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "In_Lead_St:slot0:Mod Delay III:Note Triplet Left",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "In_Lead_St:slot0:Mod Delay III:Groove Left",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "In_Lead_St:slot0:Mod Delay III:Output Right",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "In_Lead_St:slot0:Mod Delay III:Invert Right",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "In_Lead_St:slot0:Mod Delay III:Mix Right",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "In_Lead_St:slot0:Mod Delay III:Depth Right",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "In_Lead_St:slot0:Mod Delay III:Delay Right",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "In_Lead_St:slot0:Mod Delay III:Rate Right",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "In_Lead_St:slot0:Mod Delay III:LPF Right",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "In_Lead_St:slot0:Mod Delay III:Feedback Right",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "In_Lead_St:slot0:Mod Delay III:Note Right",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "In_Lead_St:slot0:Mod Delay III:Note Dot Right",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "In_Lead_St:slot0:Mod Delay III:Note Triplet Right",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "In_Lead_St:slot0:Mod Delay III:Groove Right",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugins",
+      "item": "In_Lead_St:slot0:Mod Delay III",
+      "fidelity": "approx",
+      "note": "Mod Delay III L/R collapsed to linked mod_delay"
+    },
+    {
+      "domain": "tracks",
+      "item": "In_Lead_St",
+      "fidelity": "native"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "In_Pad_St:slot0:D-Verb:Input Level",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "In_Pad_St:slot0:D-Verb:Wet/Dry",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "In_Pad_St:slot0:D-Verb:Algorithm",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "In_Pad_St:slot0:D-Verb:Size",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "In_Pad_St:slot0:D-Verb:Decay",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "In_Pad_St:slot0:D-Verb:Pre-Delay",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "In_Pad_St:slot0:D-Verb:Diffusion",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "In_Pad_St:slot0:D-Verb:HF Cut",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "In_Pad_St:slot0:D-Verb:LP Filter",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugins",
+      "item": "In_Pad_St:slot0:D-Verb",
+      "fidelity": "approx",
+      "note": "D-Verb mapped to Room Reverb"
+    },
+    {
+      "domain": "tracks",
+      "item": "In_Pad_St",
+      "fidelity": "native"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "In_Pluck_M:slot0:Lo-Fi:Distortion",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "In_Pluck_M:slot0:Lo-Fi:Sample Rate",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "In_Pluck_M:slot0:Lo-Fi:Anti-Alias",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "In_Pluck_M:slot0:Lo-Fi:Sample Size",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "In_Pluck_M:slot0:Lo-Fi:Noise",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "In_Pluck_M:slot0:Lo-Fi:Saturation",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugins",
+      "item": "In_Pluck_M:slot0:Lo-Fi",
+      "fidelity": "approx",
+      "note": "Lo-Fi drive/saturation carried"
+    },
+    {
+      "domain": "tracks",
+      "item": "In_Pluck_M",
+      "fidelity": "native"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "In_Perc_St:slot0:Sci-Fi:Input Level",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "In_Perc_St:slot0:Sci-Fi:Effect Type",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "In_Perc_St:slot0:Sci-Fi:Effect Depth",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "In_Perc_St:slot0:Sci-Fi:Effect Frequency",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "In_Perc_St:slot0:Sci-Fi:Mod Depth",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "In_Perc_St:slot0:Sci-Fi:Mod Rate/Slew/Thresh",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "In_Perc_St:slot0:Sci-Fi:Mod Type",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugins",
+      "item": "In_Perc_St:slot0:Sci-Fi",
+      "fidelity": "approx",
+      "note": "Sci-Fi approximated as ring_mod"
+    },
+    {
+      "domain": "tracks",
+      "item": "In_Perc_St",
+      "fidelity": "native"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "In_Arp_M:slot0:AutoPan:Offset",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "In_Arp_M:slot0:AutoPan:Mode",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "In_Arp_M:slot0:AutoPan:Direction",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "In_Arp_M:slot0:AutoPan:Waveform",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "In_Arp_M:slot0:AutoPan:Trig Mode",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "In_Arp_M:slot0:AutoPan:One Shot",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "In_Arp_M:slot0:AutoPan:Link",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "In_Arp_M:slot0:AutoPan:Env Trig",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "In_Arp_M:slot0:AutoPan:Duration",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "In_Arp_M:slot0:AutoPan:Threshold",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "In_Arp_M:slot0:AutoPan:Attack",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "In_Arp_M:slot0:AutoPan:Release",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugins",
+      "item": "In_Arp_M:slot0:AutoPan",
+      "fidelity": "native"
+    },
+    {
+      "domain": "tracks",
+      "item": "In_Arp_M",
+      "fidelity": "native"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "In_Drone_St:slot0:Channel Strip:Process Order",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "In_Drone_St:slot0:Channel Strip:Phase Switch In/Out",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "In_Drone_St:slot0:Channel Strip:Fader Volume Pre/Post",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "In_Drone_St:slot0:Channel Strip:Fader Volume On/Off",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "In_Drone_St:slot0:Channel Strip:Filters On/Off",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "In_Drone_St:slot0:Channel Strip:Dynamics On/Off",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "In_Drone_St:slot0:Channel Strip:Cmp Knee",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "In_Drone_St:slot0:Channel Strip:Cmp Depth",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "In_Drone_St:slot0:Channel Strip:Exp Ratio",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "In_Drone_St:slot0:Channel Strip:Exp Knee",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "In_Drone_St:slot0:Channel Strip:Exp Attack Time",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "In_Drone_St:slot0:Channel Strip:Exp Hold Time",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "In_Drone_St:slot0:Channel Strip:Exp Hysteresis",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "In_Drone_St:slot0:Channel Strip:Sc Filter In/Out",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "In_Drone_St:slot0:Channel Strip:Sc Filter Type",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "In_Drone_St:slot0:Channel Strip:Sc Filter Frequency",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "In_Drone_St:slot0:Channel Strip:Sc Source",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "In_Drone_St:slot0:Channel Strip:Sc Detector Type Avg/Pk",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "In_Drone_St:slot0:Channel Strip:EQ Low In/Out",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "In_Drone_St:slot0:Channel Strip:EQ Low Type",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "In_Drone_St:slot0:Channel Strip:EQ Low Q",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "In_Drone_St:slot0:Channel Strip:EQ Low-Mid In/Out",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "In_Drone_St:slot0:Channel Strip:EQ High-Mid In/Out",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "In_Drone_St:slot0:Channel Strip:EQ High-Mid Gain",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "In_Drone_St:slot0:Channel Strip:EQ High-Mid Frequency",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "In_Drone_St:slot0:Channel Strip:EQ High-Mid Q",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "In_Drone_St:slot0:Channel Strip:EQ High In/Out",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "In_Drone_St:slot0:Channel Strip:EQ High Type",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "In_Drone_St:slot0:Channel Strip:EQ High Q",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "In_Drone_St:slot0:Channel Strip:Filter 1 Type",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "In_Drone_St:slot0:Channel Strip:Filter 1 Q",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "In_Drone_St:slot0:Channel Strip:Filter 1 Slope 12/24dB",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "In_Drone_St:slot0:Channel Strip:Filter 2 In/Out",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "In_Drone_St:slot0:Channel Strip:Filter 2 Type",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "In_Drone_St:slot0:Channel Strip:Filter 2 Frequency",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "In_Drone_St:slot0:Channel Strip:Filter 2 Q",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "In_Drone_St:slot0:Channel Strip:Filter 2 Slope 12/24dB",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugins",
+      "item": "In_Drone_St:slot0:Channel Strip",
+      "fidelity": "approx",
+      "note": "4-band/Fader/Filter2 carried"
+    },
+    {
+      "domain": "tracks",
+      "item": "In_Drone_St",
+      "fidelity": "native"
+    },
+    {
+      "domain": "midi",
+      "item": "Md_Main:Md_Main-01:sysex",
+      "fidelity": "carry"
+    },
+    {
+      "domain": "tracks",
+      "item": "Md_Main",
+      "fidelity": "native"
+    },
+    {
+      "domain": "tracks",
+      "item": "Md_CC_Low",
+      "fidelity": "native"
+    },
+    {
+      "domain": "tracks",
+      "item": "Md_CC_Mid",
+      "fidelity": "native"
+    },
+    {
+      "domain": "tracks",
+      "item": "Md_CC_High",
+      "fidelity": "native"
+    },
+    {
+      "domain": "tracks",
+      "item": "Md_Chords",
+      "fidelity": "native"
+    },
+    {
+      "domain": "tracks",
+      "item": "Md_Samples",
+      "fidelity": "native"
+    },
+    {
+      "domain": "tracks",
+      "item": "Md_Mute",
+      "fidelity": "native"
+    },
+    {
+      "domain": "tracks",
+      "item": "Md_Hidden",
+      "fidelity": "native"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Master:slot0:EQ3 7-Band:Phase Invert",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Master:slot0:EQ3 7-Band:High-Pass Type",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Master:slot0:EQ3 7-Band:High-Pass Q",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Master:slot0:EQ3 7-Band:Low Band Type",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Master:slot0:EQ3 7-Band:High Band Type",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Master:slot0:EQ3 7-Band:Low-Pass Type",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Master:slot0:EQ3 7-Band:Low-Pass Q",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugins",
+      "item": "Master:slot0:EQ3 7-Band",
+      "fidelity": "approx",
+      "note": "EQ3 7-Band dynamic band enable composed into gain; EQ3 7-Band dynamic band enable composed into gain; EQ3 7-Band dynamic band enable composed into gain; EQ3 7-Band dynamic band enable composed into gain; EQ3 7-Band dynamic band enable composed into gain"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Master:slot1:Dyn3 Compressor/Limiter:Phase Invert",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Master:slot1:Dyn3 Compressor/Limiter:High Filter Freq",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Master:slot1:Dyn3 Compressor/Limiter:High Filter Type",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Master:slot1:Dyn3 Compressor/Limiter:High Filter Enable",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Master:slot1:Dyn3 Compressor/Limiter:Low Filter Type",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugins",
+      "item": "Master:slot1:Dyn3 Compressor/Limiter",
+      "fidelity": "approx",
+      "note": "dyn3 curve/sidechain differences"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Master:slot2:Dither:Bit Resolution",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugins",
+      "item": "Master:slot2:Dither",
+      "fidelity": "native"
+    },
+    {
+      "domain": "plugin_automation",
+      "item": "Master:slot3:POW-r Dither:Bit Resolution",
+      "fidelity": "carry",
+      "note": "unmapped PT plugin automation parameter"
+    },
+    {
+      "domain": "plugins",
+      "item": "Master:slot3:POW-r Dither",
+      "fidelity": "native"
+    },
+    {
+      "domain": "tracks",
+      "item": "Master",
+      "fidelity": "native"
+    },
+    {
+      "domain": "markers",
+      "item": "Intro Start",
+      "fidelity": "native"
+    },
+    {
+      "domain": "markers",
+      "item": "Chorus Range",
+      "fidelity": "native"
+    },
+    {
+      "domain": "markers",
+      "item": "Bridge Mod",
+      "fidelity": "native"
+    },
+    {
+      "domain": "markers",
+      "item": "Abs Sync Anchor",
+      "fidelity": "native"
+    },
+    {
+      "domain": "groups",
+      "item": "Grp_Rhythm",
+      "fidelity": "native"
+    },
+    {
+      "domain": "groups",
+      "item": "Grp_Synths",
+      "fidelity": "native"
+    },
+    {
+      "domain": "groups",
+      "item": "Grp_AuxMix",
+      "fidelity": "native"
+    }
+  ]
+}

@@ -341,9 +341,15 @@ fn decode_all_params(
     (out, vs, vi)
 }
 
-/// Parse plug-in automation lane `0x260B` (`[(pos, norm)]`).
+/// Parse plug-in automation lane `0x260B` (`[(pos, norm)]`) using continuous fixed-point scaling.
 #[must_use]
 pub fn parse_plugin_lane(d: &[u8], n: &Block) -> Vec<(u64, f64)> {
+    parse_plugin_lane_with_steps(d, n, None)
+}
+
+/// Parse plug-in automation lane `0x260B` (`[(pos, norm)]`), handling discrete integer lanes when `discrete_steps` is `Some(n >= 2)`.
+#[must_use]
+pub fn parse_plugin_lane_with_steps(d: &[u8], n: &Block, discrete_steps: Option<u8>) -> Vec<(u64, f64)> {
     let s = n.data_start();
     let e = n.end().min(d.len());
     if d.get(s..s + 4) != Some(&[0x01, 0x46, 0x01, 0x00]) || s + 30 > e {
@@ -360,18 +366,48 @@ pub fn parse_plugin_lane(d: &[u8], n: &Block) -> Vec<(u64, f64)> {
     if tb == 1 {
         p0 = plain_ticks(p0);
     }
+    let decode_val = |vi: i32| -> f64 {
+        match discrete_steps {
+            Some(steps) if steps <= 2 => {
+                if vi != 0 { 1.0 } else { 0.0 }
+            }
+            Some(steps) => {
+                let denom = f64::from(steps.saturating_sub(1).max(1));
+                round_n((f64::from(vi) / denom).clamp(0.0, 1.0), 6)
+            }
+            None => round_n(f64::from(vi) / 2_147_483_648.0 + 0.5, 6),
+        }
+    };
     let Some(v0) = i32_at(d, s + 26) else { return Vec::new() };
     let mut pts = Vec::with_capacity(cnt);
-    pts.push((p0, round_n(f64::from(v0) / 2_147_483_648.0 + 0.5, 6)));
+    pts.push((p0, decode_val(v0)));
     let mut j = s + 30;
     for _ in 1..cnt {
         let (Some(off), Some(vi)) = (u32_at(d, j), i32_at(d, j + 4)) else {
             break;
         };
-        pts.push((p0 + u64::from(off), round_n(f64::from(vi) / 2_147_483_648.0 + 0.5, 6)));
+        pts.push((p0 + u64::from(off), decode_val(vi)));
         j += 8;
     }
     pts
+}
+
+/// Extract discrete step count from a `0x260F` entry when its metadata marks a stepped/boolean parameter (`is_continuous == 0`).
+#[must_use]
+pub fn plugin_lane_discrete_steps(d: &[u8], n: &Block) -> Option<u8> {
+    let tail_start = n.kids.last().map_or(n.pos + 10, Block::end);
+    let end = n.end().min(d.len());
+    if tail_start + 4 > end {
+        return None;
+    }
+    let name_len = usize::try_from(u32_at(d, tail_start)?).ok()?;
+    let meta_pos = tail_start.checked_add(4)?.checked_add(name_len)?.checked_add(4)?;
+    let meta = d.get(meta_pos..meta_pos + 4)?;
+    if meta[1] == 0 && meta[3] >= 2 {
+        Some(meta[3])
+    } else {
+        None
+    }
 }
 
 /// Parse parameter name & id from `0x260F` plug-in automation entry.
@@ -505,19 +541,18 @@ pub fn parse_inserts(d: &[u8], ch: &Block) -> Vec<Insert> {
         let mut automation = Vec::new();
         let mut automation_params = None;
         if let Some(au_blk) = auto {
-            let mut au_sub = Vec::new();
-            subtree(au_blk, &mut au_sub);
-            for x in au_sub {
-                if x.content_type == 0x260B {
-                    automation.push(parse_plugin_lane(d, x));
+            let mut ap = Vec::new();
+            for entry in au_blk.kids.iter().filter(|x| x.content_type == 0x260F) {
+                let steps = plugin_lane_discrete_steps(d, entry);
+                let mut entry_sub = Vec::new();
+                subtree(entry, &mut entry_sub);
+                for x in entry_sub {
+                    if x.content_type == 0x260B {
+                        automation.push(parse_plugin_lane_with_steps(d, x, steps));
+                    }
                 }
+                ap.push(plugin_lane_names(d, entry));
             }
-            let ap: Vec<[Option<String>; 2]> = au_blk
-                .kids
-                .iter()
-                .filter(|x| x.content_type == 0x260F)
-                .map(|x| plugin_lane_names(d, x))
-                .collect();
             automation_params = Some(ap);
         }
 

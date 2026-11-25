@@ -8,7 +8,7 @@
   "summary": {
     "native": 77,
     "approx": 28,
-    "carry": 404,
+    "carry": 342,
     "absent": 0
   },
   "warnings": [],
@@ -105,12 +105,6 @@
     },
     {
       "domain": "plugin_automation",
-      "item": "Fold_Rhythm:slot0:Channel Strip:Master Bypass",
-      "fidelity": "carry",
-      "note": "unmapped PT plugin automation parameter"
-    },
-    {
-      "domain": "plugin_automation",
       "item": "Fold_Rhythm:slot0:Channel Strip:Process Order",
       "fidelity": "carry",
       "note": "unmapped PT plugin automation parameter"
@@ -118,12 +112,6 @@
     {
       "domain": "plugin_automation",
       "item": "Fold_Rhythm:slot0:Channel Strip:Phase Switch In/Out",
-      "fidelity": "carry",
-      "note": "unmapped PT plugin automation parameter"
-    },
-    {
-      "domain": "plugin_automation",
-      "item": "Fold_Rhythm:slot0:Channel Strip:Fader Volume",
       "fidelity": "carry",
       "note": "unmapped PT plugin automation parameter"
     },
@@ -141,12 +129,6 @@
     },
     {
       "domain": "plugin_automation",
-      "item": "Fold_Rhythm:slot0:Channel Strip:EQ On/Off",
-      "fidelity": "carry",
-      "note": "unmapped PT plugin automation parameter"
-    },
-    {
-      "domain": "plugin_automation",
       "item": "Fold_Rhythm:slot0:Channel Strip:Filters On/Off",
       "fidelity": "carry",
       "note": "unmapped PT plugin automation parameter"
@@ -159,12 +141,6 @@
     },
     {
       "domain": "plugin_automation",
-      "item": "Fold_Rhythm:slot0:Channel Strip:Cmp In/Out",
-      "fidelity": "carry",
-      "note": "unmapped PT plugin automation parameter"
-    },
-    {
-      "domain": "plugin_automation",
       "item": "Fold_Rhythm:slot0:Channel Strip:Cmp Knee",
       "fidelity": "carry",
       "note": "unmapped PT plugin automation parameter"
@@ -172,12 +148,6 @@
     {
       "domain": "plugin_automation",
       "item": "Fold_Rhythm:slot0:Channel Strip:Cmp Depth",
-      "fidelity": "carry",
-      "note": "unmapped PT plugin automation parameter"
-    },
-    {
-      "domain": "plugin_automation",
-      "item": "Fold_Rhythm:slot0:Channel Strip:Exp In/Out",
       "fidelity": "carry",
       "note": "unmapped PT plugin automation parameter"
     },
@@ -196,24 +166,6 @@
     {
       "domain": "plugin_automation",
       "item": "Fold_Rhythm:slot0:Channel Strip:Exp Attack Time",
-      "fidelity": "carry",
-      "note": "unmapped PT plugin automation parameter"
-    },
-    {
-      "domain": "plugin_automation",
-      "item": "Fold_Rhythm:slot0:Channel Strip:Exp Release Time",
-      "fidelity": "carry",
-      "note": "unmapped PT plugin automation parameter"
-    },
-    {
-      "domain": "plugin_automation",
-      "item": "Fold_Rhythm:slot0:Channel Strip:Exp Threshold",
-      "fidelity": "carry",
-      "note": "unmapped PT plugin automation parameter"
-    },
-    {
-      "domain": "plugin_automation",
-      "item": "Fold_Rhythm:slot0:Channel Strip:Exp Depth",
       "fidelity": "carry",
       "note": "unmapped PT plugin automation parameter"
     },
@@ -327,12 +279,6 @@
     },
     {
       "domain": "plugin_automation",
-      "item": "Fold_Rhythm:slot0:Channel Strip:Filter 1 In/Out",
-      "fidelity": "carry",
-      "note": "unmapped PT plugin automation parameter"
-    },
-    {
-      "domain": "plugin_automation",
       "item": "Fold_Rhythm:slot0:Channel Strip:Filter 1 Type",
       "fidelity": "carry",
       "note": "unmapped PT plugin automation parameter"
@@ -386,12 +332,6 @@
       "note": "4-band/Fader/Filter2 carried"
     },
     {
-      "domain": "plugin_automation",
-      "item": "Fold_Rhythm:slot1:Trim:Master Bypass",
-      "fidelity": "carry",
-      "note": "unmapped PT plugin automation parameter"
-    },
-    {
       "domain": "plugins",
       "item": "Fold_Rhythm:slot1:Trim",
       "fidelity": "native"
@@ -410,12 +350,6 @@
       "domain": "tracks",
       "item": "Fold_Synths",
       "fidelity": "native"
-    },
-    {
-      "domain": "plugin_automation",
-      "item": "Aux_Verb_St:slot0:D-Verb:Master Bypass",
-      "fidelity": "carry",
-      "note": "unmapped PT plugin automation parameter"
     },
     {
       "domain": "plugin_automation",
@@ -479,12 +413,6 @@
     },
     {
       "domain": "plugin_automation",
-      "item": "Aux_Verb_St:slot1:EQ3 7-Band:Master Bypass",
-      "fidelity": "carry",
-      "note": "unmapped PT plugin automation parameter"
-    },
-    {
-      "domain": "plugin_automation",
       "item": "Aux_Verb_St:slot1:EQ3 7-Band:Phase Invert",
       "fidelity": "carry",
       "note": "unmapped PT plugin automation parameter"
@@ -530,12 +458,6 @@
       "item": "Aux_Verb_St:slot1:EQ3 7-Band",
       "fidelity": "approx",
       "note": "EQ3 7-Band dynamic band enable composed into gain; EQ3 7-Band dynamic band enable composed into gain; EQ3 7-Band dynamic band enable composed into gain; EQ3 7-Band dynamic band enable composed into gain; EQ3 7-Band dynamic band enable composed into gain"
-    },
-    {
-      "domain": "plugin_automation",
-      "item": "Aux_Verb_St:slot2:Mod Delay III:Master Bypass",
-      "fidelity": "carry",
-      "note": "unmapped PT plugin automation parameter"
     },
     {
       "domain": "plugin_automation",
@@ -718,12 +640,6 @@
     },
     {
       "domain": "plugin_automation",
-      "item": "Aux_Sub_M:slot0:Dyn3 Compressor/Limiter:Master Bypass",
-      "fidelity": "carry",
-      "note": "unmapped PT plugin automation parameter"
-    },
-    {
-      "domain": "plugin_automation",
       "item": "Aux_Sub_M:slot0:Dyn3 Compressor/Limiter:Phase Invert",
       "fidelity": "carry",
       "note": "unmapped PT plugin automation parameter"
@@ -759,12 +675,6 @@
       "note": "dyn3 curve/sidechain differences"
     },
     {
-      "domain": "plugin_automation",
-      "item": "Aux_Sub_M:slot1:SansAmp PSA-1:Master Bypass",
-      "fidelity": "carry",
-      "note": "unmapped PT plugin automation parameter"
-    },
-    {
       "domain": "plugins",
       "item": "Aux_Sub_M:slot1:SansAmp PSA-1",
       "fidelity": "approx",
@@ -777,12 +687,6 @@
     },
     {
       "domain": "plugin_automation",
-      "item": "Au_Drums_St:slot0:Channel Strip:Master Bypass",
-      "fidelity": "carry",
-      "note": "unmapped PT plugin automation parameter"
-    },
-    {
-      "domain": "plugin_automation",
       "item": "Au_Drums_St:slot0:Channel Strip:Process Order",
       "fidelity": "carry",
       "note": "unmapped PT plugin automation parameter"
@@ -790,12 +694,6 @@
     {
       "domain": "plugin_automation",
       "item": "Au_Drums_St:slot0:Channel Strip:Phase Switch In/Out",
-      "fidelity": "carry",
-      "note": "unmapped PT plugin automation parameter"
-    },
-    {
-      "domain": "plugin_automation",
-      "item": "Au_Drums_St:slot0:Channel Strip:Fader Volume",
       "fidelity": "carry",
       "note": "unmapped PT plugin automation parameter"
     },
@@ -813,12 +711,6 @@
     },
     {
       "domain": "plugin_automation",
-      "item": "Au_Drums_St:slot0:Channel Strip:EQ On/Off",
-      "fidelity": "carry",
-      "note": "unmapped PT plugin automation parameter"
-    },
-    {
-      "domain": "plugin_automation",
       "item": "Au_Drums_St:slot0:Channel Strip:Filters On/Off",
       "fidelity": "carry",
       "note": "unmapped PT plugin automation parameter"
@@ -831,12 +723,6 @@
     },
     {
       "domain": "plugin_automation",
-      "item": "Au_Drums_St:slot0:Channel Strip:Cmp In/Out",
-      "fidelity": "carry",
-      "note": "unmapped PT plugin automation parameter"
-    },
-    {
-      "domain": "plugin_automation",
       "item": "Au_Drums_St:slot0:Channel Strip:Cmp Knee",
       "fidelity": "carry",
       "note": "unmapped PT plugin automation parameter"
@@ -844,12 +730,6 @@
     {
       "domain": "plugin_automation",
       "item": "Au_Drums_St:slot0:Channel Strip:Cmp Depth",
-      "fidelity": "carry",
-      "note": "unmapped PT plugin automation parameter"
-    },
-    {
-      "domain": "plugin_automation",
-      "item": "Au_Drums_St:slot0:Channel Strip:Exp In/Out",
       "fidelity": "carry",
       "note": "unmapped PT plugin automation parameter"
     },
@@ -868,24 +748,6 @@
     {
       "domain": "plugin_automation",
       "item": "Au_Drums_St:slot0:Channel Strip:Exp Attack Time",
-      "fidelity": "carry",
-      "note": "unmapped PT plugin automation parameter"
-    },
-    {
-      "domain": "plugin_automation",
-      "item": "Au_Drums_St:slot0:Channel Strip:Exp Release Time",
-      "fidelity": "carry",
-      "note": "unmapped PT plugin automation parameter"
-    },
-    {
-      "domain": "plugin_automation",
-      "item": "Au_Drums_St:slot0:Channel Strip:Exp Threshold",
-      "fidelity": "carry",
-      "note": "unmapped PT plugin automation parameter"
-    },
-    {
-      "domain": "plugin_automation",
-      "item": "Au_Drums_St:slot0:Channel Strip:Exp Depth",
       "fidelity": "carry",
       "note": "unmapped PT plugin automation parameter"
     },
@@ -999,12 +861,6 @@
     },
     {
       "domain": "plugin_automation",
-      "item": "Au_Drums_St:slot0:Channel Strip:Filter 1 In/Out",
-      "fidelity": "carry",
-      "note": "unmapped PT plugin automation parameter"
-    },
-    {
-      "domain": "plugin_automation",
       "item": "Au_Drums_St:slot0:Channel Strip:Filter 1 Type",
       "fidelity": "carry",
       "note": "unmapped PT plugin automation parameter"
@@ -1059,12 +915,6 @@
     },
     {
       "domain": "plugin_automation",
-      "item": "Au_Drums_St:slot1:Dyn3 Compressor/Limiter:Master Bypass",
-      "fidelity": "carry",
-      "note": "unmapped PT plugin automation parameter"
-    },
-    {
-      "domain": "plugin_automation",
       "item": "Au_Drums_St:slot1:Dyn3 Compressor/Limiter:Phase Invert",
       "fidelity": "carry",
       "note": "unmapped PT plugin automation parameter"
@@ -1100,12 +950,6 @@
       "note": "dyn3 curve/sidechain differences"
     },
     {
-      "domain": "plugin_automation",
-      "item": "Au_Drums_St:slot2:Trim:Master Bypass",
-      "fidelity": "carry",
-      "note": "unmapped PT plugin automation parameter"
-    },
-    {
       "domain": "plugins",
       "item": "Au_Drums_St:slot2:Trim",
       "fidelity": "native"
@@ -1121,22 +965,10 @@
       "fidelity": "native"
     },
     {
-      "domain": "plugin_automation",
-      "item": "Au_Bass_M:slot0:SansAmp PSA-1:Master Bypass",
-      "fidelity": "carry",
-      "note": "unmapped PT plugin automation parameter"
-    },
-    {
       "domain": "plugins",
       "item": "Au_Bass_M:slot0:SansAmp PSA-1",
       "fidelity": "approx",
       "note": "SansAmp PSA-1 approximated as saturator"
-    },
-    {
-      "domain": "plugin_automation",
-      "item": "Au_Bass_M:slot1:BF-76:Master Bypass",
-      "fidelity": "carry",
-      "note": "unmapped PT plugin automation parameter"
     },
     {
       "domain": "plugin_automation",
@@ -1155,12 +987,6 @@
       "item": "Au_Bass_M:slot1:BF-76",
       "fidelity": "approx",
       "note": "BF-76 FET compressor approximated as compressor"
-    },
-    {
-      "domain": "plugin_automation",
-      "item": "Au_Bass_M:slot2:EQ3 1-Band:Master Bypass",
-      "fidelity": "carry",
-      "note": "unmapped PT plugin automation parameter"
     },
     {
       "domain": "plugin_automation",
@@ -1232,22 +1058,10 @@
       "note": "unmapped PT plugin automation parameter"
     },
     {
-      "domain": "plugin_automation",
-      "item": "Au_Gtr_St:slot0:Sci-Fi:Master Bypass",
-      "fidelity": "carry",
-      "note": "unmapped PT plugin automation parameter"
-    },
-    {
       "domain": "plugins",
       "item": "Au_Gtr_St:slot0:Sci-Fi",
       "fidelity": "approx",
       "note": "Sci-Fi approximated as ring_mod"
-    },
-    {
-      "domain": "plugin_automation",
-      "item": "Au_Gtr_St:slot1:Mod Delay III:Master Bypass",
-      "fidelity": "carry",
-      "note": "unmapped PT plugin automation parameter"
     },
     {
       "domain": "plugin_automation",
@@ -1425,12 +1239,6 @@
     },
     {
       "domain": "plugin_automation",
-      "item": "Au_Gtr_St:slot2:EQ3 7-Band:Master Bypass",
-      "fidelity": "carry",
-      "note": "unmapped PT plugin automation parameter"
-    },
-    {
-      "domain": "plugin_automation",
       "item": "Au_Gtr_St:slot2:EQ3 7-Band:Phase Invert",
       "fidelity": "carry",
       "note": "unmapped PT plugin automation parameter"
@@ -1499,12 +1307,6 @@
     },
     {
       "domain": "plugin_automation",
-      "item": "Au_Vox_Lead_M:slot0:EQ3 7-Band:Master Bypass",
-      "fidelity": "carry",
-      "note": "unmapped PT plugin automation parameter"
-    },
-    {
-      "domain": "plugin_automation",
       "item": "Au_Vox_Lead_M:slot0:EQ3 7-Band:Phase Invert",
       "fidelity": "carry",
       "note": "unmapped PT plugin automation parameter"
@@ -1553,12 +1355,6 @@
     },
     {
       "domain": "plugin_automation",
-      "item": "Au_Vox_Lead_M:slot1:Dyn3 Compressor/Limiter:Master Bypass",
-      "fidelity": "carry",
-      "note": "unmapped PT plugin automation parameter"
-    },
-    {
-      "domain": "plugin_automation",
       "item": "Au_Vox_Lead_M:slot1:Dyn3 Compressor/Limiter:Phase Invert",
       "fidelity": "carry",
       "note": "unmapped PT plugin automation parameter"
@@ -1594,12 +1390,6 @@
       "note": "dyn3 curve/sidechain differences"
     },
     {
-      "domain": "plugin_automation",
-      "item": "Au_Vox_Lead_M:slot2:Trim:Master Bypass",
-      "fidelity": "carry",
-      "note": "unmapped PT plugin automation parameter"
-    },
-    {
       "domain": "plugins",
       "item": "Au_Vox_Lead_M:slot2:Trim",
       "fidelity": "native"
@@ -1608,12 +1398,6 @@
       "domain": "tracks",
       "item": "Au_Vox_Lead_M",
       "fidelity": "native"
-    },
-    {
-      "domain": "plugin_automation",
-      "item": "Au_Keys_St:slot0:Pitch II:Master Bypass",
-      "fidelity": "carry",
-      "note": "unmapped PT plugin automation parameter"
     },
     {
       "domain": "plugin_automation",
@@ -1706,12 +1490,6 @@
       "note": "unmapped PT plugin automation parameter"
     },
     {
-      "domain": "plugin_automation",
-      "item": "Au_Keys_St:slot1:Lo-Fi:Master Bypass",
-      "fidelity": "carry",
-      "note": "unmapped PT plugin automation parameter"
-    },
-    {
       "domain": "plugins",
       "item": "Au_Keys_St:slot1:Lo-Fi",
       "fidelity": "approx",
@@ -1731,12 +1509,6 @@
       "domain": "tracks",
       "item": "Au_Keys_St",
       "fidelity": "native"
-    },
-    {
-      "domain": "plugin_automation",
-      "item": "Au_FX_M:slot0:AutoPan:Master Bypass",
-      "fidelity": "carry",
-      "note": "unmapped PT plugin automation parameter"
     },
     {
       "domain": "plugin_automation",
@@ -1816,12 +1588,6 @@
       "fidelity": "native"
     },
     {
-      "domain": "plugin_automation",
-      "item": "Au_FX_M:slot1:Time Adjuster:Master Bypass",
-      "fidelity": "carry",
-      "note": "unmapped PT plugin automation parameter"
-    },
-    {
       "domain": "plugins",
       "item": "Au_FX_M:slot1:Time Adjuster",
       "fidelity": "native"
@@ -1840,12 +1606,6 @@
       "domain": "tracks",
       "item": "Au_FX_M",
       "fidelity": "native"
-    },
-    {
-      "domain": "plugin_automation",
-      "item": "Au_Perc_St:slot0:Time Adjuster:Master Bypass",
-      "fidelity": "carry",
-      "note": "unmapped PT plugin automation parameter"
     },
     {
       "domain": "plugins",
@@ -1867,12 +1627,6 @@
       "domain": "tracks",
       "item": "Au_Perc_St",
       "fidelity": "native"
-    },
-    {
-      "domain": "plugin_automation",
-      "item": "Au_Amb_M:slot0:D-Verb:Master Bypass",
-      "fidelity": "carry",
-      "note": "unmapped PT plugin automation parameter"
     },
     {
       "domain": "plugin_automation",
@@ -1946,12 +1700,6 @@
     },
     {
       "domain": "plugin_automation",
-      "item": "In_Piano_St:slot0:EQ3 1-Band:Master Bypass",
-      "fidelity": "carry",
-      "note": "unmapped PT plugin automation parameter"
-    },
-    {
-      "domain": "plugin_automation",
       "item": "In_Piano_St:slot0:EQ3 1-Band:Slope",
       "fidelity": "carry",
       "note": "unmapped PT plugin automation parameter"
@@ -1966,12 +1714,6 @@
       "domain": "plugins",
       "item": "In_Piano_St:slot0:EQ3 1-Band",
       "fidelity": "native"
-    },
-    {
-      "domain": "plugin_automation",
-      "item": "In_Piano_St:slot1:Click II:Master Bypass",
-      "fidelity": "carry",
-      "note": "unmapped PT plugin automation parameter"
     },
     {
       "domain": "plugin_automation",
@@ -1995,12 +1737,6 @@
       "domain": "tracks",
       "item": "In_Piano_St",
       "fidelity": "native"
-    },
-    {
-      "domain": "plugin_automation",
-      "item": "In_Bass_M:slot0:BF-76:Master Bypass",
-      "fidelity": "carry",
-      "note": "unmapped PT plugin automation parameter"
     },
     {
       "domain": "plugin_automation",
@@ -2030,12 +1766,6 @@
       "domain": "tracks",
       "item": "In_Bass_M",
       "fidelity": "native"
-    },
-    {
-      "domain": "plugin_automation",
-      "item": "In_Lead_St:slot0:Mod Delay III:Master Bypass",
-      "fidelity": "carry",
-      "note": "unmapped PT plugin automation parameter"
     },
     {
       "domain": "plugin_automation",
@@ -2218,12 +1948,6 @@
     },
     {
       "domain": "plugin_automation",
-      "item": "In_Pad_St:slot0:D-Verb:Master Bypass",
-      "fidelity": "carry",
-      "note": "unmapped PT plugin automation parameter"
-    },
-    {
-      "domain": "plugin_automation",
       "item": "In_Pad_St:slot0:D-Verb:Input Level",
       "fidelity": "carry",
       "note": "unmapped PT plugin automation parameter"
@@ -2324,12 +2048,6 @@
       "note": "unmapped PT plugin automation parameter"
     },
     {
-      "domain": "plugin_automation",
-      "item": "In_Pluck_M:slot0:Lo-Fi:Master Bypass",
-      "fidelity": "carry",
-      "note": "unmapped PT plugin automation parameter"
-    },
-    {
       "domain": "plugins",
       "item": "In_Pluck_M:slot0:Lo-Fi",
       "fidelity": "approx",
@@ -2383,12 +2101,6 @@
       "note": "unmapped PT plugin automation parameter"
     },
     {
-      "domain": "plugin_automation",
-      "item": "In_Perc_St:slot0:Sci-Fi:Master Bypass",
-      "fidelity": "carry",
-      "note": "unmapped PT plugin automation parameter"
-    },
-    {
       "domain": "plugins",
       "item": "In_Perc_St:slot0:Sci-Fi",
       "fidelity": "approx",
@@ -2398,12 +2110,6 @@
       "domain": "tracks",
       "item": "In_Perc_St",
       "fidelity": "native"
-    },
-    {
-      "domain": "plugin_automation",
-      "item": "In_Arp_M:slot0:AutoPan:Master Bypass",
-      "fidelity": "carry",
-      "note": "unmapped PT plugin automation parameter"
     },
     {
       "domain": "plugin_automation",
@@ -2489,12 +2195,6 @@
     },
     {
       "domain": "plugin_automation",
-      "item": "In_Drone_St:slot0:Channel Strip:Master Bypass",
-      "fidelity": "carry",
-      "note": "unmapped PT plugin automation parameter"
-    },
-    {
-      "domain": "plugin_automation",
       "item": "In_Drone_St:slot0:Channel Strip:Process Order",
       "fidelity": "carry",
       "note": "unmapped PT plugin automation parameter"
@@ -2502,12 +2202,6 @@
     {
       "domain": "plugin_automation",
       "item": "In_Drone_St:slot0:Channel Strip:Phase Switch In/Out",
-      "fidelity": "carry",
-      "note": "unmapped PT plugin automation parameter"
-    },
-    {
-      "domain": "plugin_automation",
-      "item": "In_Drone_St:slot0:Channel Strip:Fader Volume",
       "fidelity": "carry",
       "note": "unmapped PT plugin automation parameter"
     },
@@ -2525,12 +2219,6 @@
     },
     {
       "domain": "plugin_automation",
-      "item": "In_Drone_St:slot0:Channel Strip:EQ On/Off",
-      "fidelity": "carry",
-      "note": "unmapped PT plugin automation parameter"
-    },
-    {
-      "domain": "plugin_automation",
       "item": "In_Drone_St:slot0:Channel Strip:Filters On/Off",
       "fidelity": "carry",
       "note": "unmapped PT plugin automation parameter"
@@ -2543,12 +2231,6 @@
     },
     {
       "domain": "plugin_automation",
-      "item": "In_Drone_St:slot0:Channel Strip:Cmp In/Out",
-      "fidelity": "carry",
-      "note": "unmapped PT plugin automation parameter"
-    },
-    {
-      "domain": "plugin_automation",
       "item": "In_Drone_St:slot0:Channel Strip:Cmp Knee",
       "fidelity": "carry",
       "note": "unmapped PT plugin automation parameter"
@@ -2556,12 +2238,6 @@
     {
       "domain": "plugin_automation",
       "item": "In_Drone_St:slot0:Channel Strip:Cmp Depth",
-      "fidelity": "carry",
-      "note": "unmapped PT plugin automation parameter"
-    },
-    {
-      "domain": "plugin_automation",
-      "item": "In_Drone_St:slot0:Channel Strip:Exp In/Out",
       "fidelity": "carry",
       "note": "unmapped PT plugin automation parameter"
     },
@@ -2580,24 +2256,6 @@
     {
       "domain": "plugin_automation",
       "item": "In_Drone_St:slot0:Channel Strip:Exp Attack Time",
-      "fidelity": "carry",
-      "note": "unmapped PT plugin automation parameter"
-    },
-    {
-      "domain": "plugin_automation",
-      "item": "In_Drone_St:slot0:Channel Strip:Exp Release Time",
-      "fidelity": "carry",
-      "note": "unmapped PT plugin automation parameter"
-    },
-    {
-      "domain": "plugin_automation",
-      "item": "In_Drone_St:slot0:Channel Strip:Exp Threshold",
-      "fidelity": "carry",
-      "note": "unmapped PT plugin automation parameter"
-    },
-    {
-      "domain": "plugin_automation",
-      "item": "In_Drone_St:slot0:Channel Strip:Exp Depth",
       "fidelity": "carry",
       "note": "unmapped PT plugin automation parameter"
     },
@@ -2711,12 +2369,6 @@
     },
     {
       "domain": "plugin_automation",
-      "item": "In_Drone_St:slot0:Channel Strip:Filter 1 In/Out",
-      "fidelity": "carry",
-      "note": "unmapped PT plugin automation parameter"
-    },
-    {
-      "domain": "plugin_automation",
       "item": "In_Drone_St:slot0:Channel Strip:Filter 1 Type",
       "fidelity": "carry",
       "note": "unmapped PT plugin automation parameter"
@@ -2821,12 +2473,6 @@
     },
     {
       "domain": "plugin_automation",
-      "item": "Master:slot0:EQ3 7-Band:Master Bypass",
-      "fidelity": "carry",
-      "note": "unmapped PT plugin automation parameter"
-    },
-    {
-      "domain": "plugin_automation",
       "item": "Master:slot0:EQ3 7-Band:Phase Invert",
       "fidelity": "carry",
       "note": "unmapped PT plugin automation parameter"
@@ -2875,12 +2521,6 @@
     },
     {
       "domain": "plugin_automation",
-      "item": "Master:slot1:Dyn3 Compressor/Limiter:Master Bypass",
-      "fidelity": "carry",
-      "note": "unmapped PT plugin automation parameter"
-    },
-    {
-      "domain": "plugin_automation",
       "item": "Master:slot1:Dyn3 Compressor/Limiter:Phase Invert",
       "fidelity": "carry",
       "note": "unmapped PT plugin automation parameter"
@@ -2917,12 +2557,6 @@
     },
     {
       "domain": "plugin_automation",
-      "item": "Master:slot2:Dither:Master Bypass",
-      "fidelity": "carry",
-      "note": "unmapped PT plugin automation parameter"
-    },
-    {
-      "domain": "plugin_automation",
       "item": "Master:slot2:Dither:Bit Resolution",
       "fidelity": "carry",
       "note": "unmapped PT plugin automation parameter"
@@ -2931,12 +2565,6 @@
       "domain": "plugins",
       "item": "Master:slot2:Dither",
       "fidelity": "native"
-    },
-    {
-      "domain": "plugin_automation",
-      "item": "Master:slot3:POW-r Dither:Master Bypass",
-      "fidelity": "carry",
-      "note": "unmapped PT plugin automation parameter"
     },
     {
       "domain": "plugin_automation",

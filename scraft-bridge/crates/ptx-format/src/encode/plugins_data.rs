@@ -606,12 +606,64 @@ pub fn build_1017(spec: &StockPluginSpec, use_stereo: bool) -> Vec<u8> {
     encode_block(9, 0x1017, &p)
 }
 
-/// Build `0x260B` plug-in automation lane data (`01 46 01 00 ...`).
+/// Classify a plug-in automation parameter's `0x260F` 4-byte metadata `[flag0, is_continuous, flag2, num_steps]`.
+#[must_use]
+pub fn plugin_lane_meta(param_id: &str, param_name: &str) -> ([u8; 4], Option<u8>) {
+    if param_id == "MasterBypassID" || param_name == "Master Bypass" {
+        return ([0x01, 0x00, 0x01, 0x02], Some(2));
+    }
+    let id_l = param_id.to_ascii_lowercase();
+    let nm_l = param_name.to_ascii_lowercase();
+    if matches!(
+        id_l.as_str(),
+        "process order" | "sc filter type" | "filter 1 type" | "filter 2 type" | "hpfs" | "lpfs" | "effect type" | "mod type" | "meter num" | "meter den"
+    ) {
+        return ([0x00, 0x00, 0x01, 0x04], Some(4));
+    }
+    if id_l == "sc source" {
+        return ([0x00, 0x00, 0x01, 0x03], Some(3));
+    }
+    if id_l.starts_with("in ")
+        || matches!(
+            id_l.as_str(),
+            "phse" | "hife" | "lofe" | "hprg" | "lfrg" | "hfrg" | "lprg" | "hirg" | "lorg"
+                | "invert left" | "invert right" | "tempo sync" | "note dot left" | "note dot right"
+                | "note triplet left" | "note triplet right" | "eq low type" | "eq high type"
+                | "sc detector type avg/pk" | "mtrg" | "ones" | "mbck" | "etrg"
+        )
+        || nm_l.contains("in/out")
+        || nm_l.contains("on/off")
+        || nm_l.contains("pre/post")
+        || nm_l.contains("enable")
+        || nm_l.contains("12/24db")
+        || nm_l.contains("phase invert")
+    {
+        return ([0x00, 0x00, 0x01, 0x02], Some(2));
+    }
+    ([0x00, 0x01, 0x01, 0x00], None)
+}
+
+/// Build `0x260B` plug-in automation lane data (`01 46 01 00 ...`) using continuous fixed-point scaling.
 #[must_use]
 pub fn build_plug_lane_body(is_ticks: bool, pts: &[(u64, f64)]) -> Vec<u8> {
+    build_plug_lane_body_with(is_ticks, pts, None)
+}
+
+/// Build `0x260B` plug-in automation lane data (`01 46 01 00 ...`) with optional discrete step count.
+#[must_use]
+pub fn build_plug_lane_body_with(is_ticks: bool, pts: &[(u64, f64)], discrete_steps: Option<u8>) -> Vec<u8> {
     let enc = |v: f64| -> i32 {
-        let s = ((v - 0.5) * 2_147_483_648.0).round();
-        s.clamp(f64::from(i32::MIN), f64::from(i32::MAX)) as i32
+        match discrete_steps {
+            Some(steps) if steps <= 2 => i32::from(v >= 0.5),
+            Some(steps) => {
+                let max_s = f64::from(steps.saturating_sub(1).max(1));
+                (v.clamp(0.0, 1.0) * max_s).round() as i32
+            }
+            None => {
+                let s = ((v - 0.5) * 2_147_483_648.0).round();
+                s.clamp(f64::from(i32::MIN), f64::from(i32::MAX)) as i32
+            }
+        }
     };
     let mut body = Vec::new();
     let tb = u16::from(is_ticks);
@@ -620,7 +672,7 @@ pub fn build_plug_lane_body(is_ticks: bool, pts: &[(u64, f64)]) -> Vec<u8> {
     body.extend_from_slice(&4u16.to_le_bytes());
     body.extend_from_slice(&(pts.len().saturating_sub(1) as u16).to_le_bytes());
     let first_t = if is_ticks { crate::primitives::OFFSET_FORM } else { 0 };
-    let v0 = pts.first().map_or(0.5, |p| p.1);
+    let v0 = pts.first().map_or(if discrete_steps.is_some() { 0.0 } else { 0.5 }, |p| p.1);
     body.extend_from_slice(&first_t.to_le_bytes());
     body.extend_from_slice(&enc(v0).to_le_bytes());
     for &(t, v) in pts.iter().skip(1) {
@@ -783,10 +835,11 @@ pub fn build_filled_insert(args: &FilledInsertArgs<'_>) -> Vec<u8> {
     let mut d2614 = Vec::new();
     d2614.extend_from_slice(&u32::try_from(auto_lanes.len()).unwrap_or(0).to_le_bytes());
     for lane_spec in auto_lanes {
+        let (meta4, steps) = plugin_lane_meta(&lane_spec.param_id, &lane_spec.param_name);
         let lane = encode_block(
             1,
             0x260B,
-            &build_plug_lane_body(lane_spec.is_ticks, &lane_spec.points),
+            &build_plug_lane_body_with(lane_spec.is_ticks, &lane_spec.points, steps),
         );
         let nb = lane_spec.param_name.as_bytes();
         let ib = lane_spec.param_id.as_bytes();
@@ -796,7 +849,7 @@ pub fn build_filled_insert(args: &FilledInsertArgs<'_>) -> Vec<u8> {
         entry.extend_from_slice(&u32::try_from(nb.len()).unwrap_or(0).to_le_bytes());
         entry.extend_from_slice(nb);
         entry.extend_from_slice(&lane_spec.param_index.to_le_bytes());
-        entry.extend_from_slice(&[0x00, 0x01, 0x01, 0x00]);
+        entry.extend_from_slice(&meta4);
         entry.extend_from_slice(&0u32.to_le_bytes());
         entry.extend_from_slice(&u32::try_from(ib.len()).unwrap_or(0).to_le_bytes());
         entry.extend_from_slice(ib);

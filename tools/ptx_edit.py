@@ -1533,10 +1533,33 @@ def _slot_auto(dec, d, tree, track, slot):
     return ch, s, auto
 
 
-def _plug_lane(tb, pts):
+def _plug_lane_meta(pid, name=""):
+    """Return (4-byte 0x260F metadata, discrete_steps_or_None) matching Pro Tools AAX parameter types."""
+    if pid == "MasterBypassID" or name == "Master Bypass":
+        return b"\x01\x00\x01\x02", 2
+    pl, nl = pid.lower(), name.lower()
+    if pl in ("process order", "sc filter type", "filter 1 type", "filter 2 type", "hpfs", "lpfs",
+              "effect type", "mod type", "meter num", "meter den"):
+        return b"\x00\x00\x01\x04", 4
+    if pl == "sc source":
+        return b"\x00\x00\x01\x03", 3
+    if (pl.startswith("in ") or pl in ("phse", "hife", "lofe", "hprg", "lfrg", "hfrg", "lprg", "hirg", "lorg",
+            "invert left", "invert right", "tempo sync", "note dot left", "note dot right",
+            "note triplet left", "note triplet right", "eq low type", "eq high type",
+            "sc detector type avg/pk", "mtrg", "ones", "mbck", "etrg")
+            or any(t in nl for t in ("in/out", "on/off", "pre/post", "enable", "12/24db", "phase invert"))):
+        return b"\x00\x00\x01\x02", 2
+    return b"\x00\x01\x01\x00", None
+
+
+def _plug_lane(tb, pts, steps=None):
     """plug-in lane data (0x260B): 01 46 01 00 | u32 L = 14 + 8 n | u16 time base | u32 n | u16 4 | u16 n - 1 | u64 first
-    position (10^12 on tick lanes) + i32 value | (n - 1) x (u32 position, i32 value) | u16 0; value = (normalised - 0.5) x 2^31."""
-    enc = lambda v: max(-2 ** 31, min(2 ** 31 - 1, int(round((float(v) - 0.5) * 2 ** 31))))
+    position (10^12 on tick lanes) + i32 value | (n - 1) x (u32 position, i32 value) | u16 0;
+    continuous: (normalised - 0.5) x 2^31; discrete: raw integer 0..steps-1."""
+    if steps is not None:
+        enc = (lambda v: 1 if float(v) >= 0.5 else 0) if steps <= 2 else (lambda v: int(round(max(0.0, min(1.0, float(v))) * (steps - 1))))
+    else:
+        enc = lambda v: max(-2 ** 31, min(2 ** 31 - 1, int(round((float(v) - 0.5) * 2 ** 31))))
     first = 10 ** 12 if tb == 1 else 0
     body = struct.pack("<HIHH", tb, len(pts), 4, (len(pts) - 1) & 0xFFFF) + struct.pack("<Qi", first, enc(pts[0][1]))
     body += b"".join(struct.pack("<Ii", int(p), enc(v)) for p, v in pts[1:])
@@ -1567,9 +1590,10 @@ def cmd_addautolane(src, dst, track, slot, name, pid, pindex, start, tb=None):
         tbv = struct.unpack_from("<H", d, vol["pos"] + 9 + 8)[0] if vol else 0
     else:
         tbv = int(str(tb).split("=")[-1])
-    lane = _blk(1, 0x260B, _plug_lane(tbv, [(0, start)]))
+    meta4, steps = _plug_lane_meta(pid, name)
+    lane = _blk(1, 0x260B, _plug_lane(tbv, [(0, start)], steps=steps))
     nb, ib = name.encode("latin-1"), pid.encode("latin-1")
-    tail = struct.pack("<I", len(nb)) + nb + struct.pack("<I", int(pindex)) + b"\x00\x01\x01\x00" + struct.pack("<I", 0) + struct.pack("<I", len(ib)) + ib
+    tail = struct.pack("<I", len(nb)) + nb + struct.pack("<I", int(pindex)) + meta4 + struct.pack("<I", 0) + struct.pack("<I", len(ib)) + ib
     entry = _blk(2, 0x260F, b"\x01" + lane + tail)
     cnt = struct.unpack_from("<I", d, auto["pos"] + 9)[0]
     if cnt != sum(1 for k in auto["kids"] if k["ct"] == 0x260F):
@@ -1601,7 +1625,8 @@ def cmd_setpluglane(src, dst, track, slot, pid, text):
     pts = [(int(a), float(b)) for a, b in (x.split(":") for x in text.split(","))]
     if pts[0][0] != 0:
         probe.fail("the first point must be at 0", "write 0:<value> first")
-    new = _plug_lane(tb, pts)
+    steps = dec._plugin_lane_steps(d, f) if hasattr(dec, "_plugin_lane_steps") else _plug_lane_meta(pid)[1]
+    new = _plug_lane(tb, pts, steps=steps)
     old_len = 8 + struct.unpack_from("<I", d, s0 + 4)[0] + 2
     edits = [{"p": s0, "ol": old_len, "nb": new}]
     print("%s slot %s %s: %d points %s" % (track, slot, pid, len(pts), pts))

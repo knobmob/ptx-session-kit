@@ -308,6 +308,10 @@ fn map_ptx_auto_param_key(sc_plugin: &str, name: &str, pid: &str) -> Option<&'st
         "channel_strip" => {
             if n == "input trim" {
                 Some("input_gain")
+            } else if n == "fader volume" {
+                Some("output_gain")
+            } else if n == "cmp in/out" {
+                Some("comp_on")
             } else if n == "cmp threshold" {
                 Some("comp_threshold")
             } else if n == "cmp ratio" {
@@ -318,6 +322,20 @@ fn map_ptx_auto_param_key(sc_plugin: &str, name: &str, pid: &str) -> Option<&'st
                 Some("comp_release")
             } else if n == "cmp gain makeup" {
                 Some("comp_makeup")
+            } else if n == "exp in/out" {
+                Some("gate_on")
+            } else if n == "exp threshold" {
+                Some("gate_threshold")
+            } else if n == "exp depth" {
+                Some("gate_range")
+            } else if n == "exp release time" {
+                Some("gate_release")
+            } else if n == "eq on/off" {
+                Some("eq_on")
+            } else if n == "filter 1 in/out" {
+                Some("hpf_on")
+            } else if n == "filter 1 frequency" {
+                Some("hpf_freq")
             } else if n == "eq low gain" {
                 Some("low_gain")
             } else if n == "eq low frequency" {
@@ -332,8 +350,6 @@ fn map_ptx_auto_param_key(sc_plugin: &str, name: &str, pid: &str) -> Option<&'st
                 Some("high_gain")
             } else if n == "eq high frequency" {
                 Some("high_freq")
-            } else if n == "filter 1 frequency" {
-                Some("hpf_freq")
             } else {
                 None
             }
@@ -374,6 +390,28 @@ fn map_sc_auto_param_to_pt(pt_name: &str, sc_key: &str) -> Option<(&'static str,
         ("AutoPan", "width") => Some(("Width", "wdth", 4)),
         ("AutoPan", "rate") => Some(("Rate", "temp", 8)),
         ("Time Adjuster", "delay_samples") => Some(("Delay", "dlyL", 6)),
+        ("Channel Strip", "input_gain") => Some(("Input Trim", "Input Trim", 4)),
+        ("Channel Strip", "output_gain") => Some(("Fader Volume", "Fader Volume", 5)),
+        ("Channel Strip", "comp_on") => Some(("Cmp In/Out", "Cmp In/Out", 19)),
+        ("Channel Strip", "comp_ratio") => Some(("Cmp Ratio", "Cmp Ratio", 20)),
+        ("Channel Strip", "comp_attack") => Some(("Cmp Attack Time", "Cmp Attack Time", 22)),
+        ("Channel Strip", "comp_release") => Some(("Cmp Release Time", "Cmp Release Time", 23)),
+        ("Channel Strip", "comp_makeup") => Some(("Cmp Gain Makeup", "Cmp Gain Makeup", 24)),
+        ("Channel Strip", "comp_threshold") => Some(("Cmp Threshold", "Cmp Threshold", 25)),
+        ("Channel Strip", "gate_on") => Some(("Exp In/Out", "Exp In/Out", 27)),
+        ("Channel Strip", "gate_release") => Some(("Exp Release Time", "Exp Release Time", 31)),
+        ("Channel Strip", "gate_threshold") => Some(("Exp Threshold", "Exp Threshold", 32)),
+        ("Channel Strip", "gate_range") => Some(("Exp Depth", "Exp Depth", 33)),
+        ("Channel Strip", "eq_on") => Some(("EQ On/Off", "EQ On/Off", 8)),
+        ("Channel Strip", "low_gain") => Some(("EQ Low Gain", "EQ Low Gain", 44)),
+        ("Channel Strip", "low_freq") => Some(("EQ Low Frequency", "EQ Low Frequency", 45)),
+        ("Channel Strip", "mid_gain") => Some(("EQ Low-Mid Gain", "EQ Low-Mid Gain", 49)),
+        ("Channel Strip", "mid_freq") => Some(("EQ Low-Mid Frequency", "EQ Low-Mid Frequency", 50)),
+        ("Channel Strip", "mid_q") => Some(("EQ Low-Mid Q", "EQ Low-Mid Q", 51)),
+        ("Channel Strip", "high_gain") => Some(("EQ High Gain", "EQ High Gain", 60)),
+        ("Channel Strip", "high_freq") => Some(("EQ High Frequency", "EQ High Frequency", 61)),
+        ("Channel Strip", "hpf_on") => Some(("Filter 1 In/Out", "Filter 1 In/Out", 64)),
+        ("Channel Strip", "hpf_freq") => Some(("Filter 1 Frequency", "Filter 1 Frequency", 66)),
         _ => None,
     }
 }
@@ -429,10 +467,42 @@ fn trim_knots_db_to_norm(knots: &[[f64; 2]], db: f64, max_db: f64) -> f64 {
     last[0]
 }
 
+/// Clamp physical parameter value to SoundCraft DSP's supported range for `(sc_plugin, sc_key)`.
+fn clamp_sc_phys(sc_plugin: &str, sc_key: &str, val: f64) -> f64 {
+    let (lo, hi) = match (sc_plugin, sc_key) {
+        ("channel_strip", "input_gain" | "output_gain" | "low_gain" | "mid_gain" | "high_gain") => (-24.0, 24.0),
+        ("channel_strip", "gate_range") => (0.0, 80.0),
+        ("channel_strip", "comp_attack") => (0.01, 300.0),
+        ("channel_strip", "comp_release") => (5.0, 3000.0),
+        ("channel_strip", "comp_makeup") => (0.0, 40.0),
+        ("channel_strip", "hpf_freq") => (10.0, 2000.0),
+        ("channel_strip", "low_freq") => (20.0, 1000.0),
+        ("channel_strip", "mid_freq") => (100.0, 8000.0),
+        ("channel_strip", "mid_q") => (0.1, 10.0),
+        ("channel_strip", "high_freq") => (1000.0, 20_000.0),
+        ("eq_7band", "input_gain" | "output_gain" | "low_shelf_gain" | "low_mid_gain" | "mid_gain" | "high_mid_gain" | "high_shelf_gain") => (-24.0, 24.0),
+        ("eq_7band", "hpf_freq" | "low_mid_freq") => (10.0, 2000.0),
+        ("eq_7band", "low_shelf_freq") => (20.0, 1000.0),
+        ("eq_7band", "mid_freq") => (100.0, 8000.0),
+        ("eq_7band", "high_mid_freq") => (500.0, 20_000.0),
+        ("eq_7band", "high_shelf_freq" | "lpf_freq") => (1000.0, 20_000.0),
+        ("eq_7band", "low_shelf_q" | "high_shelf_q") => (0.3, 2.0),
+        ("compressor", "knee") => (0.0, 24.0),
+        ("compressor", "release") => (5.0, 3000.0),
+        ("compressor", "makeup") => (0.0, 40.0),
+        ("auto_pan", "rate") => (1.0, 960.0),
+        _ => return val,
+    };
+    val.clamp(lo, hi)
+}
+
 /// Convert normalized PT automation `[0..1]` -> physical SoundCraft DSP value using `cfg`.
 #[must_use]
 pub fn pt_norm_to_phys_with(cfg: &PluginMapConfig, sc_plugin: &str, sc_key: &str, u: f64) -> f64 {
     let u = u.clamp(0.0, 1.0);
+    if sc_plugin == "channel_strip" && sc_key == "gate_range" {
+        return (1.0 - u) * 108.0;
+    }
     let r = param_spec(cfg, sc_plugin, sc_key);
     if sc_plugin == "trim" && sc_key == "gain" {
         let max_db = r.map_or(12.0, |s| s.max);
@@ -458,7 +528,7 @@ pub fn pt_norm_to_phys_with(cfg: &PluginMapConfig, sc_plugin: &str, sc_key: &str
     }
     if sc_plugin == "eq_7band" && (sc_key == "input_gain" || sc_key == "output_gain") {
         if u <= 0.769_231 {
-            return -18.0 + (u / 0.769_231) * 18.0;
+            return -20.0 + (u / 0.769_231) * 20.0;
         }
         return ((u - 0.769_231) / (1.0 - 0.769_231)) * 6.0;
     }
@@ -468,6 +538,9 @@ pub fn pt_norm_to_phys_with(cfg: &PluginMapConfig, sc_plugin: &str, sc_key: &str
 /// Inverse: convert physical SoundCraft value -> normalized `[0..1]` PT automation value using `cfg`.
 #[must_use]
 pub fn sc_phys_to_pt_norm_with(cfg: &PluginMapConfig, sc_plugin: &str, sc_key: &str, phys: f64) -> f64 {
+    if sc_plugin == "channel_strip" && sc_key == "gate_range" {
+        return (1.0 - (phys.clamp(0.0, 108.0) / 108.0)).clamp(0.0, 1.0);
+    }
     let r = param_spec(cfg, sc_plugin, sc_key);
     if sc_plugin == "trim" && sc_key == "gain" {
         let max_db = r.map_or(12.0, |s| s.max);
@@ -657,7 +730,7 @@ pub fn ptx_insert_to_sc(
     let plugin_cfg = args.plugin_cfg;
     let pt_name = resolve_ptx_plugin_name(ins);
     let active = ins.active.unwrap_or(true);
-    let bypass = ins.bypass.unwrap_or(false);
+    let mut bypass = ins.bypass.unwrap_or(false);
     let mut sc_params = BTreeMap::new();
     let mut approx_notes: Vec<&str> = Vec::new();
     let mut carry_needed = false;
@@ -770,6 +843,9 @@ pub fn ptx_insert_to_sc(
         "Channel Strip" => {
             if let Some(v) = json_f64(&ins.params, "d_Input Trim") {
                 set_param(&mut sc_params, "input_gain", v, -24.0, 24.0);
+            }
+            if let Some(v) = json_f64(&ins.params, "d_Fader Volume") {
+                set_param(&mut sc_params, "output_gain", v, -24.0, 24.0);
             }
             if let Some(v) = json_i64(&ins.params, "l_Cmp In/Out") {
                 set_param(&mut sc_params, "comp_on", if v != 0 { 1.0 } else { 0.0 }, 0.0, 1.0);
@@ -1104,6 +1180,22 @@ pub fn ptx_insert_to_sc(
         let meta = ins.automation_params.as_ref().and_then(|v| v.get(idx));
         let p_name = meta.and_then(|m| m[0].as_deref()).unwrap_or("");
         let p_id = meta.and_then(|m| m[1].as_deref()).unwrap_or("");
+        if p_id.eq_ignore_ascii_case("masterbypassid") || p_name.eq_ignore_ascii_case("master bypass") {
+            if !pts.is_empty() {
+                let mut sorted_mb: Vec<(Samples, bool)> = pts
+                    .iter()
+                    .map(|&(raw_t, norm_u)| (to_samples(raw_t), norm_u >= 0.5))
+                    .collect();
+                sorted_mb.sort_by_key(|p| p.0);
+                let init_byp = sorted_mb[0].1;
+                bypass = init_byp;
+                if sorted_mb.iter().any(|&(_, b)| b != init_byp) {
+                    approx_notes.push("dynamic Master Bypass automation approximated by initial t=0 state");
+                    carry_needed = true;
+                }
+            }
+            continue;
+        }
         if sc_id_str == "eq_7band"
             && eq7_band_enable_index(p_id, p_name).is_some()
         {
@@ -1150,13 +1242,16 @@ pub fn ptx_insert_to_sc(
                     dense.push((t1, pt_norm_to_phys_with(plugin_cfg, sc_id_str, sc_key, u1)));
                 }
                 for (at, phys) in dense {
-                    lane.set_point(at, phys as f32);
+                    lane.set_point(at, clamp_sc_phys(sc_id_str, sc_key, phys) as f32);
                 }
             } else {
                 for (at, norm_u) in sorted_pts {
                     let phys = pt_norm_to_phys_with(plugin_cfg, sc_id_str, sc_key, norm_u);
-                    lane.set_point(at, phys as f32);
+                    lane.set_point(at, clamp_sc_phys(sc_id_str, sc_key, phys) as f32);
                 }
+            }
+            if let Some(first_pt) = lane.points.first() {
+                sc_params.insert(sc_key.to_owned(), first_pt.value);
             }
             auto_lanes.push(lane);
         } else if !pts.is_empty() {
@@ -1376,6 +1471,75 @@ pub fn sc_insert_to_ptx(
                 pt_params.insert("d_sldG".to_owned(), BuildParamVal::Float(f64::from(v)));
             }
             report.record("plugins", format!("{track_name}:slot{slot_idx}:Dyn3"), Fidelity::Approx, None);
+        }
+        "Channel Strip" => {
+            if let Some(&v) = ins.params.get("input_gain") {
+                pt_params.insert("d_Input Trim".to_owned(), BuildParamVal::Float(f64::from(v)));
+            }
+            if let Some(&v) = ins.params.get("output_gain") {
+                pt_params.insert("d_Fader Volume".to_owned(), BuildParamVal::Float(f64::from(v)));
+            }
+            if let Some(&v) = ins.params.get("comp_on") {
+                pt_params.insert("l_Cmp In/Out".to_owned(), BuildParamVal::Int(i32::from(v >= 0.5)));
+            }
+            if let Some(&v) = ins.params.get("comp_threshold") {
+                pt_params.insert("d_Cmp Threshold".to_owned(), BuildParamVal::Float(f64::from(v)));
+            }
+            if let Some(&v) = ins.params.get("comp_ratio") {
+                pt_params.insert("d_Cmp Ratio".to_owned(), BuildParamVal::Float(f64::from(v)));
+            }
+            if let Some(&v) = ins.params.get("comp_attack") {
+                pt_params.insert("d_Cmp Attack Time".to_owned(), BuildParamVal::Float(f64::from(v) / 1000.0));
+            }
+            if let Some(&v) = ins.params.get("comp_release") {
+                pt_params.insert("d_Cmp Release Time".to_owned(), BuildParamVal::Float(f64::from(v) / 1000.0));
+            }
+            if let Some(&v) = ins.params.get("comp_makeup") {
+                pt_params.insert("d_Cmp Gain Makeup".to_owned(), BuildParamVal::Float(f64::from(v)));
+            }
+            if let Some(&v) = ins.params.get("gate_on") {
+                pt_params.insert("l_Exp In/Out".to_owned(), BuildParamVal::Int(i32::from(v >= 0.5)));
+            }
+            if let Some(&v) = ins.params.get("gate_threshold") {
+                pt_params.insert("d_Exp Threshold".to_owned(), BuildParamVal::Float(f64::from(v)));
+            }
+            if let Some(&v) = ins.params.get("gate_range") {
+                pt_params.insert("d_Exp Depth".to_owned(), BuildParamVal::Float(-f64::from(v)));
+            }
+            if let Some(&v) = ins.params.get("gate_release") {
+                pt_params.insert("d_Exp Release Time".to_owned(), BuildParamVal::Float(f64::from(v) / 1000.0));
+            }
+            if let Some(&v) = ins.params.get("eq_on") {
+                pt_params.insert("l_EQ On/Off".to_owned(), BuildParamVal::Int(i32::from(v >= 0.5)));
+            }
+            if let Some(&v) = ins.params.get("hpf_on") {
+                pt_params.insert("l_Filter 1 In/Out".to_owned(), BuildParamVal::Int(i32::from(v >= 0.5)));
+            }
+            if let Some(&v) = ins.params.get("hpf_freq") {
+                pt_params.insert("d_Filter 1 Frequency".to_owned(), BuildParamVal::Float(f64::from(v)));
+            }
+            if let Some(&v) = ins.params.get("low_gain") {
+                pt_params.insert("d_EQ Low Gain".to_owned(), BuildParamVal::Float(f64::from(v)));
+            }
+            if let Some(&v) = ins.params.get("low_freq") {
+                pt_params.insert("d_EQ Low Frequency".to_owned(), BuildParamVal::Float(f64::from(v)));
+            }
+            if let Some(&v) = ins.params.get("mid_gain") {
+                pt_params.insert("d_EQ Low-Mid Gain".to_owned(), BuildParamVal::Float(f64::from(v)));
+            }
+            if let Some(&v) = ins.params.get("mid_freq") {
+                pt_params.insert("d_EQ Low-Mid Frequency".to_owned(), BuildParamVal::Float(f64::from(v)));
+            }
+            if let Some(&v) = ins.params.get("mid_q") {
+                pt_params.insert("d_EQ Low-Mid Q".to_owned(), BuildParamVal::Float(f64::from(v)));
+            }
+            if let Some(&v) = ins.params.get("high_gain") {
+                pt_params.insert("d_EQ High Gain".to_owned(), BuildParamVal::Float(f64::from(v)));
+            }
+            if let Some(&v) = ins.params.get("high_freq") {
+                pt_params.insert("d_EQ High Frequency".to_owned(), BuildParamVal::Float(f64::from(v)));
+            }
+            report.record("plugins", format!("{track_name}:slot{slot_idx}:Channel Strip"), Fidelity::Approx, None);
         }
         "Trim" => {
             if let Some(&v) = ins.params.get("gain") {

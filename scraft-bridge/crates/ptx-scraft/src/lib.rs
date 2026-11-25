@@ -1080,4 +1080,66 @@ mod tests {
         assert!(rep.warnings.iter().any(|w| w.contains("sine.mxf")));
         Ok(())
     }
+
+    #[test]
+    fn discrete_master_bypass_and_channel_strip_t0_calibration() -> Result<(), Box<dyn std::error::Error>> {
+        let spec = PtxBuildSpec {
+            sample_rate: 48_000,
+            bit_depth: 24,
+            tracks: vec![BuildTrack {
+                name: "Fold_Rhythm".to_owned(),
+                kind: BuildTrackKind::RoutingFolder,
+                stereo: true,
+                inserts: vec![BuildInsert {
+                    slot_index: 0,
+                    plugin_name: "Channel Strip".to_owned(),
+                    bypass: false,
+                    active: true,
+                    multi_mono: false,
+                    params: BTreeMap::new(),
+                    automation: vec![
+                        BuildInsertAutoLane {
+                            param_name: "Master Bypass".to_owned(),
+                            param_id: "MasterBypassID".to_owned(),
+                            param_index: 1,
+                            points: vec![(0, 0.0), (48_000, 1.0)],
+                        },
+                        BuildInsertAutoLane {
+                            param_name: "Input Trim".to_owned(),
+                            param_id: "Input Trim".to_owned(),
+                            param_index: 4,
+                            points: vec![(0, 0.25), (48_000, 0.5)],
+                        },
+                        BuildInsertAutoLane {
+                            param_name: "Cmp Gain Makeup".to_owned(),
+                            param_id: "Cmp Gain Makeup".to_owned(),
+                            param_index: 24,
+                            points: vec![(0, 0.25), (48_000, 0.5)],
+                        },
+                        BuildInsertAutoLane {
+                            param_name: "EQ Low Frequency".to_owned(),
+                            param_id: "EQ Low Frequency".to_owned(),
+                            param_index: 45,
+                            points: vec![(0, 0.25), (48_000, 0.5)],
+                        },
+                    ],
+                }],
+                ..BuildTrack::default()
+            }],
+            ..PtxBuildSpec::default()
+        };
+        let ptx_bytes = encode_ptx(&spec)?;
+        let doc = decode_bytes("cs_test.ptx", &ptx_bytes)?;
+        let pt_ins0 = doc.tracks[0].inserts.as_ref().and_then(|v| v.first()).ok_or("missing pt insert")?;
+        let mb_pts = &pt_ins0.automation[0];
+        assert_eq!(mb_pts, &vec![(0, 0.0), (48_000, 1.0)]);
+
+        let (sc, _, _) = ptx_doc_to_scraft(&doc, Path::new("."), None, &ConvertOptions::default())?;
+        let ins = sc.tracks[0].mixer.inserts[0].as_ref().ok_or("missing sc insert")?;
+        assert!(!ins.bypass);
+        assert!((ins.params["input_gain"] - (-18.0)).abs() < 0.01);
+        assert!((ins.params["comp_makeup"] - 7.5).abs() < 0.01);
+        assert!((ins.params["low_freq"] - 113.8485).abs() < 0.05);
+        Ok(())
+    }
 }
