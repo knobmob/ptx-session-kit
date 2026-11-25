@@ -16,14 +16,24 @@ using:
 - `.scraft` / `.scraftz`  file format (as of 0.20.1)
 
 
+Bottom Up Generated Clean Room Session "CR_max2" with many features, opens in PT and after bridging in SC 
 ---
+Mix Window
 
+Protools Intro 2026.06 
+<img width="1377" height="861" alt="image" src="https://github.com/user-attachments/assets/b5139487-ff5a-4018-894b-bb0d57029801" />
 
-
+SoundCraft 0.20.1
+<img width="1466" height="841" alt="image" src="https://github.com/user-attachments/assets/6676b367-514a-4cec-9044-2412af5f49e3" />
 
 ---
-<img width="1552" height="927" alt="image" src="https://github.com/user-attachments/assets/a1f80384-3755-44cf-8ebd-80bf798c180b" />
-<img width="1486" height="861" alt="image" src="https://github.com/user-attachments/assets/548072de-8a66-4646-bc79-7967e3a2b629" />
+Edit Window
+
+Protools Intro 2026.06 
+<img width="1464" height="855" alt="image" src="https://github.com/user-attachments/assets/a3e0b60a-73d4-4ada-bb76-cf3c7aa36a25" />
+
+SoundCraft 0.20.1
+<img width="1466" height="841" alt="image" src="https://github.com/user-attachments/assets/c7e73841-a2ef-4b29-98c7-8e1c07691740" />
 
 ---
 
