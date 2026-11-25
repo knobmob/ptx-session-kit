@@ -8,7 +8,7 @@ Read, inspect, build, and edit Pro Tools `.ptx` sessions using Python `3.9+` std
 
 ---
 
-## Capabilities & New Possibilities
+## Capabilities & Possibilities
 
 - **Build `.ptx` Sessions From Scratch (Zero Templates / Zero DAW):** Programmatically generate complete multi-track Pro Tools sessions (`buildspec` from a single JSON spec, one-call `newsong`, or modular `newbase` + `61` `ptx_edit.py` subcommands) with Audio, MIDI, Instrument, Aux, Master, and Basic/Routing Folders, exact `0x0002` block directories (`dircheck`/`roundtrip`), and bit-exact container verification.
 - **Deep Multi-Domain Session Coverage:** Full read/write support across MIDI notes/CCs/Pitch Bend/Program+Bank/SysEx/MPE, multi-width Sync Points, `fade_in` / `fade_out` / centered & post crossfades, Clip Groups (`0x262C`/`0x2428`), clip loops & clip gain, internal busses, `10` pre/post sends, mono/dual-stereo panning (`pan`/`pan2`), `17` stock plug-in insert builders + `0x260F` automation curves, tempo/meter/key signatures, markers, and `19/19` rational SMPTE timecode rates.
@@ -120,8 +120,16 @@ The only constraint concerns **live DAW-side export/re-save verification inside 
 
 ## Note to the SoundCraft Team
 
-**Dear SoundCraft team — you are very welcome to integrate `ptx-session-kit` / `scraft-bridge` directly into SoundCraft!**  
-The Rust workspace under [`scraft-bridge/`](scraft-bridge/Cargo.toml) (`ptx-format`, `ptx-scraft`, and the `ptxconv` CLI) is written cleanly in `#![forbid(unsafe_code)]` Rust (`edition = "2024"`, `MIT OR Apache-2.0`, built directly on [`craft-libs`](https://github.com/storytold/craft-libs), while the kit itself is [`LICENSE`](LICENSE) MIT) with strict clean-room boundaries ([`Legal Disclaimer.md`](Legal%20Disclaimer.md)) — whether you consume `ptx-format` / `ptx-scraft` as Rust library crates or embed `ptxconv` alongside [`plugin_map.json`](scraft-bridge/crates/ptx-scraft/plugin_map.json). See [`soundcraft-bridge.md`](soundcraft-bridge.md) for the crate architecture and API entry points.
+**Dear [`SoundCraft`](https://github.com/storytold/soundcraft) team — you are welcome to integrate `ptx-session-kit` / `scraft-bridge` into SoundCraft (clean room reimplemented Pro Tools clone)!**  
+
+Since SoundCraft (SC) is under heavy development at the moment, the current bridge in this kit is... :
+
+- file/CMD based (by design) and and therefore not directly integrated into file dialogues of SC (but integration is easy once SC dev is in a later and more stable phase)
+- a proof of concept (POC) for the current dev. level of SC (0.20.21), that can easily be adopted
+- not all features of Pro Tools are supported yet by SC, so developing and checking out a strategy for keeping unsupported PT features on the roundtrip
+- mainly for automated round trip testing 
+
+The Rust workspace under [`scraft-bridge/`](scraft-bridge/Cargo.toml) (`ptx-format`, `ptx-scraft`, and the `ptxconv` CLI) is written in `#![forbid(unsafe_code)]` Rust (`edition = "2024"`, `MIT OR Apache-2.0`, built directly on [`craft-libs`](https://github.com/storytold/craft-libs), while the ptx session kit itself is [`LICENSE`](LICENSE) MIT) with strict clean-room boundaries ([`Legal Disclaimer.md`](Legal%20Disclaimer.md)) — whether you consume `ptx-format` / `ptx-scraft` as Rust library crates or embed `ptxconv` alongside [`plugin_map.json`](scraft-bridge/crates/ptx-scraft/plugin_map.json). See [`soundcraft-bridge.md`](soundcraft-bridge.md) for the crate architecture and API entry points.
 
 ---
 
