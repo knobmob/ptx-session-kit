@@ -1326,6 +1326,54 @@ pub struct ScInsertToPtxArgs<'a> {
     pub plugin_cfg: &'a PluginMapConfig,
 }
 
+fn seed_carry_params(c: &CarryInsert, pt_params: &mut BTreeMap<String, BuildParamVal>) {
+    for (k, v) in &c.params {
+        if let Some(b) = v.as_bool() {
+            pt_params.insert(k.clone(), BuildParamVal::Bool(b));
+        } else if let Some(i) = v.as_i64() {
+            pt_params.insert(k.clone(), BuildParamVal::Int(i as i32));
+        } else if let Some(f) = v.as_f64() {
+            pt_params.insert(k.clone(), BuildParamVal::Float(f));
+        }
+    }
+}
+
+/// Restore a carry-only Pro Tools insert (e.g. `Click II`) when SoundCraft has `None` in `slot_idx`.
+#[must_use]
+pub fn carry_insert_to_ptx(
+    slot_idx: usize,
+    track_name: &str,
+    c: &CarryInsert,
+    report: &mut ConversionReport,
+) -> Option<BuildInsert> {
+    if lookup_stock_plugin(&c.plugin_name).is_none() {
+        report.record(
+            "plugins",
+            format!("{track_name}:slot{slot_idx}:{}", c.plugin_name),
+            Fidelity::Carry,
+            Some("3rd-party AAX plugin cannot be cleanly encoded from scratch; omitted".to_owned()),
+        );
+        return None;
+    }
+    let mut pt_params = BTreeMap::new();
+    seed_carry_params(c, &mut pt_params);
+    report.record(
+        "plugins",
+        format!("{track_name}:slot{slot_idx}:{}", c.plugin_name),
+        Fidelity::Native,
+        None,
+    );
+    Some(BuildInsert {
+        slot_index: slot_idx,
+        plugin_name: c.plugin_name.clone(),
+        bypass: c.bypass,
+        active: c.active,
+        multi_mono: c.multi_mono,
+        params: pt_params,
+        automation: Vec::new(),
+    })
+}
+
 /// Convert a SoundCraft [`ScInsert`] (+ automation lanes) back to [`BuildInsert`].
 #[must_use]
 pub fn sc_insert_to_ptx(
@@ -1346,15 +1394,7 @@ pub fn sc_insert_to_ptx(
 
     // Seed exact carried PT params first if same logical plugin, then overlay SC edits.
     let pt_name = if let Some(c) = carry_opt {
-        for (k, v) in &c.params {
-            if let Some(b) = v.as_bool() {
-                pt_params.insert(k.clone(), BuildParamVal::Bool(b));
-            } else if let Some(i) = v.as_i64() {
-                pt_params.insert(k.clone(), BuildParamVal::Int(i as i32));
-            } else if let Some(f) = v.as_f64() {
-                pt_params.insert(k.clone(), BuildParamVal::Float(f));
-            }
-        }
+        seed_carry_params(c, &mut pt_params);
         c.plugin_name.clone()
     } else {
         match sc_id {

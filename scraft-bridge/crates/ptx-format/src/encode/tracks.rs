@@ -405,15 +405,8 @@ fn build_strip_set(
     tm[21] = i32::from(v0) * 65536;
     tm[1] = i32::from(m0 != 0);
     tm[22] = 65535 + i32::from(m0 != 0);
-    if tr.record_enable {
-        tm[5] = 1;
-        // See decode::mixer::parse_strip: t.pos + 14 == slot 1 (+5 in 1029 body)
-    }
 
-    let mut tbl_bytes = encode_1029(&tm, true);
-    if tr.record_enable && tbl_bytes.len() > 14 {
-        tbl_bytes[14] = 1;
-    }
+    let tbl_bytes = encode_1029(&tm, true);
 
     let main_strip = if master {
         let mut d = tbl_bytes;

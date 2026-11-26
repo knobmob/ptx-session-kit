@@ -361,7 +361,7 @@ def _strip(d, st):
     t = next((k for k in st["kids"] if k["ct"] == 0x1029), None)
     extra = {"mute": (_lane(d, lanes[1]) or []) if len(lanes) > 1 else [],
              "active": (d[o["pos"] + 12] != 0) if o else None,                  # +3 (inactive track MIX_05 s13, inactive send MIX_02)
-             "record_enable": (d[t["pos"] + 14] != 0) if (t and t["size"] >= 10) else None,  # slot 1 (+5 in 1029 body)
+             "record_enable": False if (t and t["size"] >= 10) else None,        # 0x1029+5 (tm[1]) is mute_static, not record_enable
              "dest_path": u32(d, o["pos"] + 9) & 0xFFFF if o else None,
              "post_fader": bool(d[t["pos"] + 9]) if t else None}
     vol = lanes[0] if lanes else None

@@ -26,7 +26,8 @@ use crate::media::{
     inspect_audio_file, materialize_media_ref, materialize_ptx_pcm_wav, resolve_audio_path,
 };
 use crate::plugins::{
-    ScInsertToPtxArgs, load_plugin_config, sc_insert_to_ptx, sc_phys_to_pt_norm_with,
+    ScInsertToPtxArgs, carry_insert_to_ptx, load_plugin_config, sc_insert_to_ptx,
+    sc_phys_to_pt_norm_with,
 };
 use crate::report::{CarryClip, CarrySidecar, ConversionReport, Fidelity};
 use crate::{ConvertError, ConvertOptions, LoopHandling};
@@ -420,10 +421,22 @@ pub fn scraft_to_ptx_spec(
             );
         }
 
-        // Inserts + Mixer Trim/Phase synthesis if needed
+        // Inserts (mapped SC slots + carry-only PT slots like Click II) + Mixer Trim/Phase synthesis if needed
         let mut inserts = Vec::new();
-        for (slot_idx, slot_opt) in sc_tr.mixer.inserts.iter().enumerate() {
-            let Some(sc_ins) = slot_opt else {
+        let max_slots = sc_tr.mixer.inserts.len().max(
+            tr_carry
+                .and_then(|tc| tc.inserts.iter().map(|ci| ci.slot_index + 1).max())
+                .unwrap_or(0),
+        );
+        for slot_idx in 0..max_slots {
+            let carry_ins = tr_carry
+                .and_then(|tc| tc.inserts.iter().find(|ci| ci.slot_index == slot_idx));
+            let Some(sc_ins) = sc_tr.mixer.inserts.get(slot_idx).and_then(Option::as_ref) else {
+                if let Some(ci) = carry_ins
+                    && let Some(bi) = carry_insert_to_ptx(slot_idx, &sc_tr.name, ci, &mut report)
+                {
+                    inserts.push(bi);
+                }
                 continue;
             };
             if tr_carry.is_some_and(|tc| tc.synthesized_user_delay_slot == Some(slot_idx))
@@ -431,8 +444,6 @@ pub fn scraft_to_ptx_spec(
             {
                 continue;
             }
-            let carry_ins = tr_carry
-                .and_then(|tc| tc.inserts.iter().find(|ci| ci.slot_index == slot_idx));
             if let Some(bi) = sc_insert_to_ptx(
                 &ScInsertToPtxArgs {
                     slot_idx,

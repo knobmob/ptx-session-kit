@@ -696,6 +696,7 @@ pub fn ptx_doc_to_scraft(
             .map_or(tidx % TRACK_COLORS.len(), |i| i % TRACK_COLORS.len());
         let mut sc_tr = Track::new(tid, &pt_tr.name, kind, fmt, TRACK_COLORS[color_idx]);
         sc_tr.hidden = pt_tr.hidden.unwrap_or(false);
+        sc_tr.inactive = pt_tr.active == Some(false);
         sc_tr.height = map_ptx_height(pt_tr.height_code);
         sc_tr.comments = pt_tr.comment.clone().unwrap_or_default();
         sc_tr.folder = pt_tr.folder.as_deref().and_then(|fnm| track_name_to_id.get(fnm).copied());
@@ -1511,7 +1512,9 @@ pub fn ptx_doc_to_scraft(
             ptx_ticks_to_samples(pos, &tempo, sr)
         };
         let start = to_smp(m.ticks, m.samples);
-        let end = if m.end > m.ticks {
+        let end = if m.unit == "samples" {
+            i64::try_from(m.end).unwrap_or(start).max(start)
+        } else if m.end > m.ticks {
             to_smp(m.end, None)
         } else {
             start

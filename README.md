@@ -92,6 +92,15 @@ For full Rust codec internals, DSP curve calibration, and `ptxconv` CLI flags, s
 - **Lossless preservation by default (`<stem>.ptxcarry.json`):** Features that have no direct SoundCraft model (such as third-party AAX plug-in chunks, `Click II`, SysEx/MPE mode, non-PCM `.mxf`/`.sd2` media descriptors, pull codes, dynamic LFE, track `colour`, or `elastic_mode`) are **never silently dropped** — they are stored in `<stem>.ptxcarry.json` so a subsequent `.scraft -> .ptx` pass restores them.
 - **Opt-out & strict guardrails:** Passing `--no-carry` skips `.ptxcarry.json`, causing non-native features to be omitted from round-trip recovery and recorded as **`Absent`** (or **`Approx`**) in the ledger. Passing **`--strict`** makes `ptxconv` **abort and refuse conversion** whenever any item is classified as `Carry` or `Absent` (use `--render-opaque-stems` to invoke an optional external `export_stems` script defined in [`config.toml`](config.toml) when opaque items exist).
 
+### D. Quick Reference: Not Transferred to SoundCraft, Restored Back to Pro Tools (`.ptxcarry.json`)
+
+For full details see [`soundcraft-bridge.md`](soundcraft-bridge.md). Summary of properties preserved for `.scraft -> .ptx` round-trip when `--no-carry` is not used:
+
+- **Session & Timeline:** `.ptx` format version / XOR seed, video pull codes (`0x2023`), session settings / write-enables, and `EditState` (edit mode/tool/grid/zoom/selection).
+- **Tracks & Clips:** `BasicFolder` vs. `RoutingFolder` kind, track `colour` index, `user_delay` (`Time Shift` insert in SC, original `user_delay` restored on return), `elastic_mode` metadata, BWF/AIFF file descriptors (`bit_depth`, float flag, `data_offset`, `filetime`, `UMID`), split-mono `.L`/`.R` origin, Clip Group IDs/names, centered crossfade pre-roll handles, and loop descriptors.
+- **MIDI & Plug-ins:** Raw `SysEx` (`MdTEL`), `MPE` mode/curves, `Click II` inserts (omitted in SC, restored on return), and static PT parameter dicts / `.tfx` preset metadata for approximated stock plug-ins (`EQ3 7-Band` extra filters, `Channel Strip` Filter 2/Expander/Fader, `Dyn3`, `D-Verb`, `Mod Delay III`, `Lo-Fi`, `SansAmp PSA-1`, `Sci-Fi`, `Pitch II`, `BF-76`, `Dither`, `POW-r Dither`).
+- **Not Restored / Out of Scope:** Third-party AAX blobs & unmapped `0x260F` automation curves (recorded in `.ptxcarry.json` for telemetry only), `VCA` tracks (`Absent` on return), host hardware I/O matrices (`0x2033`/`0x2600`, rebuilt portably), dynamic `LFE` lanes, session Solo Mode / Solo-Safe, send `active=False` state, and Elastic Audio warp DSP (use `--render-opaque-stems` for audio stem parity).
+
 ---
 
 ## Core Components

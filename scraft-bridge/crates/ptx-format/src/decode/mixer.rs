@@ -156,10 +156,8 @@ pub fn parse_strip(d: &[u8], st: &Block) -> Strip {
     let lane_tb = lanes.first().and_then(|b| lane_time_base(d, b));
 
     let active = o.and_then(|ob| d.get(ob.pos + 12)).map(|&b| b != 0);
-    let record_enable = t
-        .filter(|tb| tb.size >= 10)
-        .and_then(|tb| d.get(tb.pos + 14))
-        .map(|&b| b != 0);
+    // 0x1029+5 (`tb.pos + 14`, `tm[1]`) is `mute_static`, not `record_enable`.
+    let record_enable = t.filter(|tb| tb.size >= 10).map(|_| false);
     let dest_path = o.and_then(|ob| u32_at(d, ob.pos + 9)).map(|v| (v & 0xFFFF) as u16);
     let post_fader = t.and_then(|tb| d.get(tb.pos + 9)).map(|&b| b != 0);
     let (output, stem_index) = out_dest(d, st);

@@ -1142,4 +1142,67 @@ mod tests {
         assert!((ins.params["low_freq"] - 113.8485).abs() < 0.05);
         Ok(())
     }
+
+    #[test]
+    fn carry_restores_click_ii_inactive_muted_record_arm_and_sample_selection() -> Result<(), Box<dyn std::error::Error>> {
+        let mut click_params = BTreeMap::new();
+        click_params.insert("d_AcAt".to_owned(), BuildParamVal::Float(0.5));
+        click_params.insert("d_UnAt".to_owned(), BuildParamVal::Float(0.5));
+        let spec = PtxBuildSpec {
+            sample_rate: 48_000,
+            bit_depth: 24,
+            tracks: vec![
+                BuildTrack {
+                    name: "Muted_Au".to_owned(),
+                    kind: BuildTrackKind::Audio,
+                    mute: true,
+                    record_enable: false,
+                    inserts: vec![BuildInsert {
+                        slot_index: 1,
+                        plugin_name: "Click II".to_owned(),
+                        bypass: true,
+                        active: true,
+                        multi_mono: false,
+                        params: click_params,
+                        automation: Vec::new(),
+                    }],
+                    ..BuildTrack::default()
+                },
+                BuildTrack {
+                    name: "Inact_Au".to_owned(),
+                    kind: BuildTrackKind::Audio,
+                    inactive: true,
+                    hidden: true,
+                    ..BuildTrack::default()
+                },
+            ],
+            markers: vec![ptx_format::encode::spec::BuildMarker {
+                number: 1,
+                name: "SelSample".to_owned(),
+                is_selection: true,
+                is_ticks: false,
+                start: 48_000,
+                end: 96_000,
+                comment: "1s..2s".to_owned(),
+            }],
+            ..PtxBuildSpec::default()
+        };
+        let pt1 = decode_bytes("s1.ptx", &encode_ptx(&spec)?)?;
+        let (sc, _, carry) = ptx_doc_to_scraft(&pt1, Path::new("."), None, &ConvertOptions::default())?;
+        assert!(sc.tracks[0].mixer.mute);
+        assert!(!sc.tracks[0].mixer.record_arm);
+        assert!(sc.tracks[1].inactive);
+        assert!(sc.tracks[1].hidden);
+        assert_eq!(sc.markers[0].start, 48_000);
+        assert_eq!(sc.markers[0].end, 96_000);
+
+        let (pt2_spec, _) = scraft_to_ptx_spec(&sc, Path::new("."), None, carry.as_ref(), &ConvertOptions::default())?;
+        let pt2 = decode_bytes("s2.ptx", &encode_ptx(&pt2_spec)?)?;
+        let ins2 = pt2.tracks[0].inserts.as_ref().ok_or("missing inserts")?;
+        assert!(ins2.iter().any(|i| i.plugin.as_deref() == Some("Click II") && i.bypass == Some(true)));
+        assert_eq!(pt2.tracks[0].record_enable, Some(false));
+        assert_eq!(pt2.tracks[1].active, Some(false));
+        assert_eq!(pt2.tracks[1].hidden, Some(true));
+        Ok(())
+    }
 }
