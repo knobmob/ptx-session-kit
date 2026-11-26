@@ -16,24 +16,21 @@ using:
 - `.scraft` / `.scraftz`  file format (as of 0.20.1)
 
 
-Bottom Up Generated Clean Room Session "CR_max2" (screenshots; current fixture: `CR_max3`) with many features, opens in PT and after bridging in SC 
----
-Mix Window
+Clean-room generated sessions **`test/CR_min/`** (4-track minimal demo) and **`test/CR_max3/`** (30-track stress fixture) opened natively in **Pro Tools Intro 2026.11** and after bridging via `ptxconv` in **SoundCraft 0.20.1**:
 
-Protools Intro 2026.06 
-<img width="1377" height="861" alt="image" src="https://github.com/user-attachments/assets/b5139487-ff5a-4018-894b-bb0d57029801" />
+### `CR_min` — Minimal Demo (`Audio`, `Instrument`, `MIDI`, `Master`, 3 Plug-ins & Automation)
 
-SoundCraft 0.20.1
-<img width="1466" height="841" alt="image" src="https://github.com/user-attachments/assets/6676b367-514a-4cec-9044-2412af5f49e3" />
+| Window | Pro Tools (`test/CR_min/CR_min.ptx`) | SoundCraft 0.20.1 (`test/CR_min/CR_min.scraft`) |
+|---|---|---|
+| **Mix** | ![CR_min Pro Tools Mix](reports/screenshots/CR_min_PT_Mix.png) | ![CR_min SoundCraft Mix](reports/screenshots/CR_min_SC_Mix.png) |
+| **Edit** | ![CR_min Pro Tools Edit](reports/screenshots/CR_min_PT_Edit.png) | ![CR_min SoundCraft Edit](reports/screenshots/CR_min_SC_Edit.png) |
 
----
-Edit Window
+### `CR_max3` — Full Stress Fixture (`30` Tracks, `17` Stock Plug-ins, Folders, Groups & Automation)
 
-Protools Intro 2026.06 
-<img width="1464" height="855" alt="image" src="https://github.com/user-attachments/assets/a3e0b60a-73d4-4ada-bb76-cf3c7aa36a25" />
-
-SoundCraft 0.20.1
-<img width="1466" height="841" alt="image" src="https://github.com/user-attachments/assets/c7e73841-a2ef-4b29-98c7-8e1c07691740" />
+| Window | Pro Tools (`test/CR_max3/CR_max3.ptx`) | SoundCraft 0.20.1 (`test/CR_max3/CR_max3.scraft`) |
+|---|---|---|
+| **Mix** | ![CR_max3 Pro Tools Mix](reports/screenshots/CR_max3_PT_Mix.png) | ![CR_max3 SoundCraft Mix](reports/screenshots/CR_max3_SC_Mix.png) |
+| **Edit** | ![CR_max3 Pro Tools Edit](reports/screenshots/CR_max3_PT_Edit.png) | ![CR_max3 SoundCraft Edit](reports/screenshots/CR_max3_SC_Edit.png) |
 
 ---
 
@@ -114,7 +111,9 @@ Converts `.ptx <-> .scraft` / `.scraftz` cleanly (`ptxconv`) with fidelity ledge
 
 ---
 
-## Quick Verification Using the Included Fixture ([`test/CR_max3/`](test/CR_max3/CR_max3.ptx))
+## Quick Verification Using Included Fixtures ([`test/CR_min/`](test/CR_min/CR_min.ptx) & [`test/CR_max3/`](test/CR_max3/CR_max3.ptx))
+
+> **Demo starter (`test/CR_min/`):** Minimal 4-track clean-room demo (`Au_Lead` mono audio + fades + `EQ3 7-Band` automation, `In_Keys` stereo instrument + chords + `Dyn3 Compressor/Limiter`, `Md_Bass` MIDI bassline, `Master` stereo fader + `Trim` automation, tempo/meter/keys & markers; rebuildable from [`test/CR_min/CR_min.json`](test/CR_min/CR_min.json) and bridged in [`test/CR_min/CR_min.scraft`](test/CR_min/CR_min.scraft)).
 
 ```bash
 # 0. Verify release file integrity (Linux: sha256sum -c SHA256SUMS)

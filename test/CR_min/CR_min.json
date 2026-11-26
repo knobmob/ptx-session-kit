@@ -1,0 +1,188 @@
+{
+  "version": "0.7.0-beta",
+  "date": "2026-11-27",
+  "rate": 48000,
+  "bits": 24,
+  "io": 1,
+  "tempo": [
+    {
+      "ticks": 0,
+      "bpm": 120.0
+    }
+  ],
+  "meter": [
+    {
+      "ticks": 0,
+      "bar": 1,
+      "num": 4,
+      "den": 4
+    }
+  ],
+  "keysig": [
+    {
+      "ticks": 0,
+      "key": "C"
+    },
+    {
+      "ticks": 3840000,
+      "key": "Am"
+    }
+  ],
+  "timeline": {
+    "tc_rate": "25",
+    "tc_start": "01:00:00:00",
+    "pull": "None",
+    "record_mode": "Normal"
+  },
+  "tracks": [
+    {
+      "name": "Au_Lead",
+      "kind": "audio",
+      "stereo": false,
+      "output": "Out 1-2",
+      "colour": 29,
+      "comment": "Clean-room mono audio track"
+    },
+    {
+      "name": "In_Keys",
+      "kind": "instrument",
+      "stereo": true,
+      "output": "Out 1-2",
+      "comment": "Clean-room stereo instrument track"
+    },
+    {
+      "name": "Md_Bass",
+      "kind": "midi",
+      "comment": "Clean-room MIDI bass pattern"
+    },
+    {
+      "name": "Master",
+      "kind": "master",
+      "stereo": true,
+      "comment": "Clean-room stereo master fader"
+    }
+  ],
+  "clips": [
+    {
+      "track": "Au_Lead",
+      "wav": "Audio Files/lead_m.wav",
+      "at": 0
+    }
+  ],
+  "fades": [
+    {
+      "track": "Au_Lead",
+      "pos": 0,
+      "len": 4800,
+      "kind": "fade_in",
+      "slope": "equal_power"
+    },
+    {
+      "track": "Au_Lead",
+      "pos": 0,
+      "len": 9600,
+      "kind": "fade_out",
+      "slope": "equal_power"
+    }
+  ],
+  "notes": [
+    {
+      "track": "In_Keys",
+      "spec": "chords:C,Am,F,G7:4:96"
+    },
+    {
+      "track": "Md_Bass",
+      "spec": "0:36:4:100;4:33:4:95;8:29:4:95;12:31:4:100"
+    }
+  ],
+  "plugins": [
+    {
+      "track": "Au_Lead",
+      "slot": "a",
+      "plugin": "EQ3 7-Band",
+      "params": {
+        "l_in 4": 1,
+        "d_gai4": 4.5,
+        "d_frq4": 1000.0
+      },
+      "bypass": false
+    },
+    {
+      "track": "In_Keys",
+      "slot": "a",
+      "plugin": "Dyn3 Compressor/Limiter",
+      "params": {
+        "d_sldC": -18.0,
+        "d_sld2": 4.0,
+        "d_sldG": 2.5
+      },
+      "bypass": false
+    },
+    {
+      "track": "Master",
+      "slot": "a",
+      "plugin": "Trim",
+      "params": {
+        "gain_db": -1.5
+      },
+      "bypass": false
+    }
+  ],
+  "lanes": [
+    {
+      "track": "Au_Lead",
+      "lane": "volume",
+      "points": "0:0,96000:-30,192000:0"
+    },
+    {
+      "track": "Au_Lead",
+      "lane": "pan",
+      "points": "0:-40,96000:40,192000:0"
+    },
+    {
+      "track": "In_Keys",
+      "lane": "volume",
+      "points": "0:-20,96000:-20,192000:-45"
+    },
+    {
+      "track": "Master",
+      "lane": "volume",
+      "points": "0:0,144000:0,192000:-60"
+    }
+  ],
+  "plugin_lanes": [
+    {
+      "track": "Au_Lead",
+      "slot": "a",
+      "name": "Mid Band Gain",
+      "id": "gai4",
+      "index": 22,
+      "start": 0.769231,
+      "points": "0:0.769231,96000:0.9,192000:0.769231"
+    },
+    {
+      "track": "Master",
+      "slot": "a",
+      "name": "Gain",
+      "id": "gain",
+      "index": 2,
+      "start": 0.72,
+      "points": "0:0.72,144000:0.72,192000:0.5"
+    }
+  ],
+  "markers": [
+    {
+      "name": "Intro",
+      "start": 0,
+      "unit": "ticks",
+      "kind": "marker"
+    },
+    {
+      "name": "Chorus",
+      "start": 3840000,
+      "end": 7680000,
+      "unit": "ticks",
+      "kind": "selection"
+    }
+  ]
+}

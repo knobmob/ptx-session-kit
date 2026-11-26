@@ -223,4 +223,6 @@ __marimo__/
 .DS_Store
 scraft-bridge/target/
 .cargo/
+test/**/WaveCache.wfm
+test/**/Session File Backups/
 

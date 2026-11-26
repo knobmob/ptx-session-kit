@@ -31,7 +31,8 @@ ptx-session-kit/
 │   ├── pt_api_assessment.md       # Three-way format toolbox benchmark & architecture audit
 │   └── panning_law_roundtrip.*    # 20-variant panning-law round-trip report, PDF & plots
 └── test/
-    ├── CR_max3/                   # Example session (.ptx, .scraft, sidecars & Audio Files/)
+    ├── CR_max3/                   # Full stress fixture (.ptx, .scraft, sidecars & Audio Files/)
+    ├── CR_min/                    # Minimal 4-track demo (Audio, Instrument, MIDI, Master, 3 plug-ins, automation & CR_min.json)
     └── example_session.json       # Complete single-file JSON spec for `ptx_edit.py buildspec`
 ```
 

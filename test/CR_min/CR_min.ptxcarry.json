@@ -1,0 +1,106 @@
+{
+  "version": 1,
+  "xor_seed": 90,
+  "session_version": "2026.11.0",
+  "timeline": {
+    "timecode_rate_code": 2,
+    "timecode_rate": "25",
+    "drop_frame": false,
+    "session_start": "01:00:00:00"
+  },
+  "session_settings": {},
+  "audio_files": [
+    {
+      "file_name": "lead_m.wav",
+      "bit_depth": 24,
+      "is_float": false,
+      "is_aiff": false,
+      "data_offset": 44,
+      "filetime": 134402081954283091,
+      "umid": "060a2b340101010501010f1013000000a0a39d7b1a918000ec96b9ebc432aee6"
+    }
+  ],
+  "tracks": {
+    "Au_Lead": {
+      "colour": 29,
+      "inserts": [
+        {
+          "slot_index": 0,
+          "plugin_name": "EQ3 7-Band",
+          "vendor_id": "com.digidesign.aax.eq3.7band",
+          "bypass": false,
+          "active": true,
+          "multi_mono": false,
+          "params": {
+            "d_bnd2": 1.0,
+            "d_bnd3": 1.0,
+            "d_bnd4": 1.0,
+            "d_bnd5": 1.0,
+            "d_bnd6": 1.0,
+            "d_frq1": 20.0,
+            "d_frq2": 100.0,
+            "d_frq3": 200.0,
+            "d_frq4": 1000.0,
+            "d_frq5": 2000.0,
+            "d_frq6": 6000.0,
+            "d_frq7": 20000.0,
+            "d_gai2": 0.0,
+            "d_gai3": 0.0,
+            "d_gai4": 4.5,
+            "d_gai5": 0.0,
+            "d_gai6": 0.0,
+            "d_hpfq": 1.0,
+            "d_inpt": 0.0,
+            "d_lpfq": 1.0,
+            "d_outp": 0.0,
+            "l_Phse": 0,
+            "l_hak1": 0,
+            "l_hak2": 0,
+            "l_hak3": 0,
+            "l_hfrg": 1,
+            "l_hpfs": 0,
+            "l_hprg": 1,
+            "l_in 1": 0,
+            "l_in 2": 1,
+            "l_in 3": 1,
+            "l_in 4": 1,
+            "l_in 5": 1,
+            "l_in 6": 1,
+            "l_in 7": 0,
+            "l_lfrg": 1,
+            "l_lpfs": 0,
+            "l_lprg": 1
+          }
+        }
+      ]
+    },
+    "In_Keys": {
+      "inserts": [
+        {
+          "slot_index": 0,
+          "plugin_name": "Dyn3 Compressor/Limiter",
+          "vendor_id": "com.avid.aax.dyn3.Compressor",
+          "bypass": false,
+          "active": true,
+          "multi_mono": false,
+          "params": {
+            "d_HiFF": 20000.0,
+            "d_LoFF": 20.0,
+            "d_sld1": 0.01,
+            "d_sld2": 4.0,
+            "d_sld3": 0.08,
+            "d_sldC": -18.0,
+            "d_sldD": 0.0,
+            "d_sldG": 2.5,
+            "l_HiFE": 0,
+            "l_HiRG": 1,
+            "l_LoFE": 0,
+            "l_LoRG": 1,
+            "l_Phse": 0,
+            "l_sldE": 0
+          }
+        }
+      ]
+    }
+  }
+}

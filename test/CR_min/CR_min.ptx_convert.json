@@ -1,0 +1,98 @@
+{
+  "version": 1,
+  "direction": "ptx_to_scraft",
+  "source_path": "test/CR_min/CR_min.ptx",
+  "target_path": "test/CR_min/CR_min.scraft",
+  "media_mode": "relative",
+  "loop_handling": "faithful",
+  "summary": {
+    "native": 15,
+    "approx": 1,
+    "carry": 0,
+    "absent": 0
+  },
+  "warnings": [],
+  "entries": [
+    {
+      "domain": "tempo",
+      "item": "tempo@0=120.000bpm",
+      "fidelity": "native"
+    },
+    {
+      "domain": "meter",
+      "item": "4/4@0",
+      "fidelity": "native"
+    },
+    {
+      "domain": "key_signatures",
+      "item": "0:C",
+      "fidelity": "native"
+    },
+    {
+      "domain": "key_signatures",
+      "item": "96000:Am",
+      "fidelity": "native"
+    },
+    {
+      "domain": "media",
+      "item": "lead_m.wav",
+      "fidelity": "native"
+    },
+    {
+      "domain": "plugins",
+      "item": "Au_Lead:slot0:EQ3 7-Band",
+      "fidelity": "native"
+    },
+    {
+      "domain": "fades",
+      "item": "Au_Lead:slope=equal_power",
+      "fidelity": "native"
+    },
+    {
+      "domain": "fades",
+      "item": "Au_Lead:slope=equal_power",
+      "fidelity": "native"
+    },
+    {
+      "domain": "tracks",
+      "item": "Au_Lead",
+      "fidelity": "native"
+    },
+    {
+      "domain": "plugins",
+      "item": "In_Keys:slot0:Dyn3 Compressor/Limiter",
+      "fidelity": "approx",
+      "note": "dyn3 curve/sidechain differences"
+    },
+    {
+      "domain": "tracks",
+      "item": "In_Keys",
+      "fidelity": "native"
+    },
+    {
+      "domain": "tracks",
+      "item": "Md_Bass",
+      "fidelity": "native"
+    },
+    {
+      "domain": "plugins",
+      "item": "Master:slot0:Trim",
+      "fidelity": "native"
+    },
+    {
+      "domain": "tracks",
+      "item": "Master",
+      "fidelity": "native"
+    },
+    {
+      "domain": "markers",
+      "item": "Intro",
+      "fidelity": "native"
+    },
+    {
+      "domain": "markers",
+      "item": "Chorus",
+      "fidelity": "native"
+    }
+  ]
+}
