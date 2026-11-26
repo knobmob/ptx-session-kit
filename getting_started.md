@@ -31,7 +31,7 @@ ptx-session-kit/
 │   ├── pt_api_assessment.md       # Three-way format toolbox benchmark & architecture audit
 │   └── panning_law_roundtrip.*    # 20-variant panning-law round-trip report, PDF & plots
 └── test/
-    ├── CR_max/                    # Example session (.ptx, .scraft, sidecars & Audio Files/)
+    ├── CR_max2/                   # Example session (.ptx, .scraft, sidecars & Audio Files/)
     └── example_session.json       # Complete single-file JSON spec for `ptx_edit.py buildspec`
 ```
 
@@ -60,14 +60,14 @@ ptx-session-kit/
 
 ```bash
 # High-level block census & tree inspection
-python3 tools/ptx_probe.py census test/CR_max/CR_max.ptx
+python3 tools/ptx_probe.py census test/CR_max2/CR_max2.ptx
 
 # Full or filtered JSON session decode (tracks, strips, sends, plugins, midi_lists, markers, fades, ...)
-python3 tools/ptx_decode.py test/CR_max/CR_max.ptx --only tracks,strips,inserts,markers
+python3 tools/ptx_decode.py test/CR_max2/CR_max2.ptx --only tracks,strips,inserts,markers
 
 # Verify block-tree roundtrip & 0x0002 directory parity without modifying the input file
-python3 tools/ptx_edit.py roundtrip test/CR_max/CR_max.ptx
-python3 tools/ptx_edit.py dircheck test/CR_max/CR_max.ptx
+python3 tools/ptx_edit.py roundtrip test/CR_max2/CR_max2.ptx
+python3 tools/ptx_edit.py dircheck test/CR_max2/CR_max2.ptx
 ```
 
 ---
@@ -116,8 +116,8 @@ python3 tools/ptx_edit.py newsong "$OUT/DemoSong.ptx" \
   rate=48000 bits=24 bpm=120 keysig="0:C;3840000:Am" \
   markers=@"$OUT/markers.json" groups=@"$OUT/groups.json" \
   MixBus=rfolder,stereo \
-  "Drums=audio,stereo,in:MixBus|test/CR_max/Audio Files/drums_st.wav@0" \
-  "Bass=audio,in:MixBus|test/CR_max/Audio Files/bass_m.wav@0" \
+  "Drums=audio,stereo,in:MixBus|test/CR_max2/Audio Files/drums_st.wav@0" \
+  "Bass=audio,in:MixBus|test/CR_max2/Audio Files/bass_m.wav@0" \
   "Chords=midi|chords:C,Am,F,G7:4:96"
 ```
 
@@ -127,7 +127,7 @@ python3 tools/ptx_edit.py newsong "$OUT/DemoSong.ptx" \
 ```bash
 OUT=/tmp/ptx_demo_mod
 rm -rf "$OUT" && mkdir -p "$OUT/Audio Files"
-cp test/CR_max/"Audio Files"/vox_m.wav "$OUT/Audio Files/"
+cp test/CR_max2/"Audio Files"/vox_m.wav "$OUT/Audio Files/"
 ptxedit() { python3 tools/ptx_edit.py "$@"; }
 
 ptxedit newbase "$OUT/m00.ptx" rate=48000 bits=24 io=1
@@ -153,12 +153,12 @@ Run `python3 tools/ptx_edit.py` with no arguments for the CLI command synopsis, 
 PTXCONV=/tmp/ptx-scraft-target/release/ptxconv
 
 # Dry-run conversion ledger (JSON summary on stdout, writes no files)
-"$PTXCONV" test/CR_max/CR_max.ptx --dry-run --report
+"$PTXCONV" test/CR_max2/CR_max2.ptx --dry-run --report
 
 # Copy the example session folder to scratch before running file conversion round-trips
-rm -rf /tmp/CR_max_demo && cp -R test/CR_max /tmp/CR_max_demo
-"$PTXCONV" /tmp/CR_max_demo/CR_max.ptx -o /tmp/CR_max_demo/CR_max_conv.scraft
-"$PTXCONV" /tmp/CR_max_demo/CR_max.scraft -o /tmp/CR_max_demo/CR_max_rt.ptx
+rm -rf /tmp/CR_max2_demo && cp -R test/CR_max2 /tmp/CR_max2_demo
+"$PTXCONV" /tmp/CR_max2_demo/CR_max2.ptx -o /tmp/CR_max2_demo/CR_max2_conv.scraft
+"$PTXCONV" /tmp/CR_max2_demo/CR_max2.scraft -o /tmp/CR_max2_demo/CR_max2_rt.ptx
 ```
 
 ### Supported Media & Conversion Fidelity

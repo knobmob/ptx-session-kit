@@ -32,8 +32,8 @@
     {"name": "Chords", "kind": "midi"}
   ],
   "clips": [
-    {"track": "Vox", "wav": "CR_max/Audio Files/vox_m.wav", "at": 0},
-    {"track": "Keys", "wav": "CR_max/Audio Files/keys_st.wav", "at": 0}
+    {"track": "Vox", "wav": "CR_max2/Audio Files/vox_m.wav", "at": 0},
+    {"track": "Keys", "wav": "CR_max2/Audio Files/keys_st.wav", "at": 0}
   ],
   "fades": [
     {"track": "Vox", "pos": 0, "len": 4800, "kind": "fade_in", "slope": "equal_power"}

@@ -2,18 +2,59 @@
 
 **Version:** 0.7.0 (beta) · **Date:** 2026-11-23
 
-This is a clean-room release of **`ptx-session-kit`** with a **`scraft-bridge/`** (working POC): 
+Clean-room release of **`ptx-session-kit`** including POC of **`scraft-bridge`**: 
 
-Read, inspect, build, and edit Pro Tools `.ptx` sessions using Python `3.9+` stdlib (`tools/`), and convert bidirectionally between `.ptx` and SoundCraft `.scraft` / `.scraftz` using Rust `1.95+` (`scraft-bridge/` -> `ptxconv`) — with **zero** Pro Tools installation, external DAW templates, GPL/LGPL parsers, or proprietary SDKs required (see [`reports/pt_api_assessment.md`](reports/pt_api_assessment.md)).
+Read, inspect, build, and edit Pro Tools sessions (`.ptx`) and convert bidirectionally between `.ptx` and Artcraft Suite SoundCraft, with:
+- **zero** Avid Pro Tools &copy; installation
+- **zero** external DAW templates
+- **zero** GPL/LGPL parsers
+- **zero** proprietary SDKs required (see [`reports/pt_api_assessment.md`](reports/pt_api_assessment.md))
+
+using: 
+- Python `3.9+` stdlib (`tools/`)
+- Rust `1.95+` (`scraft-bridge/` -> `ptxconv`) and
+- `.scraft` / `.scraftz`  file format (as of 0.20.1)
+
+
+Bottom Up Generated Clean Room Session "CR_max2" with many features, opens in PT and after bridging in SC 
+---
+Mix Window
+
+Protools Intro 2026.06 
+<img width="1377" height="861" alt="image" src="https://github.com/user-attachments/assets/b5139487-ff5a-4018-894b-bb0d57029801" />
+
+SoundCraft 0.20.1
+<img width="1466" height="841" alt="image" src="https://github.com/user-attachments/assets/6676b367-514a-4cec-9044-2412af5f49e3" />
+
+---
+Edit Window
+
+Protools Intro 2026.06 
+<img width="1464" height="855" alt="image" src="https://github.com/user-attachments/assets/a3e0b60a-73d4-4ada-bb76-cf3c7aa36a25" />
+
+SoundCraft 0.20.1
+<img width="1466" height="841" alt="image" src="https://github.com/user-attachments/assets/c7e73841-a2ef-4b29-98c7-8e1c07691740" />
 
 ---
 
-## Capabilities & New Possibilities
+## Capabilities & Possibilities
 
-- **Build `.ptx` Sessions From Scratch (Zero Templates / Zero DAW):** Programmatically generate complete multi-track Pro Tools sessions (`buildspec` from a single JSON spec, one-call `newsong`, or modular `newbase` + `61` `ptx_edit.py` subcommands) with Audio, MIDI, Instrument, Aux, Master, and Basic/Routing Folders, exact `0x0002` block directories (`dircheck`/`roundtrip`), and bit-exact container verification.
-- **Deep Multi-Domain Session Coverage:** Full read/write support across MIDI notes/CCs/Pitch Bend/Program+Bank/SysEx/MPE, multi-width Sync Points, `fade_in` / `fade_out` / centered & post crossfades, Clip Groups (`0x262C`/`0x2428`), clip loops & clip gain, internal busses, `10` pre/post sends, mono/dual-stereo panning (`pan`/`pan2`), `17` stock plug-in insert builders + `0x260F` automation curves, tempo/meter/key signatures, markers, and `19/19` rational SMPTE timecode rates.
-- **Bidirectional Pro Tools <-> SoundCraft Bridge (`ptxconv`):** Convert `.ptx <-> .scraft` / `.scraftz` with zero-move `Audio Files/` linking, compressed SoundCraft audio decoding via `craft-audio`/`symphonia` (`.flac`/`.ogg`/`.mp3`/`.m4a`/`.aac`/`.caf` -> 24-bit BWF `.wav`), fader-taper & log-frequency curve subdivision, externalizable [`plugin_map.json`](scraft-bridge/crates/ptx-scraft/plugin_map.json), `.mxf`/`.sd2` stem detection, `.ptxcarry.json` lossless sidecars, and machine-readable `.ptx_convert.json` fidelity ledgers (`--dry-run --report`, `--strict`).
+**Build `.ptx` Sessions From Scratch (Zero Templates / Zero DAW):**
+- Programmatically generate complete multi-track Pro Tools sessions (`buildspec` from a single JSON spec, one-call `newsong`
+- modular `newbase` subcommands) with Audio, MIDI, Instrument, Aux, Master, and Basic/Routing Folders
+  
+**Deep Multi-Domain Session Coverage:** 
+- Full read/write support across MIDI notes/CCs/Pitch Bend/Program+Bank/SysEx/MPE, multi-width Sync Points, `fade_in` / `fade_out`
+- centered & post crossfades, Clip Groups,
+- clip loops & clip gain, internal busses,
+- pre/post sends, mono/dual-stereo panning (`pan`/`pan2`),
+- stock plug-in insert builders + automation curves, tempo/meter/key signatures, markers, and rational SMPTE timecode rates.
 
+**Bidirectional Pro Tools <-> SoundCraft Bridge (`ptxconv`):** 
+- Convert `.ptx <-> .scraft` / `.scraftz` with zero-move `Audio Files/` linking
+- compressed SoundCraft audio decoding via `craft-audio`/`symphonia` (`.flac`/`.ogg`/`.mp3`/`.m4a`/`.aac`/`.caf` -> 24-bit BWF `.wav`)
+- fader-taper & log-frequency curve subdivision, externalizable [`plugin_map.json`](scraft-bridge/crates/ptx-scraft/plugin_map.json), `.mxf`/`.sd2` stem detection, `.ptxcarry.json` lossless sidecars
+- machine-readable `.ptx_convert.json` fidelity ledgers (`--dry-run --report`, `--strict`).
 
 ---
 
@@ -36,13 +77,7 @@ For full Rust codec internals, DSP curve calibration, and `ptxconv` CLI flags, s
 | **Plug-in Inserts (`17` stock) & Automation** | Build/edit/automate (`addplugin`, `setparam`, `addautolane`, `setpluglane`, `setflag`), `.tfx` **`settings_files`/presets** & third-party AAX metadata decode: `EQ3 1-Band`, `EQ3 7-Band`, `Dyn3 Comp/Exp/De-Esser`, `Channel Strip`, `Trim`, `AutoPan`, `Time Adjuster`, `Maxim`, `BF-76`, `D-Verb`, `Mod Delay III`, `Lo-Fi`, `Dither`, `POW-r Dither`, `SansAmp PSA-1`, `Sci-Fi`, `Pitch II`, `Click II` | **`Native`:** `EQ3 1-Band`, `Trim`, `AutoPan`, `Time Adjuster`, `Dither`/`POW-r` · **`Approx` (+ carry):** `EQ3 7-Band` (dynamic band-enable composition), `Dyn3`, `Channel Strip`, `Maxim`, `BF-76`, `D-Verb`, `Mod Delay III`, `Lo-Fi`, `SansAmp`, `Sci-Fi`, `Pitch II` · **`Carry`:** `Click II`, third-party AAX & unmapped params (`.ptxcarry.json`) |
 | **Timeline & Session Setup** | Dual `Tempo` & `Meter` maps, `Key Signatures`, **`19/19` SMPTE rates**, Pull Codes (`0x2023`), `EditState`/selection, sample rates (`44.1–192 kHz`, `16`/`24`/`32f`), `write_enables`/`session_settings` (`settimeline`, `setkeysig`) | **`Native`** tempo/meter/keys/markers/`EditState`/rates; `30D`/`60D`/`119.88D`/`120D` timecode **`Approx`** + original code carried; Pull Codes **`Carry`/`Absent`**; log-frequency plug-in curves subdivided `<= 0.5%` |
 
-### B. What Happens When Unsupported or Non-Native Pro Tools Features Are Exported to SoundCraft (`ptxconv`)
-
-- **Four-level fidelity classification ([`.ptx_convert.json`](soundcraft-bridge.md)):** Every converted session writes a machine-readable `<stem>.ptx_convert.json` ledger (also inspectable without writing files via `--dry-run --report`) classifying every element as **`Native`**, **`Approx`** (e.g. fader/log-frequency curve subdivision, `D-Verb` -> Room Reverb, `user_delay` -> `time_shift`), **`Carry`**, or **`Absent`**.
-- **Lossless preservation by default (`<stem>.ptxcarry.json`):** Features that have no direct SoundCraft model (such as third-party AAX plug-in chunks, `Click II`, SysEx/MPE mode, non-PCM `.mxf`/`.sd2` media descriptors, pull codes, dynamic LFE, track `colour`, or `elastic_mode`) are **never silently dropped** — they are stored in `<stem>.ptxcarry.json` so a subsequent `.scraft -> .ptx` pass restores them.
-- **Opt-out & strict guardrails:** Passing `--no-carry` skips `.ptxcarry.json`, causing non-native features to be omitted from round-trip recovery and recorded as **`Absent`** (or **`Approx`**) in the ledger. Passing **`--strict`** makes `ptxconv` **abort and refuse conversion** whenever any item is classified as `Carry` or `Absent` (use `--render-opaque-stems` to invoke an optional external `export_stems` script defined in [`config.toml`](config.toml) when opaque items exist).
-
-### C. Supported Toolkit Actions & Entry Points
+### B. Supported Toolkit Actions & Entry Points
 
 - **Read & Audit (`tools/ptx_probe.py`, `tools/ptx_decode.py`, `tools/ptx_edit.py`):**
   `census`, `diff`, `strings`, `dump`, `lpstrings`, `annotate`, `cover`, `plugins`, `regions`, `notes`, `fields`, `stats`, `inventory`, `check`, `ptx_decode.py [--only K] [--ticks] [--rate] [--validate]`, `roundtrip`, `dircheck`, `aucheck`, `chcheck`, `diffblocks`, `relinkcheck`, `rebuilddir`.
@@ -51,20 +86,26 @@ For full Rust codec internals, DSP curve calibration, and `ptxconv` CLI flags, s
 - **Bidirectional Conversion (`ptxconv` in `scraft-bridge/`):**
   `.ptx <-> .scraft` / `.scraftz` / `.scraft_project` (`--sc-format`, `--media`, `--loop-handling`, `--strict`, `--no-carry`, `--dry-run --report`, `--plugin-config`). See [`getting_started.md`](getting_started.md) for the full package layout and tested commands.
 
+### C. What Happens When Unsupported or Non-Native Pro Tools Features Are Exported to SoundCraft (`ptxconv`)
+
+- **Four-level fidelity classification ([`.ptx_convert.json`](soundcraft-bridge.md)):** Every converted session writes a machine-readable `<stem>.ptx_convert.json` ledger (also inspectable without writing files via `--dry-run --report`) classifying every element as **`Native`**, **`Approx`** (e.g. fader/log-frequency curve subdivision, `D-Verb` -> Room Reverb, `user_delay` -> `time_shift`), **`Carry`**, or **`Absent`**.
+- **Lossless preservation by default (`<stem>.ptxcarry.json`):** Features that have no direct SoundCraft model (such as third-party AAX plug-in chunks, `Click II`, SysEx/MPE mode, non-PCM `.mxf`/`.sd2` media descriptors, pull codes, dynamic LFE, track `colour`, or `elastic_mode`) are **never silently dropped** — they are stored in `<stem>.ptxcarry.json` so a subsequent `.scraft -> .ptx` pass restores them.
+- **Opt-out & strict guardrails:** Passing `--no-carry` skips `.ptxcarry.json`, causing non-native features to be omitted from round-trip recovery and recorded as **`Absent`** (or **`Approx`**) in the ledger. Passing **`--strict`** makes `ptxconv` **abort and refuse conversion** whenever any item is classified as `Carry` or `Absent` (use `--render-opaque-stems` to invoke an optional external `export_stems` script defined in [`config.toml`](config.toml) when opaque items exist).
+
 ---
 
 ## Core Components
 
 1. **Read & Inspect ([`tools/ptx_decode.py`](tools/ptx_decode.py), [`tools/ptx_probe.py`](tools/ptx_probe.py)):**
-   - Descrambles `.ptx` (`type 1` / `type 5`), inspects `0x5A` block trees (`census`, `diff`, `dump`, `plugins`, `regions`, `notes`, `check`), and decodes full session state to JSON.
+Descrambles `.ptx` (`type 1` / `type 5`), inspects `0x5A` block trees (`census`, `diff`, `dump`, `plugins`, `regions`, `notes`, `check`), and decodes full session state to JSON.
 2. **Write & Edit ([`tools/ptx_edit.py`](tools/ptx_edit.py)):**
-   - Builds clean-room `.ptx` sessions from fields (`buildspec` / `newsong` / `newbase` + `addtrack4` / `addbus` / `addsend` / `setoutput` / `addclip` / `setnotes` / `addplugin` / `setlane` / `addfade` / `setmarkers` / `setkeysig`), rebuilds `0x0002` directories (`dircheck`), and verifies byte-exact block-tree round-trips (`roundtrip`). Input files are never overwritten.
+Builds clean-room `.ptx` sessions from fields (`buildspec` / `newsong` / `newbase` + `addtrack4` / `addbus` / `addsend` / `setoutput` / `addclip` / `setnotes` / `addplugin` / `setlane` / `addfade` / `setmarkers` / `setkeysig`), rebuilds `0x0002` directories (`dircheck`), and verifies byte-exact block-tree round-trips (`roundtrip`). Input files are never overwritten.
 3. **SoundCraft Bridge ([`soundcraft-bridge.md`](soundcraft-bridge.md), [`scraft-bridge/`](scraft-bridge/Cargo.toml)):**
-   - Converts `.ptx <-> .scraft` / `.scraftz` cleanly (`ptxconv`) with fidelity ledgers, lossless carry sidecars, and configurable DSP mapping ([`plugin_map.json`](scraft-bridge/crates/ptx-scraft/plugin_map.json)).
+Converts `.ptx <-> .scraft` / `.scraftz` cleanly (`ptxconv`) with fidelity ledgers, lossless carry sidecars, and configurable DSP mapping ([`plugin_map.json`](scraft-bridge/crates/ptx-scraft/plugin_map.json)).
 
 ---
 
-## Quick Verification Using the Included Fixture ([`test/CR_max/`](test/CR_max/CR_max.ptx))
+## Quick Verification Using the Included Fixture ([`test/CR_max2/`](test/CR_max2/CR_max2.ptx))
 
 ```bash
 # 0. Verify release file integrity (Linux: sha256sum -c SHA256SUMS)
@@ -73,20 +114,20 @@ shasum -a 256 -c SHA256SUMS
 # 1. Verify configuration & tool paths
 python3 tools/ptx_kitconfig.py
 
-# 2. Inspect, decode & roundtrip CR_max.ptx
-python3 tools/ptx_probe.py census test/CR_max/CR_max.ptx
-python3 tools/ptx_decode.py test/CR_max/CR_max.ptx --only tracks,strips,markers,fades
-python3 tools/ptx_edit.py roundtrip test/CR_max/CR_max.ptx
-python3 tools/ptx_edit.py dircheck test/CR_max/CR_max.ptx
+# 2. Inspect, decode & roundtrip CR_max2.ptx
+python3 tools/ptx_probe.py census test/CR_max2/CR_max2.ptx
+python3 tools/ptx_decode.py test/CR_max2/CR_max2.ptx --only tracks,strips,markers,fades
+python3 tools/ptx_edit.py roundtrip test/CR_max2/CR_max2.ptx
+python3 tools/ptx_edit.py dircheck test/CR_max2/CR_max2.ptx
 
 # 3. Test & build Rust scraft-bridge (`ptxconv`) outside synced storage
 (cd scraft-bridge && CARGO_TARGET_DIR=/tmp/ptx-scraft-target cargo test --workspace && CARGO_TARGET_DIR=/tmp/ptx-scraft-target cargo build --release -p ptx-convert-cli)
 PTXCONV=/tmp/ptx-scraft-target/release/ptxconv
 
-# 4. Inspect or convert test/CR_max/CR_max.ptx <-> .scraft in a scratch directory
-"$PTXCONV" test/CR_max/CR_max.ptx --dry-run --report
-rm -rf /tmp/CR_max_test && cp -R test/CR_max /tmp/CR_max_test
-"$PTXCONV" /tmp/CR_max_test/CR_max.scraft -o /tmp/CR_max_test/CR_max_rt.ptx
+# 4. Inspect or convert test/CR_max2/CR_max2.ptx <-> .scraft in a scratch directory
+"$PTXCONV" test/CR_max2/CR_max2.ptx --dry-run --report
+rm -rf /tmp/CR_max2_test && cp -R test/CR_max2 /tmp/CR_max2_test
+"$PTXCONV" /tmp/CR_max2_test/CR_max2.scraft -o /tmp/CR_max2_test/CR_max2_rt.ptx
 ```
 
 See [`getting_started.md`](getting_started.md) for `.ptx` creation, modular editing, and `.scraft` conversion examples, [`soundcraft-bridge.md`](soundcraft-bridge.md) for Rust converter details, [`reports/`](reports/pt_api_assessment.md) for benchmarks, and [`config.toml`](config.toml) / [`requirements.txt`](requirements.txt) for configuration and runtime requirements.
@@ -101,27 +142,46 @@ The only constraint concerns **live DAW-side export/re-save verification inside 
 
 - **DAW tier used for live saves:** Live Pro Tools open/save/bounce testing was performed on the free **Avid Pro Tools Intro Edition (`2026.11.0`)** tier (we did not purchase paid Artist, Studio, or Ultimate subscriptions strictly for automated GUI save verification). **Pro Tools Intro Edition itself** cannot save or export sessions exceeding its own DAW track limits (`8` Audio, `8` Instrument, `8` MIDI, `4` Aux/Routing Folders, `1` Master, `0` Video tracks — mirrored only as advisory warnings under `[intro_limits]` in [`config.toml`](config.toml)).
 - **Live-save vs. offline scope:** Consequently, paid-tier Pro Tools features (**live DAW re-save verification** of `VCA` masters, >8 audio/MIDI/instrument tracks, surround/Atmos stems > stereo, and proprietary third-party AAX plug-in blobs) depend on Artist/Studio/Ultimate access for live DAW round-tripping, even though the toolkit reads/builds larger sessions offline and `ptxconv` preserves paid-tier state via `.ptxcarry.json`.
-- **Audio Interfaces & Hardware I/O (`0x2600` / `0x1022`):** Hardware-specific CoreAudio/ASIO/HDX interface bindings and full I/O Setup matrices (`0x2600`, `0x1021`/`0x1022`) are **out of scope** and are **not** stored in `.ptxcarry.json`. Instead, both `ptx_edit.py` and `ptx-format` deliberately omit machine-specific hardware links (`0x2601` count `0`) and write a portable `0x2603` table (`Out 1-2` + internal busses) so Pro Tools binds outputs cleanly to whichever interface is present on open; on `.ptx -> .scraft`, recognized interface output/input names map to `Route::Main` or `Route::Hardware(name)`.
+- **Audio Interfaces & Hardware I/O:** Hardware-specific CoreAudio/ASIO/HDX interface bindings and full I/O Setup matrices are **out of scope** and are **not** stored in `.ptxcarry.json`. Instead, both `ptx_edit.py` and `ptx-format` deliberately omit machine-specific hardware links and write a portable table (`Out 1-2` + internal busses) so Pro Tools binds outputs cleanly to whichever interface is present on open; on `.ptx -> .scraft`, recognized interface output/input names map to `Route::Main` or `Route::Hardware(name)`.
 - **Format boundaries:** Binary write/build targets modern Little-Endian `.ptx` (`PT 12.3`–`2026.x`); pre-PT10 `.pt5`/`.pts`/`.ptf` archival formats (including Big-Endian PowerPC) and proprietary encrypted/third-party plug-in blobs are outside current clean-room round-trip write scope.
 
 ---
 
 ## Further Steps & Supporting the Project
 
-- **Planned Further Steps:**
-  1. **Legacy Pro Tools archival import (`PT 5`–`PT 9`):** clean-room decoding of `.pt5` / `.pts` / `.ptf` containers across Classic Mac/PowerPC (`be=1`), Windows (`be=0`), and `.sd2`/`.mxf` archival media (see [`reports/pt_api_assessment.md`](reports/pt_api_assessment.md)).
-  2. **Expanded Studio/Ultimate & Surround verification:** extend live DAW round-trip verification to VCA tracks, surround/Atmos busses, and higher track counts if Pro Tools Artist/Studio/Ultimate test access becomes available.
-  3. **Hardware DSP taper & stem workflows:** refine plug-in curve calibration beyond the `17` included stock plug-ins ([`plugin_map.json`](scraft-bridge/crates/ptx-scraft/plugin_map.json)) and external stem workflows.
-- **Sponsoring & Community Support:**  
-  `ptx-session-kit` and `scraft-bridge` are built clean-room without proprietary SDKs or paywalls, and live DAW verification has so far relied on the free **Pro Tools Intro Edition** tier due to recurring subscription costs. **If this toolkit saved you time, unblocked an urgent workflow, or rescued creative work that would otherwise have been lost, please consider voluntary sponsorship or contributing clean, non-confidential test `.ptx` fixtures saved in Pro Tools Artist, Studio, or Ultimate** — support helps fund paid-tier Pro Tools test licenses, archival hardware verification, and ongoing maintenance.
-  - **Recommended Setup:** Configure pure voluntary, no-perks project sponsorship via **[GitHub Sponsors](https://github.com/sponsors)** (e.g. a `.github/FUNDING.yml` tip button) and/or **[Open Collective](https://opencollective.com/)** (transparent project pot for reimbursing Avid test-license invoices directly). Voluntary sponsorship grants no commercial SLA, priority deliverable, or tax-deductible charity receipt.
+**Possible Further Steps:**
+  - **Legacy Pro Tools archival import (`PT 5`–`PT 9`):** clean-room decoding of `.pt5` / `.pts` / `.ptf` containers across Classic Mac/PowerPC (`be=1`), Windows (`be=0`), and `.sd2`/`.mxf` archival media (see [`reports/pt_api_assessment.md`](reports/pt_api_assessment.md)).
+  - **Expanded Studio/Ultimate & Surround verification:** extend live DAW round-trip verification to VCA tracks, surround/Atmos busses, and higher track counts if Pro Tools Artist/Studio/Ultimate test access becomes available.
+  - **Hardware DSP taper & stem workflows:** refine plug-in curve calibration beyond the `17` included stock plug-ins ([`plugin_map.json`](scraft-bridge/crates/ptx-scraft/plugin_map.json)) and external stem workflows.
+
+**Sponsoring & Community Support:**  
+`ptx-session-kit` and `scraft-bridge` are built clean-room without proprietary SDKs or paywalls, and live DAW verification has so far relied on the free **Pro Tools Intro Edition** tier due to recurring subscription costs.
+
+**If this toolkit saved you time, unblocked an urgent workflow, or rescued creative work that would otherwise have been lost, please consider
+  - voluntary sponsorship or
+  - contributing clean, non-confidential test `.ptx` fixtures saved in Pro Tools Artist, Studio, or Ultimate**
+  - report bugs / inconsistencies / lost objects or data for de- and encoding of .ptx session
+
+Support helps fund e.g.: Higher paid-tier Pro Tools test licenses SaS subscriptions, archival hardware verification and ongoing maintenance of the package.
+
+**Open Collective** 
+We configured a voluntary, no-perks project sponsorship via **[Open Collective](https://opencollective.com/therealknobmob)** (a transparent project pot for reimbursing Avid test-license invoices directly). Voluntary sponsorship grants no commercial SLA, priority deliverable, or tax-deductible charity receipt.
 
 ---
 
-## Note to the SoundCraft Team
+## Message to the [`SoundCraft`](https://github.com/storytold/soundcraft) Team
 
-**Dear SoundCraft team — you are very welcome to integrate `ptx-session-kit` / `scraft-bridge` directly into SoundCraft!**  
-The Rust workspace under [`scraft-bridge/`](scraft-bridge/Cargo.toml) (`ptx-format`, `ptx-scraft`, and the `ptxconv` CLI) is written cleanly in `#![forbid(unsafe_code)]` Rust (`edition = "2024"`, `MIT OR Apache-2.0`, built directly on [`craft-libs`](https://github.com/storytold/craft-libs), while the kit itself is [`LICENSE`](LICENSE) MIT) with strict clean-room boundaries ([`Legal Disclaimer.md`](Legal%20Disclaimer.md)) — whether you consume `ptx-format` / `ptx-scraft` as Rust library crates or embed `ptxconv` alongside [`plugin_map.json`](scraft-bridge/crates/ptx-scraft/plugin_map.json). See [`soundcraft-bridge.md`](soundcraft-bridge.md) for the crate architecture and API entry points.
+**You are welcome to integrate `ptx-session-kit` into SoundCraft (a clean room reimplemented Pro Tools clone that inspired us for this work)!**  
+
+Note:
+Since ArtCraft Suite SoundCraft is in an early (but impressive) state at time of this writing (0.20.1) and therefore under heavy development at the moment, the implemented "transfer bridge" in this kit is... :
+
+- file/CMD based (by design) and and therefore not directly integrated into file dialogues of SC (but integration is easy once SC dev is in a later phase and interfaces are more stable)
+- a proof of concept (POC) for the current dev. level of SC (0.20.1), that can easily be adopted
+- not all features of Pro Tools are supported yet by SC, so developing and checking out a strategy for keeping unsupported PT features on the roundtrip
+- mainly for automated round trip testing 
+
+The Rust workspace under [`scraft-bridge/`](scraft-bridge/Cargo.toml) (`ptx-format`, `ptx-scraft`, and the `ptxconv` CLI) is written in `#![forbid(unsafe_code)]` Rust (`edition = "2024"`, `MIT OR Apache-2.0`, built directly on [`craft-libs`](https://github.com/storytold/craft-libs), while the ptx session kit itself is [`LICENSE`](LICENSE) MIT) with strict clean-room boundaries ([`Legal Disclaimer.md`](Legal%20Disclaimer.md)) — whether you consume `ptx-format` / `ptx-scraft` as Rust library crates or embed `ptxconv` alongside [`plugin_map.json`](scraft-bridge/crates/ptx-scraft/plugin_map.json). See [`soundcraft-bridge.md`](soundcraft-bridge.md) for the crate architecture and API entry points.
 
 ---
 
