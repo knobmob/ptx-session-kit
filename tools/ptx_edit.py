@@ -68,7 +68,7 @@ Commands (usage: python3 tools/ptx_edit.py <command> <in.ptx> <out.ptx> [argumen
   relinkcheck A.ptx [WAV_DIR...]              verify UMIDs, region bounds, and optional BWF bext/fmt/data on disk
 
 Examples
-  python3 tools/ptx_edit.py roundtrip test/CR_max2/CR_max2.ptx
+  python3 tools/ptx_edit.py roundtrip test/CR_max3/CR_max3.ptx
   python3 tools/ptx_edit.py renamex session.ptx out.ptx "MIDI 1" Bass Test_New Drums_Clip
   python3 tools/ptx_edit.py addtrack4 session.ptx a.ptx ; python3 tools/ptx_edit.py addtrack4 a.ptx b.ptx name=Bass
   python3 tools/ptx_edit.py removetrack b.ptx back_to_a.ptx

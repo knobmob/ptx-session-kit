@@ -16,7 +16,7 @@ using:
 - `.scraft` / `.scraftz`  file format (as of 0.20.1)
 
 
-Bottom Up Generated Clean Room Session "CR_max2" with many features, opens in PT and after bridging in SC 
+Bottom Up Generated Clean Room Session "CR_max2" (screenshots; current fixture: `CR_max3`) with many features, opens in PT and after bridging in SC 
 ---
 Mix Window
 
@@ -114,7 +114,7 @@ Converts `.ptx <-> .scraft` / `.scraftz` cleanly (`ptxconv`) with fidelity ledge
 
 ---
 
-## Quick Verification Using the Included Fixture ([`test/CR_max2/`](test/CR_max2/CR_max2.ptx))
+## Quick Verification Using the Included Fixture ([`test/CR_max3/`](test/CR_max3/CR_max3.ptx))
 
 ```bash
 # 0. Verify release file integrity (Linux: sha256sum -c SHA256SUMS)
@@ -123,20 +123,20 @@ shasum -a 256 -c SHA256SUMS
 # 1. Verify configuration & tool paths
 python3 tools/ptx_kitconfig.py
 
-# 2. Inspect, decode & roundtrip CR_max2.ptx
-python3 tools/ptx_probe.py census test/CR_max2/CR_max2.ptx
-python3 tools/ptx_decode.py test/CR_max2/CR_max2.ptx --only tracks,strips,markers,fades
-python3 tools/ptx_edit.py roundtrip test/CR_max2/CR_max2.ptx
-python3 tools/ptx_edit.py dircheck test/CR_max2/CR_max2.ptx
+# 2. Inspect, decode & roundtrip CR_max3.ptx
+python3 tools/ptx_probe.py census test/CR_max3/CR_max3.ptx
+python3 tools/ptx_decode.py test/CR_max3/CR_max3.ptx --only tracks,strips,markers,fades
+python3 tools/ptx_edit.py roundtrip test/CR_max3/CR_max3.ptx
+python3 tools/ptx_edit.py dircheck test/CR_max3/CR_max3.ptx
 
 # 3. Test & build Rust scraft-bridge (`ptxconv`) outside synced storage
 (cd scraft-bridge && CARGO_TARGET_DIR=/tmp/ptx-scraft-target cargo test --workspace && CARGO_TARGET_DIR=/tmp/ptx-scraft-target cargo build --release -p ptx-convert-cli)
 PTXCONV=/tmp/ptx-scraft-target/release/ptxconv
 
-# 4. Inspect or convert test/CR_max2/CR_max2.ptx <-> .scraft in a scratch directory
-"$PTXCONV" test/CR_max2/CR_max2.ptx --dry-run --report
-rm -rf /tmp/CR_max2_test && cp -R test/CR_max2 /tmp/CR_max2_test
-"$PTXCONV" /tmp/CR_max2_test/CR_max2.scraft -o /tmp/CR_max2_test/CR_max2_rt.ptx
+# 4. Inspect or convert test/CR_max3/CR_max3.ptx <-> .scraft in a scratch directory
+"$PTXCONV" test/CR_max3/CR_max3.ptx --dry-run --report
+rm -rf /tmp/CR_max3_test && cp -R test/CR_max3 /tmp/CR_max3_test
+"$PTXCONV" /tmp/CR_max3_test/CR_max3.scraft -o /tmp/CR_max3_test/CR_max3_rt.ptx
 ```
 
 See [`getting_started.md`](getting_started.md) for `.ptx` creation, modular editing, and `.scraft` conversion examples, [`soundcraft-bridge.md`](soundcraft-bridge.md) for Rust converter details, [`reports/`](reports/pt_api_assessment.md) for benchmarks, and [`config.toml`](config.toml) / [`requirements.txt`](requirements.txt) for configuration and runtime requirements.

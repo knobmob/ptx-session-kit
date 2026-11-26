@@ -28,9 +28,9 @@ Commands ('#' = comment; <session> = a .ptx file; <where> = file or folder; fold
   python3 tools/ptx_probe.py check    <where> [--baseline <where>,<where>] [--json out.json] [--all]
                                                                   # structure: coverage, pointer, end, MIDI sanity, new types
 Examples
-  python3 tools/ptx_probe.py census test/CR_max2/CR_max2.ptx
-  python3 tools/ptx_probe.py plugins test/CR_max2/CR_max2.ptx
-  python3 tools/ptx_probe.py regions test/CR_max2/CR_max2.ptx 48000
+  python3 tools/ptx_probe.py census test/CR_max3/CR_max3.ptx
+  python3 tools/ptx_probe.py plugins test/CR_max3/CR_max3.ptx
+  python3 tools/ptx_probe.py regions test/CR_max3/CR_max3.ptx 48000
 
 Errors: 'ERROR: ...' + 'HINT: ...', exit code 2 (wrong arguments, unknown xor type, file too short, nothing found);
 'check' ends with exit code 1 when a session has a structural problem. Nothing is ever written except the --json file.

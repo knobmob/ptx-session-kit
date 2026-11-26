@@ -54,12 +54,12 @@ CARGO_TARGET_DIR=/tmp/ptx-scraft-target cargo clippy --workspace --all-targets -
 CARGO_TARGET_DIR=/tmp/ptx-scraft-target cargo build --release -p ptx-convert-cli
 PTXCONV=/tmp/ptx-scraft-target/release/ptxconv
 
-# 3. Inspect or convert test/CR_max2/CR_max2.ptx <-> .scraft (from the kit root on a scratch copy)
+# 3. Inspect or convert test/CR_max3/CR_max3.ptx <-> .scraft (from the kit root on a scratch copy)
 cd ..
-"$PTXCONV" test/CR_max2/CR_max2.ptx --dry-run --report
-rm -rf /tmp/CR_max2_sc && cp -R test/CR_max2 /tmp/CR_max2_sc
-"$PTXCONV" /tmp/CR_max2_sc/CR_max2.ptx -o /tmp/CR_max2_sc/CR_max2_conv.scraft
-"$PTXCONV" /tmp/CR_max2_sc/CR_max2.scraft -o /tmp/CR_max2_sc/CR_max2_rt.ptx
+"$PTXCONV" test/CR_max3/CR_max3.ptx --dry-run --report
+rm -rf /tmp/CR_max3_sc && cp -R test/CR_max3 /tmp/CR_max3_sc
+"$PTXCONV" /tmp/CR_max3_sc/CR_max3.ptx -o /tmp/CR_max3_sc/CR_max3_conv.scraft
+"$PTXCONV" /tmp/CR_max3_sc/CR_max3.scraft -o /tmp/CR_max3_sc/CR_max3_rt.ptx
 
 # Optional flags:
 #   --sc-format file|dir|bundle   (.scraft file, project folder, or .scraftz ZIP)
