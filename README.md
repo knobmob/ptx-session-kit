@@ -189,7 +189,7 @@ Since ArtCraft Suite SoundCraft is in an early (but impressive) state at time of
 - not all features of Pro Tools are supported yet by SC, so developing and checking out a strategy for keeping unsupported PT features on the roundtrip
 - mainly for automated round trip testing 
 
-The Rust workspace under [`scraft-bridge/`](scraft-bridge/Cargo.toml) (`ptx-format`, `ptx-scraft`, and the `ptxconv` CLI) is written in `#![forbid(unsafe_code)]` Rust (`edition = "2024"`, `MIT OR Apache-2.0`, built directly on [`craft-libs`](https://github.com/storytold/craft-libs), while the ptx session kit itself is [`LICENSE`](LICENSE) MIT) with strict clean-room boundaries ([`Legal Disclaimer.md`](Legal%20Disclaimer.md)) — whether you consume `ptx-format` / `ptx-scraft` as Rust library crates or embed `ptxconv` alongside [`plugin_map.json`](scraft-bridge/crates/ptx-scraft/plugin_map.json). See [`soundcraft-bridge.md`](soundcraft-bridge.md) for the crate architecture and API entry points.
+The Rust workspace under [`scraft-bridge/`](scraft-bridge/Cargo.toml) (`ptx-format`, `ptx-scraft`, and the `ptxconv` CLI) is written in Rust, built directly on [`craft-libs`](https://github.com/storytold/craft-libs), while the ptx session kit itself is [`LICENSE`](LICENSE) MIT with strict clean-room boundaries ([`Legal Disclaimer.md`](Legal%20Disclaimer.md)) — whether you consume `ptx-format` / `ptx-scraft` as Rust library crates or embed `ptxconv` alongside [`plugin_map.json`](scraft-bridge/crates/ptx-scraft/plugin_map.json). See [`soundcraft-bridge.md`](soundcraft-bridge.md) for the crate architecture and API entry points.
 
 ---
 
