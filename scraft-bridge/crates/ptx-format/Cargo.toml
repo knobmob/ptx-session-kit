@@ -1,10 +1,11 @@
-# Version: 0.7.0 (beta) | Date: 2026-11-23
+# Version: 0.7.0 (beta) | Date: 2026-11-27
 
 [package]
 name = "ptx-format"
-description = "Clean-room Pro Tools (.ptx) binary reader and field writer (MIT OR Apache-2.0)"
+description = "Clean-room Pro Tools (.ptx) binary reader and field writer (MIT)"
 version.workspace = true
 edition.workspace = true
+authors.workspace = true
 license.workspace = true
 rust-version.workspace = true
 

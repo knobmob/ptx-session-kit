@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# Version: 0.7.0 (beta) | Date: 2026-11-23
+# Version: 0.7.0 (beta) | Date: 2026-11-27
 """ptx_probe -- Read-only, stdlib-only probe for Pro Tools sessions (.ptx / .ptxt).
 
 Descrambles containers, parses the 0x5A block tree (accepting child blocks when kind <= 64 and

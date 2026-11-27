@@ -1,4 +1,4 @@
-// Version: 0.7.0 (beta) | Date: 2026-11-23
+// Version: 0.7.0 (beta) | Date: 2026-11-27
 //! Regions (`0x2628`), UMIDs (`0x1004`/`0x1003`), playlists (`0x1054`/`0x1052`),
 //! clip gains (`0x2637`), fades (`0x262F`), clip groups (`0x262C`/`0x2428`), loops (`0x242B`),
 //! and MIDI placements (`0x1058 > 0x1057 > 0x1056 > 0x104F`).

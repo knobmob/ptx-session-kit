@@ -1,4 +1,4 @@
-// Version: 0.7.0 (beta) | Date: 2026-11-23
+// Version: 0.7.0 (beta) | Date: 2026-11-27
 //! Mixer strips, automation lanes, panners, and sends (`0x2624`, `0x260D`, `0x260A`, `0x260C`, `0x260E`, `0x1029`).
 
 use serde::{Deserialize, Serialize};

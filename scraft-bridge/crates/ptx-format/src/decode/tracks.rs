@@ -1,4 +1,4 @@
-// Version: 0.7.0 (beta) | Date: 2026-11-23
+// Version: 0.7.0 (beta) | Date: 2026-11-27
 //! Track list (`0x2519`), MIDI/instrument routes (`0x1058`), folders (`0x210C`), groups (`0x202B`),
 //! track colours (`0x251A`), Elastic Audio (`0x200B`), MPE (`0x2010`), comments (`0x2015`), inputs (`0x261B`), and playlists (`0x1015`).
 

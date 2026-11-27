@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# Version: 0.7.0 (beta) | Date: 2026-11-23
+# Version: 0.7.0 (beta) | Date: 2026-11-27
 """ptx_edit -- Clean-room `.ptx` builder and editor.
 
 Builds sessions from documented binary fields or modifies copies of saved sessions.

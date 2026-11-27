@@ -1,4 +1,4 @@
-// Version: 0.7.0 (beta) | Date: 2026-11-23
+// Version: 0.7.0 (beta) | Date: 2026-11-27
 //! Timeline, tempo, meter, key signatures, markers, session format, and session settings decoding.
 
 use serde::{Deserialize, Serialize};

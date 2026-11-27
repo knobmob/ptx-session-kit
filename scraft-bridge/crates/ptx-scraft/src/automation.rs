@@ -1,4 +1,4 @@
-// Version: 0.7.0 (beta) | Date: 2026-11-23
+// Version: 0.7.0 (beta) | Date: 2026-11-27
 //! Tempo-aware time conversions, key signatures, timecode rates, fade mapping,
 //! and Pro Tools fader-taper curve subdivision.
 

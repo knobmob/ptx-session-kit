@@ -1,4 +1,4 @@
-// Version: 0.7.0 (beta) | Date: 2026-11-23
+// Version: 0.7.0 (beta) | Date: 2026-11-27
 //! Clean-room Pro Tools stock plug-in tables and state chunk packers (`elck`, `All `, `MD_3`, `PiII`).
 
 use std::collections::BTreeMap;

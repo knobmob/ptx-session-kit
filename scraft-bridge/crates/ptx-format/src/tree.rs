@@ -1,4 +1,4 @@
-// Version: 0.7.0 (beta) | Date: 2026-11-23
+// Version: 0.7.0 (beta) | Date: 2026-11-27
 //! `0x5A` block tree parser, directory `0x0002` builder, and clean-room block serializer.
 
 use crate::PtxError;

@@ -1,10 +1,11 @@
-# Version: 0.7.0 (beta) | Date: 2026-11-23
+# Version: 0.7.0 (beta) | Date: 2026-11-27
 
 [package]
 name = "ptx-convert-cli"
 description = "Drop-in CLI converter between Pro Tools (.ptx) and SoundCraft (.scraft) sessions"
 version.workspace = true
 edition.workspace = true
+authors.workspace = true
 license.workspace = true
 rust-version.workspace = true
 

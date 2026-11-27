@@ -1,4 +1,4 @@
-// Version: 0.7.0 (beta) | Date: 2026-11-23
+// Version: 0.7.0 (beta) | Date: 2026-11-27
 //! Deterministic `0x5A`-free ID generation for clean-room `.ptx` sessions.
 
 /// Stateful deterministic ID generator guaranteeing no byte equals `0x5A` (`'Z'`),

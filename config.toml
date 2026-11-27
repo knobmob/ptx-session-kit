@@ -1,4 +1,4 @@
-# Version: 0.7.0 (beta) | Date: 2026-11-23
+# Version: 0.7.0 (beta) | Date: 2026-11-27
 # Minimal release configuration for ptx-session-kit
 # Format: TOML (https://toml.io). Paths are relative to this file (kit root).
 # Verify layout with:  python3 tools/ptx_kitconfig.py

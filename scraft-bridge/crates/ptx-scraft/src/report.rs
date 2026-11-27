@@ -1,4 +1,4 @@
-// Version: 0.7.0 (beta) | Date: 2026-11-23
+// Version: 0.7.0 (beta) | Date: 2026-11-27
 //! Loss-classification ledger (`<stem>.ptx_convert.json`) and sidecar (`<stem>.ptxcarry.json`).
 
 use std::collections::BTreeMap;

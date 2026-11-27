@@ -1,4 +1,4 @@
-// Version: 0.7.0 (beta) | Date: 2026-11-23
+// Version: 0.7.0 (beta) | Date: 2026-11-27
 //! Bidirectional clean-room `.ptx` <-> `.scraft` (SoundCraft `v0.20.1`) converter and ledger.
 #![deny(
     clippy::unwrap_used,

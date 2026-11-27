@@ -1,4 +1,4 @@
-// Version: 0.7.0 (beta) | Date: 2026-11-23
+// Version: 0.7.0 (beta) | Date: 2026-11-27
 //! Low-level bounds-checked binary primitives and Pro Tools timebase math.
 
 /// Ticks per quarter note in Pro Tools sessions.

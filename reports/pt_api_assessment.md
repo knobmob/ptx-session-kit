@@ -1,12 +1,12 @@
 # Comparative Three-Way Assessment: `ptx-session-kit` vs. `sebedard-creator/pt_api` vs. `zamaudio/ptformat`
 
-**Version:** 0.7.0 (beta) · **Date:** 2026-11-23 *(original assessment: 2026-11-22)*  
+**Version:** 0.7.0 (beta) · **Date:** 2026-11-27 *(original assessment: 2026-11-22)*  
 **Targets Analyzed (Read-Only Reference Audit):**  
 1. **`ptx-session-kit` (`tools/` + `scraft-bridge/`):** [`tools/ptx_decode.py`](../tools/ptx_decode.py), [`tools/ptx_edit.py`](../tools/ptx_edit.py), [`tools/ptx_probe.py`](../tools/ptx_probe.py), Rust [`ptx-format`](../scraft-bridge/crates/ptx-format/src/lib.rs) + [`soundcraft-bridge.md`](../soundcraft-bridge.md) (`ptxconv`)  
 2. **`sebedard-creator/pt_api`** ([GitHub](https://github.com/sebedard-creator/pt_api), `v1.6.3` / tag `v1.6.3` commit `c31147b`, Python stdlib, `10,805` LoC + `62` `test_*.py` suites)  
 3. **`zamaudio/ptformat`** ([GitHub](https://github.com/zamaudio/ptformat), `HEAD af15ee9`, C++98 `libptformat` used by Ardour, `1,881` LoC across `ptformat.{cc,h}` + `ptftool`/`ptgenmissing`/`ptunxor` + `8` shell regression fixtures)
 
-**Verification Basis:** Static read-only source & layout analysis, `685`-file `.ptx*` corpus audit in `ptx-session-kit/data/`, and live 3-way empirical benchmarks across **`12` real Pro Tools sessions** (`.pts`, `.ptf`, `.ptx`, Pro Tools `5` through `2026.11.0`) — **`0` repository code changes made**.
+**Verification Basis:** Static read-only source & layout analysis, `685`-file `.ptx*` corpus audit in the separate development test corpus (`ptx-session-kit_dev/data/`), and live 3-way empirical benchmarks across **`12` real Pro Tools sessions** (`.pts`, `.ptf`, `.ptx`, Pro Tools `5` through `2026.11.0`) — **`0` repository code changes made**. *(Note: internal test-harness scripts cited below such as `ptx_cleanroom_audit*`, `ptx_regress`, `ptx_export_stems*`, and `ptx_import_report*` live in the separate `ptx-session-kit_dev` development repository and are not bundled in this clean-room release.)*
 
 ---
 

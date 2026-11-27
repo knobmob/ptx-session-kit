@@ -1,4 +1,4 @@
-# Version: 0.7.0 (beta) | Date: 2026-11-23
+# Version: 0.7.0 (beta) | Date: 2026-11-27
 
 [workspace]
 resolver = "3"
@@ -7,7 +7,8 @@ members = ["crates/*", "apps/*"]
 [workspace.package]
 version = "0.7.0-beta"
 edition = "2024"
-license = "MIT OR Apache-2.0"
+authors = ["John Forward (jbl>>FF) / knobmob prod."]
+license = "MIT"
 rust-version = "1.95"
 
 [workspace.dependencies]

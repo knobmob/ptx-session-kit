@@ -1,4 +1,4 @@
-// Version: 0.7.0 (beta) | Date: 2026-11-23
+// Version: 0.7.0 (beta) | Date: 2026-11-27
 //! Plug-in table (`0x1018`), settings files (`0x2027 > 0x2064`), channel inserts (`0x2627`), and AAX state decoders.
 
 use std::collections::BTreeMap;

@@ -1,6 +1,6 @@
 # Getting Started with `ptx-session-kit`
 
-**Version:** 0.7.0 (beta) · **Date:** 2026-11-23
+**Version:** 0.7.0 (beta) · **Date:** 2026-11-27 · **Author:** John Forward (`jbl>>FF`) / knobmob prod.
 
 Clean-room Python stdlib tooling (`tools/`) and Rust `.ptx <-> .scraft`/`.scraftz` bridge (`scraft-bridge/`) for reading, building, editing, and converting Pro Tools `.ptx` sessions without Pro Tools.
 
@@ -10,6 +10,8 @@ Clean-room Python stdlib tooling (`tools/`) and Rust `.ptx <-> .scraft`/`.scraft
 
 ```text
 ptx-session-kit/
+├── LICENSE                        # MIT License
+├── Legal Disclaimer.md            # Clean-room & interoperability legal notice
 ├── README.md                      # Overview, supported objects/actions & quick verification
 ├── getting_started.md             # Step-by-step zero-PT tutorial & verified examples
 ├── soundcraft-bridge.md           # Clean-room Rust .ptx <-> .scraft bridge reference
@@ -28,6 +30,7 @@ ptx-session-kit/
 │   ├── crates/ptx-scraft/         # Bidirectional PTX <-> SoundCraft mapper & reports
 │   └── apps/ptx-convert-cli/      # Standalone CLI binary (`ptxconv`)
 ├── reports/
+│   ├── screenshots/               # CR_min & CR_max3 Mix/Edit screenshots (Pro Tools & SoundCraft)
 │   ├── pt_api_assessment.md       # Three-way format toolbox benchmark & architecture audit
 │   └── panning_law_roundtrip.*    # 20-variant panning-law round-trip report, PDF & plots
 └── test/

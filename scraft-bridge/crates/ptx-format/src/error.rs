@@ -1,4 +1,4 @@
-// Version: 0.7.0 (beta) | Date: 2026-11-23
+// Version: 0.7.0 (beta) | Date: 2026-11-27
 //! Errors for the clean-room Pro Tools `.ptx` reader and writer.
 
 /// Errors returned when parsing, validating, or building `.ptx` binary sessions.

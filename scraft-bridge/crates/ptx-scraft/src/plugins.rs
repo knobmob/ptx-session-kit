@@ -1,4 +1,4 @@
-// Version: 0.7.0 (beta) | Date: 2026-11-23
+// Version: 0.7.0 (beta) | Date: 2026-11-27
 //! Bidirectional stock DSP plugin parameter & automation mapping (`PTX <-> SoundCraft v0.20.1`).
 
 use std::collections::BTreeMap;

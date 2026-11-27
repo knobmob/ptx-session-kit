@@ -1,4 +1,4 @@
-// Version: 0.7.0 (beta) | Date: 2026-11-23
+// Version: 0.7.0 (beta) | Date: 2026-11-27
 //! Clean-room field specification types for building a complete `.ptx` binary session.
 
 use std::collections::BTreeMap;

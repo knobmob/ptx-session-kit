@@ -1,6 +1,6 @@
 # `scraft-bridge` Documentation
 
-**Version:** 0.7.0 (beta) · **Date:** 2026-11-23
+**Version:** 0.7.0 (beta) · **Date:** 2026-11-27 · **Author:** John Forward (`jbl>>FF`) / knobmob prod.
 
 **Clean-room, bidirectional Rust `.ptx` <-> `.scraft` / `.scraftz` (SoundCraft `v0.20.1`) session converter.**
 

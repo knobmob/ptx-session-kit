@@ -1,4 +1,4 @@
-// Version: 0.7.0 (beta) | Date: 2026-11-23
+// Version: 0.7.0 (beta) | Date: 2026-11-27
 //! Clean-room track, mixer strip, send, insert, folder, and track-list builders
 //! (`0x2519`, `0x2107`, `0x210C`, `0x2624`, `0x1018`).
 

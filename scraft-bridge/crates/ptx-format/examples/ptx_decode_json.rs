@@ -1,4 +1,4 @@
-// Version: 0.7.0 (beta) | Date: 2026-11-23
+// Version: 0.7.0 (beta) | Date: 2026-11-27
 //! Dump canonical decoded `.ptx` JSON for parity comparison against `tools/ptx_decode.py`.
 
 use std::io::BufRead;

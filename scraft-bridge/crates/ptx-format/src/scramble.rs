@@ -1,4 +1,4 @@
-// Version: 0.7.0 (beta) | Date: 2026-11-23
+// Version: 0.7.0 (beta) | Date: 2026-11-27
 //! Page XOR scrambler/descrambler for `.ptx` files after the 20-byte header (`0x00..0x14`).
 //!
 //! Byte `0x12` = XOR type (`1` or `5`), byte `0x13` = XOR seed byte.

@@ -1,4 +1,4 @@
-// Version: 0.7.0 (beta) | Date: 2026-11-23
+// Version: 0.7.0 (beta) | Date: 2026-11-27
 //! MIDI data block (`0x2000`: `MdChun`, `MdNLB`, `MdCDS`, `MdES` / `MdTEL`) decoding.
 
 use serde::{Deserialize, Serialize};

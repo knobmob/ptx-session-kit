@@ -1,6 +1,6 @@
 # Audio-Based Panning Law Round-Trip Benchmark — Post-Fix Verification (`PT1 -> SC1 -> PT2 -> SC2`)
 
-**Version:** 0.7.0 (beta) · **Date:** 2026-11-23 *(original benchmark: 2026-11-21)*  
+**Version:** 0.7.0 (beta) · **Date:** 2026-11-27 *(original benchmark: 2026-11-21)*  
 **Engines:** Pro Tools Intro `2026.11.0` (`32-bit float` WAV) & `soundcraft-cli 0.20.1` (`24-bit` WAV, unmodified upstream) · **Converter:** `ptxconv` (`scraft-bridge`)  
 **Plots:** [panning_law_mono_vs_stereo.png](panning_law_mono_vs_stereo.png) · [panning_law_sum_power_and_delta.png](panning_law_sum_power_and_delta.png) · **PDF:** [panning_law_roundtrip.pdf](panning_law_roundtrip.pdf)
 

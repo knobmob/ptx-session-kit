@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# Version: 0.7.0 (beta) | Date: 2026-11-23
+# Version: 0.7.0 (beta) | Date: 2026-11-27
 """ptx_decode -- Read-only decoder of verified `.ptx` / `.ptxt` binary fields.
 
 Decodes tracks, playlists, markers, tempo maps, meter maps, key signatures, regions,

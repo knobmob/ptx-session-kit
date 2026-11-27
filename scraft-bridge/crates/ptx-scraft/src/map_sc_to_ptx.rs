@@ -1,4 +1,4 @@
-// Version: 0.7.0 (beta) | Date: 2026-11-23
+// Version: 0.7.0 (beta) | Date: 2026-11-27
 //! Clean-room `SoundCraft Session -> PtxBuildSpec` converter.
 
 use std::collections::{BTreeMap, HashMap};

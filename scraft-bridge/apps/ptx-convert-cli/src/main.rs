@@ -1,4 +1,4 @@
-// Version: 0.7.0 (beta) | Date: 2026-11-23
+// Version: 0.7.0 (beta) | Date: 2026-11-27
 //! Clean-room CLI converter between Pro Tools (`.ptx`) and SoundCraft (`.scraft`/`.scraftz`).
 #![deny(
     clippy::unwrap_used,

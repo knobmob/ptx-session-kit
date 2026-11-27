@@ -1,4 +1,4 @@
-// Version: 0.7.0 (beta) | Date: 2026-11-23
+// Version: 0.7.0 (beta) | Date: 2026-11-27
 //! Zero-move relative media resolution, WAV/AIFF chunk inspection, and FILETIME calculation.
 
 use std::fs::{self, File};
